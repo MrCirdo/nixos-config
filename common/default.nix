@@ -51,7 +51,13 @@
     '';
   };
 
-  environment.systemPackages = with pkgs; [ vim firefox vscode git ];
+  environment.systemPackages = with pkgs; [
+    vim
+    firefox
+    vscode
+    git
+    xorg.xmodmap
+  ];
 
   nixpkgs.config.allowUnfree = true;
 

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   wallpaper = builtins.fetchurl {
@@ -17,13 +17,19 @@ in {
       inner = 20;
       outer = 5;
     };
+
+    keybindings = lib.mkOptionDefault {
+      "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
+      "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
+    };
+
+    bars = [ ];
     startup = [
-      /* {
-           command = "systemctl --user restart polybar.service";
-           always = true;
-           notification = false;
-         }
-      */
+      {
+        command = "systemctl --user restart polybar.service";
+        always = true;
+        notification = false;
+      }
       {
         command = "${pkgs.feh}/bin/feh --bg-scale ${wallpaper}";
         always = true;
