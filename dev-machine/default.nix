@@ -1,7 +1,11 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
-{
-  home-manager.users.odric = {
+{ home-manager.users.odric = {
+    home = {
+      username = "Odric";
+      homeDirectory = "/home/odric";
+    };
+
     programs = {
       alacritty = {
         enable = true;

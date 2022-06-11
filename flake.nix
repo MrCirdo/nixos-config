@@ -42,7 +42,8 @@
             extraGroups = [ "networkmanager" "wheel" ];
           };
 
-          home-manager.nixosModules.home-manager = {
+          nixosModules.home.home-manager = {
+            home-manager.verbose = true;
             home-manager.useUserPackages = true;
             home-manager.users.odric = import ./home.nix;
 
@@ -54,9 +55,9 @@
       ];
     in {
       dev-machine = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = modules
-          ++ [ ({ pkgs, ... }: { imports = [ ./dev-machine ]; }) ];
+        inherit system modules;
+        #modules = modules
+        #  ++ [ ({ pkgs, ... }: { imports = [ ./dev-machine ]; }) ];
       };
     };
   };
