@@ -27,11 +27,6 @@
     LC_TIME = "fr_FR.utf8";
   };
 
-  services.xserver.enable = true;
-
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   services.xserver = {
     layout = "us";
     xkbVariant = "";
@@ -59,4 +54,20 @@
   environment.systemPackages = with pkgs; [ vim firefox vscode git ];
 
   nixpkgs.config.allowUnfree = true;
+
+  system.stateVersion = "22.05"; # Did you read the comment?
+  users.users.odric = {
+    isNormalUser = true;
+    description = "Odric";
+    shell = pkgs.zsh;
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+
+  environment = {
+    variables = {
+      #TERMINAL = "alacritty";
+      EDITOR = "vim";
+      VISUAL = "vim";
+    };
+  };
 }

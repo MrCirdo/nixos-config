@@ -1,0 +1,9 @@
+{ pkgs, ... }:
+
+{
+  home-manager.enable = true;
+
+  alacritty = import ./alacritty.nix { };
+  git = import ./git.nix { };
+  zsh = import ./zsh.nix { };
+}
