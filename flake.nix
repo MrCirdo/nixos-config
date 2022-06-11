@@ -28,22 +28,36 @@
 
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
 
-    nixosConfigurations.dev-machine = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = let
       system = "x86_64-linux";
       modules = [
         ({ pkgs, ... }: {
           imports = [ ./common ];
 
+          system.stateVersion = "22.05"; # Did you read the comment?
           users.users.odric = {
             isNormalUser = true;
             description = "Odric";
+            shell = pkgs.zsh;
             extraGroups = [ "networkmanager" "wheel" ];
           };
 
-          system.stateVersion = "22.05"; # Did you read the comment?
+          home-manager.nixosModules.home-manager = {
+            home-manager.useUserPackages = true;
+            home-manager.users.odric = import ./home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          };
 
         })
       ];
+    in {
+      dev-machine = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = modules
+          ++ [ ({ pkgs, ... }: { imports = [ ./dev-machine ]; }) ];
+      };
     };
   };
 }
