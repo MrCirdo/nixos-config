@@ -12,9 +12,10 @@
     auto-pairs # Print double quotes/brackets/etc.
 
     # File Tree
-    neo-tree
+    nerdtree
+    nvim-treesitter
     nvim-lspconfig
-    vim-lsp
+    null-ls-nvim
 
     # Customization 
     wombat256-vim # Color scheme for lightline
