@@ -28,6 +28,7 @@
   ];
 
   extraConfig = ''
+    set number
     syntax enable
     colorscheme gruvbox
     let g:lightline = {
