@@ -28,8 +28,8 @@
   };
 
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    layout = "fr,us";
+    xkbVariant = "mac,intl";
   };
 
   services.printing.enable = true;

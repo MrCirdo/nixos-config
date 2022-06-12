@@ -7,6 +7,6 @@
   extraOptions = ''
     corner-radius = 5.0;
     blur-method = "kawase";
-    blur-strength = 5;
+    blur-strength = 10;
   '';
 }

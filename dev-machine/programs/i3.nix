@@ -14,7 +14,7 @@ in {
     terminal = "alacritty";
     window.border = 0;
     gaps = {
-      inner = 20;
+      inner = 10;
       outer = 5;
     };
 
