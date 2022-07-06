@@ -1,176 +1,176 @@
 /* { pkgs, ... }:
 
-   let
-     background = "#282A2E";
-     background-alt = "#373B41";
-     foreground = "#C5C8C6";
-     primary = "#F0C674";
-     secondary = "#8ABEB7";
-     alert = "#A54242";
-     disabled = "#707880";
-   in {
-     enable = true;
-     script = ''
-       if type "xrandr"; then
-         for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-           MONITOR=$m polybar -r main&
-         done
-       else
-         polybar -r main &
-       fi
-     '';
+  let
+  background = "#282A2E";
+  background-alt = "#373B41";
+  foreground = "#C5C8C6";
+  primary = "#F0C674";
+  secondary = "#8ABEB7";
+  alert = "#A54242";
+  disabled = "#707880";
+  in {
+  enable = true;
+  script = ''
+  if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+  MONITOR=$m polybar -r main&
+  done
+  else
+  polybar -r main &
+  fi
+  '';
 
-    package = pkgs.polybar.override {
-         i3GapsSupport = true;
-         alsaSupport = true;
-       };
+  package = pkgs.polybar.override {
+  i3GapsSupport = true;
+  alsaSupport = true;
+  };
 
-     config = {
-       "bar/main" = {
-         "width" = "100%";
-         "height" = "24pt";
+  config = {
+  "bar/main" = {
+  "width" = "100%";
+  "height" = "24pt";
 
-         "background" = "${background}";
-         "foreground" = "${foreground}";
+  "background" = "${background}";
+  "foreground" = "${foreground}";
 
-         "line-size" = "3pt";
+  "line-size" = "3pt";
 
-         "border-size" = "4pt";
-         "border-color" = "#00000000";
+  "border-size" = "4pt";
+  "border-color" = "#00000000";
 
-         "padding-left" = "0";
-         "padding-right" = "1";
+  "padding-left" = "0";
+  "padding-right" = "1";
 
-         "module-margin" = "1";
+  "module-margin" = "1";
 
-         "separator" = "|";
-         "separator-foreground" = "${disabled}";
+  "separator" = "|";
+  "separator-foreground" = "${disabled}";
 
-         "modules-left" = "xworkspaces xwindow";
-         "modules-right" =
-           "filesystem pulseaudio xkeyboard memory cpu wlan eth date";
+  "modules-left" = "xworkspaces xwindow";
+  "modules-right" =
+  "filesystem pulseaudio xkeyboard memory cpu wlan eth date";
 
-         "cursor-click" = "pointer";
-         "cursor-scroll" = "ns-resize";
+  "cursor-click" = "pointer";
+  "cursor-scroll" = "ns-resize";
 
-         "enable-ipc" = "true";
-       };
+  "enable-ipc" = "true";
+  };
 
-       "module/xworkspaces" = {
-         "type" = "internal/xworkspaces";
+  "module/xworkspaces" = {
+  "type" = "internal/xworkspaces";
 
-         "label-active" = "%name%";
-         "label-active-background" = "${background-alt}";
-         "label-active-underline" = "${primary}";
-         "label-active-padding" = "1";
+  "label-active" = "%name%";
+  "label-active-background" = "${background-alt}";
+  "label-active-underline" = "${primary}";
+  "label-active-padding" = "1";
 
-         "label-occupied" = "%name%";
-         "label-occupied-padding" = "1";
+  "label-occupied" = "%name%";
+  "label-occupied-padding" = "1";
 
-         "label-urgent" = "%name%";
-         "label-urgent-background" = "${alert}";
-         "label-urgent-padding" = "1";
-         "label-empty" = "%name%";
-         "label-empty-foreground" = "${disabled}";
-         "label-empty-padding" = "1";
-       };
+  "label-urgent" = "%name%";
+  "label-urgent-background" = "${alert}";
+  "label-urgent-padding" = "1";
+  "label-empty" = "%name%";
+  "label-empty-foreground" = "${disabled}";
+  "label-empty-padding" = "1";
+  };
 
-       "module/xwindow" = {
-         "type" = "internal/xwindow";
-         "label" = "%title:0:60:...%";
-       };
+  "module/xwindow" = {
+  "type" = "internal/xwindow";
+  "label" = "%title:0:60:...%";
+  };
 
-       "module/filesystem" = {
-         "type" = "internal/fs";
-         "interval" = "25";
+  "module/filesystem" = {
+  "type" = "internal/fs";
+  "interval" = "25";
 
-         "mount-0" = "/";
+  "mount-0" = "/";
 
-         "label-mounted" = "%{F#F0C674}%mountpoint%%{F-} %percentage_used%%";
+  "label-mounted" = "%{F#F0C674}%mountpoint%%{F-} %percentage_used%%";
 
-         "label-unmounted" = "%mountpoint% not mounted";
-         "label-unmounted-foreground" = "${disabled}";
-       };
+  "label-unmounted" = "%mountpoint% not mounted";
+  "label-unmounted-foreground" = "${disabled}";
+  };
 
-       "module/pulseaudio" = {
-         "type" = "internal/pulseaudio";
+  "module/pulseaudio" = {
+  "type" = "internal/pulseaudio";
 
-         "format-volume-prefix" = " VOL ";
-         "format-volume-prefix-foreground" = "${primary}";
-         "format-volume" = "<label-volume>";
+  "format-volume-prefix" = " VOL ";
+  "format-volume-prefix-foreground" = "${primary}";
+  "format-volume" = "<label-volume>";
 
-         "label-volume" = "%percentage%%";
+  "label-volume" = "%percentage%%";
 
-         "label-muted" = "muted";
-         "label-muted-foreground" = "${disabled}";
-       };
+  "label-muted" = "muted";
+  "label-muted-foreground" = "${disabled}";
+  };
 
-       "module/xkeyboard" = {
-         "type" = "internal/xkeyboard";
-         "blacklist-0" = "num lock";
+  "module/xkeyboard" = {
+  "type" = "internal/xkeyboard";
+  "blacklist-0" = "num lock";
 
-         "label-layout" = "%layout%";
-         "label-layout-foreground" = "${primary}";
+  "label-layout" = "%layout%";
+  "label-layout-foreground" = "${primary}";
 
-         "label-indicator-padding" = "2";
-         "label-indicator-margin" = "1";
-         "label-indicator-foreground" = "${background}";
-         "label-indicator-background" = "${secondary}";
-       };
+  "label-indicator-padding" = "2";
+  "label-indicator-margin" = "1";
+  "label-indicator-foreground" = "${background}";
+  "label-indicator-background" = "${secondary}";
+  };
 
-       "module/memory" = {
-         "type" = "internal/memory";
-         "interval" = "2";
-         "format-prefix" = " RAM ";
-         "format-prefix-foreground" = "${primary}";
-         "label" = "%percentage_used:2%%";
-       };
+  "module/memory" = {
+  "type" = "internal/memory";
+  "interval" = "2";
+  "format-prefix" = " RAM ";
+  "format-prefix-foreground" = "${primary}";
+  "label" = "%percentage_used:2%%";
+  };
 
-       "module/cpu" = {
-         "type" = "internal/cpu";
-         "interval" = "2";
-         "format-prefix" = "CPU ";
-         "format-prefix-foreground" = "${primary}";
-         "label" = "%percentage:2%%";
-       };
+  "module/cpu" = {
+  "type" = "internal/cpu";
+  "interval" = "2";
+  "format-prefix" = "CPU ";
+  "format-prefix-foreground" = "${primary}";
+  "label" = "%percentage:2%%";
+  };
 
-       "network-base" = {
-         "type" = "internal/network";
-         "interval" = "5";
-         "format-connected" = "<label-connected>";
-         "format-disconnected" = "<label-disconnected>";
-         "label-disconnected" = "%{F#F0C674}%ifname%%{F#707880} disconnected";
-       };
+  "network-base" = {
+  "type" = "internal/network";
+  "interval" = "5";
+  "format-connected" = "<label-connected>";
+  "format-disconnected" = "<label-disconnected>";
+  "label-disconnected" = "%{F#F0C674}%ifname%%{F#707880} disconnected";
+  };
 
-       "module/wlan" = {
-         "inherit" = "network-base";
-         "interface-type" = "wireless";
-         "label-connected" = "%{F#F0C674}%ifname%%{F-} %essid% %local_ip%";
-       };
+  "module/wlan" = {
+  "inherit" = "network-base";
+  "interface-type" = "wireless";
+  "label-connected" = "%{F#F0C674}%ifname%%{F-} %essid% %local_ip%";
+  };
 
-       "module/eth" = {
-         "inherit" = "network-base";
-         "interface-type" = "wired";
-         "label-connected" = "%{F#F0C674}%ifname%%{F-} %local_ip%";
-       };
+  "module/eth" = {
+  "inherit" = "network-base";
+  "interface-type" = "wired";
+  "label-connected" = "%{F#F0C674}%ifname%%{F-} %local_ip%";
+  };
 
-       "module/date" = {
-         "type" = "internal/date";
-         "interval" = "1";
+  "module/date" = {
+  "type" = "internal/date";
+  "interval" = "1";
 
-         "date" = "%H:%M";
-         "date-alt" = "%Y-%m-%d %H:%M:%S";
+  "date" = "%H:%M";
+  "date-alt" = "%Y-%m-%d %H:%M:%S";
 
-         "label" = "%date%";
-         "label-foreground" = "${primary}";
-       };
+  "label" = "%date%";
+  "label-foreground" = "${primary}";
+  };
 
-       "settings" = {
-         "screenchange-reload" = "true";
-         "pseudo-transparency" = "true";
-       };
-     };
-   }
+  "settings" = {
+  "screenchange-reload" = "true";
+  "pseudo-transparency" = "true";
+  };
+  };
+  }
 */
 { pkgs, ... }:
 
@@ -202,7 +202,8 @@ let
 
   # Red
   urgency = "#e74c3c";
-in {
+in
+{
   enable = true;
 
   package = pkgs.polybar.override {
@@ -430,13 +431,13 @@ in {
       ws-icon-0 = "1;";
       ws-icon-1 = "2;";
       ws-icon-2 = "3;";
-      ws-icon-3 = "4;";
-      ws-icon-4 = "5;";
-      ws-icon-5 = "6;";
-      ws-icon-6 = "7;";
-      ws-icon-7 = "8;";
-      ws-icon-8 = "9;";
-      ws-icon-9 = "10;";
+      ws-icon-3 = "4;";
+      ws-icon-4 = "5; ";
+      ws-icon-5 = "6; ";
+      ws-icon-6 = "7; ";
+      ws-icon-7 = "8; ";
+      ws-icon-8 = "9; ";
+      ws-icon-9 = "10; ";
 
       label-mode = "%mode%";
       label-mode-padding = 1;
@@ -469,7 +470,7 @@ in {
     "module/memory" = {
       type = "internal/memory";
 
-      interval = 3;       
+      interval = 3;
 
       format = " <label>";
       format-background = tertiary;

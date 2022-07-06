@@ -7,7 +7,7 @@
   git = import ./git.nix { };
   zsh = import ./zsh.nix { };
   rofi = import ./rofi.nix { };
-  vscode = import ./vscode.nix { };
+  vscode = import ./vscode.nix { inherit pkgs; };
   emacs = import ./doom-emacs { };
   # emacs = import ./emacs.nix { };
   neovim = import ./nvim.nix { inherit pkgs; };
