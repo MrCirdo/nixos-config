@@ -7,7 +7,8 @@
     packages = builtins.attrValues {
       inherit (pkgs)
         vlc discord feh tree gcc gdb gnumake automake autogen autoconf cmake zip
-        unzip bitwarden thunderbird mpv jellyfin-mpv-shim bear htop ctags;
+        unzip bitwarden thunderbird mpv jellyfin-mpv-shim bear htop ctags virtualbox
+        ccls clang-tools cider ghidra man-pages man-pages-posix python3 tmux vagrant nixpkgs-fmt;
     };
 
     file.".doom.d" = {
