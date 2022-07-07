@@ -2,5 +2,6 @@
 
 {
   picom = import ./picom.nix { };
-  polybar = import ./polybar.nix { inherit pkgs; };
+  polybar = import ./polybar { inherit pkgs; };
+  gammastep = import ./gammastep.nix { };
 }

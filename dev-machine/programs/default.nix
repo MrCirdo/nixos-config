@@ -11,4 +11,5 @@
   emacs = import ./doom-emacs { };
   # emacs = import ./emacs.nix { };
   neovim = import ./nvim.nix { inherit pkgs; };
+  ssh = import ./ssh.nix { };
 }

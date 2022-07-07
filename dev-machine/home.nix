@@ -1,6 +1,11 @@
 { pkgs, lib, ... }:
 
 {
+  xsession.windowManager.i3 = import programs/i3.nix { inherit pkgs lib; };
+  #xresources.properties = {
+  #  "Xft.dpi" = "192";
+  #};
+
   home = {
     username = "odric";
     homeDirectory = "/home/odric";
