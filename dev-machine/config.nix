@@ -20,7 +20,7 @@
   ];
 
   services.xserver = {
-    enable = true;
+    enable = false;
     xkbOptions = "caps:escape";
     libinput.enable = true;
     autoRepeatDelay = 200;

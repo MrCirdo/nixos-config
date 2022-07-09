@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  enable = true;
+  enable = false;
   experimentalBackends = true;
   blur = true;
   extraOptions = ''

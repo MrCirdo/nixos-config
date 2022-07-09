@@ -1,8 +1,33 @@
 { pkgs, lib, ... }:
 
 {
-  services.xserver.windowManager.i3 = {
+  services.xserver.displayManager.gdm.wayland = true;
+  services.xserver.displayManager.gdm.enable = true;
+
+  programs.sway = {
     enable = true;
-    package = pkgs.i3-gaps;
+    extraPackages = with pkgs; [ swaylock swayidle ];
+  };
+
+  services.dbus.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
+    gtkUsePortal = true;
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.sway}/bin/sway";
+        user = "odric";
+      };
+      default_session = initial_session;
+    };
   };
 }

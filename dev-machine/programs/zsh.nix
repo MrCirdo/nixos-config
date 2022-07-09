@@ -2,7 +2,6 @@
 
 {
   enable = true;
-  defaultKeymap = "vicmd";
   initExtraFirst = ''
     set -o vi
   '';

@@ -1,10 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  xsession.windowManager.i3 = import programs/i3.nix { inherit pkgs lib; };
-  #xresources.properties = {
-  #  "Xft.dpi" = "192";
-  #};
+  wayland.windowManager.sway = import programs/sway.nix { inherit pkgs lib; };
 
   home = {
     username = "odric";
@@ -13,7 +10,7 @@
       inherit (pkgs)
         vlc discord feh tree gcc gdb gnumake automake autogen autoconf cmake zip
         unzip bitwarden thunderbird mpv jellyfin-mpv-shim bear htop ctags virtualbox
-        ccls clang-tools cider ghidra man-pages man-pages-posix python3 tmux vagrant nixpkgs-fmt;
+        ccls clang-tools cider ghidra man-pages man-pages-posix python3 tmux vagrant nixpkgs-fmt wayland;
     };
 
     file.".doom.d" = {
@@ -26,6 +23,6 @@
     };
   };
 
-  programs = import ./programs { inherit pkgs; };
+  programs = import ./programs { inherit lib pkgs; };
   services = import ./services { inherit pkgs; };
 }

@@ -7,7 +7,7 @@ let
   };
 in
 {
-  enable = true;
+  enable = false;
   package = pkgs.i3-gaps;
 
   config = rec {

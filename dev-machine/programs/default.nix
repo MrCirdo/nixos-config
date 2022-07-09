@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   home-manager.enable = true;
@@ -12,4 +12,6 @@
   # emacs = import ./emacs.nix { };
   neovim = import ./nvim.nix { inherit pkgs; };
   ssh = import ./ssh.nix { };
+  waybar = import ./waybar { inherit lib pkgs; };
+  swaylock = import ./swaylock.nix { };
 }

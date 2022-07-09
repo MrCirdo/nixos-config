@@ -31,7 +31,7 @@ let
   modules = import ./modules.nix pkgs colors fonts;
 in
 {
-  enable = true;
+  enable = false;
 
   package = pkgs.polybar.override {
     i3GapsSupport = true;
