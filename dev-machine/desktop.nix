@@ -1,8 +1,8 @@
 { pkgs, lib, ... }:
 
 {
+  system.nixos.label = "Desktop";
   services.xserver.displayManager.gdm.wayland = true;
-  services.xserver.displayManager.gdm.enable = true;
 
   programs.sway = {
     enable = true;

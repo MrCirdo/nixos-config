@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  services.xserver.displayManager.gdm.enable = true;
+
   fonts.fonts = with pkgs; [
     noto-fonts
     noto-fonts-emoji
@@ -18,19 +20,4 @@
     corefonts
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
-
-  services.xserver = {
-    enable = false;
-    xkbOptions = "caps:escape";
-    libinput.enable = true;
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 50;
-
-    displayManager = {
-      #lightdm.enable = true;
-      sessionCommands = ''
-        ${pkgs.xorg.xset}/bin/xset r rate 200 150
-      '';
-    };
-  };
 }

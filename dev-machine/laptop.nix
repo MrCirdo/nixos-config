@@ -1,10 +1,10 @@
 { pkgs, lib, ... }:
 
 {
+  system.nixos.label = "Laptop";
+  system.nixos.tags = [ "school" "gnome" ];
   services.xserver = {
-    enable = false;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    enable = true;
     xkbOptions = "caps:escape";
     libinput.enable = true;
     autoRepeatDelay = 200;
@@ -17,4 +17,6 @@
       '';
     };
   };
+
+  services.xserver.desktopManager.gnome.enable = true;
 }
