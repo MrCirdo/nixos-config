@@ -6,12 +6,46 @@
   home = {
     username = "odric";
     homeDirectory = "/home/odric";
-    packages = builtins.attrValues {
-      inherit (pkgs)
-        vlc discord feh tree gcc gdb gnumake automake autogen autoconf cmake zip
-        unzip bitwarden thunderbird mpv jellyfin-mpv-shim bear htop ctags virtualbox
-        ccls clang-tools cider ghidra man-pages man-pages-posix python3 tmux vagrant nixpkgs-fmt wayland;
-    };
+    packages =
+      let
+        python-packages = pkgs.python310.withPackages (ps: with ps; [ z3 ]);
+      in
+      with pkgs;
+      [
+        vlc
+        discord
+        feh
+        tree
+        gcc
+        gdb
+        gnumake
+        automake
+        autogen
+        autoconf
+        cmake
+        zip
+        unzip
+        bitwarden
+        thunderbird
+        mpv
+        jellyfin-mpv-shim
+        bear
+        htop
+        ctags
+        virtualbox
+        ccls
+        clang-tools
+        cider
+        ghidra
+        man-pages
+        man-pages-posix
+        tmux
+        vagrant
+        nixpkgs-fmt
+        wayland
+        python-packages
+      ];
+
 
     file.".doom.d" = {
       # Get Doom Emacs
