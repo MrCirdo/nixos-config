@@ -8,7 +8,7 @@
     homeDirectory = "/home/odric";
     packages =
       let
-        python-packages = pkgs.python310.withPackages (ps: with ps; [ z3 ]);
+        python-packages = pkgs.python310.withPackages (ps: with ps; [ z3 angr numpy matplotlib ]);
       in
       with pkgs;
       [
