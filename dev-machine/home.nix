@@ -44,6 +44,8 @@
         nixpkgs-fmt
         wayland
         python-packages
+        chromium
+        binutils
       ];
 
 
