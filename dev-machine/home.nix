@@ -8,7 +8,7 @@
     homeDirectory = "/home/odric";
     packages =
       let
-        python-packages = pkgs.python310.withPackages (ps: with ps; [ z3 angr numpy matplotlib ]);
+        python-packages = (pkgs.python3.withPackages (ps: with ps; [ pwntools z3 angr numpy matplotlib pycryptodome])).override (args: { ignoreCollisions = true; });
       in
       with pkgs;
       [
