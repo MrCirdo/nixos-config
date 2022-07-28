@@ -35,6 +35,7 @@
         virtualbox
         ccls
         clang-tools
+        lldb
         cider
         ghidra
         man-pages
