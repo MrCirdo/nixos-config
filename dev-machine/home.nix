@@ -16,8 +16,8 @@
         discord
         feh
         tree
-        gcc
         gdb
+        gcc_multi
         gnumake
         automake
         autogen
@@ -46,7 +46,7 @@
         wayland
         python-packages
         chromium
-        binutils
+        android-tools
       ];
 
 
