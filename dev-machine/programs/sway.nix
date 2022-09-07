@@ -33,8 +33,8 @@
       "*" = {
         bg = builtins.fetchurl
           {
-            url = "https://i.redd.it/9lbwxdoirk891.png";
-            sha256 = "51447000dff937658a4380e6c79bdfd23f12f1730cc146b97bcea18d0756c1bc";
+            url = "https://i.redd.it/hv2q6ot89fl91.jpg";
+            sha256 = "04d7d10145d235e42a4e9448dd3405ecc1cab0c20993a67cb28d18663b355696";
           } + " fill";
       };
       "eDP-1" = {
