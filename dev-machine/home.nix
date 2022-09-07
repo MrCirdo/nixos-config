@@ -47,6 +47,7 @@
         python-packages
         chromium
         android-tools
+        openssl
       ];
 
 
