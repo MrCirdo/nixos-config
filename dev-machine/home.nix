@@ -49,6 +49,7 @@
         chromium
         android-tools
         openssl
+        spotify
       ];
 
 
