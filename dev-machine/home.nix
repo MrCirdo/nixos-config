@@ -17,7 +17,8 @@
         feh
         tree
         gdb
-        gcc_multi
+        gcc
+        glibc
         gnumake
         automake
         autogen
