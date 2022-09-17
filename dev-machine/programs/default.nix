@@ -14,4 +14,6 @@
   ssh = import ./ssh.nix { };
   waybar = import ./waybar { inherit lib pkgs; };
   swaylock = import ./swaylock.nix { };
+  gpg = import ./gpg.nix {  };
+  
 }
