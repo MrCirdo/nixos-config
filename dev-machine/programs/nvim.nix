@@ -8,6 +8,7 @@
     vim-lastplace
     auto-pairs
     nerdtree
+    nvim-treesitter
     null-ls-nvim
     nvim-lspconfig
     nvim-cmp
