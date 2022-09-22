@@ -2,7 +2,7 @@
 
 {
   enable = true;
-  dawnTime = "9:00";
-  duskTime = "23:00";
+  dawnTime = "8:00";
+  duskTime = "22:00";
   temperature.night = 2500;
 }
