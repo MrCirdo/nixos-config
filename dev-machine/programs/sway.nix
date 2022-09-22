@@ -40,9 +40,11 @@
       "eDP-1" = { scale = "2"; };
     };
 
-    window.border = 10;
+    window.border = 0;
 
     gaps = {
+      inner = 14;
+      outer = -2;
       smartGaps = false;
       smartBorders = "on";
     };
