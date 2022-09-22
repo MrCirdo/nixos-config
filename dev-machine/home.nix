@@ -6,14 +6,13 @@
   home = {
     username = "odric";
     homeDirectory = "/home/odric";
+    stateVersion = "22.05";
     packages =
       let
-        python-packages = (pkgs.python310.withPackages (ps: with ps; [ pwntools z3 angr numpy matplotlib six jinja2])).override (args: { ignoreCollisions = true; });
+        python-packages = (pkgs.python310.withPackages (ps: with ps; [ pwntools z3 angr numpy matplotlib jinja2])).override (args: { ignoreCollisions = true; });
       in
       with pkgs;
       [
-        vlc
-        discord
         feh
         tree
         gdb
@@ -33,12 +32,9 @@
         bear
         htop
         ctags
-        virtualbox
         ccls
         clang-tools
-        lldb
-        cider
-        ghidra
+        ghidra-bin
         man-pages
         man-pages-posix
         tmux
@@ -47,21 +43,10 @@
         wayland
         python-packages
         chromium
-        android-tools
         openssl
         spotify
+        signal-desktop
       ];
-
-
-    file.".doom.d" = {
-      # Get Doom Emacs
-      source =
-        ./programs/doom-emacs/doom.d; # Sets up symlink name ".doom.d" for file "doom.d"
-      recursive = true; # Allow symlinking a directory
-      onChange = builtins.readFile
-        ./programs/doom-emacs/doom.sh; # If an edit is detected, it will run this script
-    };
-  };
 
   programs = import ./programs { inherit lib pkgs; };
   services = import ./services { inherit pkgs; };

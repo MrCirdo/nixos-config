@@ -4,36 +4,21 @@
   vimAlias = true;
 
   plugins = with pkgs.vimPlugins; [
-    vim-nix # Syntax Highlighting nix
-
-    # QoL
-    vim-lastplace # Opens document where you left it
-    auto-pairs # Print double quotes/brackets/etc.
-
-    # File Tree
+    vim-nix
+    vim-lastplace
+    auto-pairs
     nerdtree
-
-    nvim-treesitter
-
-    #lsp
     null-ls-nvim
     nvim-lspconfig
     nvim-cmp
     cmp-nvim-lsp
     cmp_luasnip
     luasnip
-
     packer-nvim
-
-    # Customization 
-    # wombat256-vim # Color scheme for lightline
-    # vim-code-dark        # Alternative Color scheme: codedark
-    # vim-hybrid
     onedark-nvim
     gruvbox
-
-    lightline-vim # Info bar at bottom
-    indent-blankline-nvim # Indentation lines
+    lightline-vim
+    indent-blankline-nvim
   ];
 
   extraConfig = ''
