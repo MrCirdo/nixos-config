@@ -1,6 +1,5 @@
 # Config from https://github.com/TristanFloch/dotfiles-nix
-colors: fonts:
-{
+colors: fonts: {
   "global/wm" = {
     margin-top = 0;
     margin-bottom = 0;
@@ -29,7 +28,8 @@ colors: fonts:
     module-margin-right = 0;
     modules-left = "xwindow right left date right left xkeyboard right";
     modules-center = "left i3 right";
-    modules-right = "left backlight space pulseaudio right left memory space cpu space filesystem right left temperature space battery right left";
+    modules-right =
+      "left backlight space pulseaudio right left memory space cpu space filesystem right left temperature space battery right left";
     font = fonts.list;
     cursor-click = "pointer";
     cursor-scroll = "ns-resize";

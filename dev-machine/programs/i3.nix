@@ -5,8 +5,7 @@ let
     url = "https://i.redd.it/d6jjpbeaz3491.jpg";
     sha256 = "edcbb14b43975b5c7a5878155f8a9c18d3e8120588d530124c7cb633a9015195";
   };
-in
-{
+in {
   enable = false;
   package = pkgs.i3-gaps;
 

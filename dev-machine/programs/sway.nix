@@ -31,32 +31,58 @@
 
     output = {
       "*" = {
-        bg = builtins.fetchurl
-          {
-            url = "https://i.redd.it/hv2q6ot89fl91.jpg";
-            sha256 = "04d7d10145d235e42a4e9448dd3405ecc1cab0c20993a67cb28d18663b355696";
-          } + " fill";
+        bg = builtins.fetchurl {
+          url = "https://i.redd.it/hv2q6ot89fl91.jpg";
+          sha256 =
+            "04d7d10145d235e42a4e9448dd3405ecc1cab0c20993a67cb28d18663b355696";
+        } + " fill";
       };
-      "eDP-1" = {
-        scale = "2";
-      };
+      "eDP-1" = { scale = "2"; };
     };
 
-    window.border = 0;
+    window.border = 10;
 
     gaps = {
-      inner = 10;
-      outer = 5;
       smartGaps = false;
       smartBorders = "on";
     };
 
     colors = {
-      focused = { border = "#6272A4"; background = "#6272A4"; text = "#F8F8F2"; indicator = "#6272A4"; childBorder = "#6272A4"; };
-      focusedInactive = { border = "#44475A"; background = "#44475A"; text = "#F8F8F2"; indicator = "#44475A"; childBorder = "#44475A"; };
-      unfocused = { border = "#282A36"; background = "#282A36"; text = "#BFBFBF"; indicator = "#282A36"; childBorder = "#282A36"; };
-      urgent = { border = "#44475A"; background = "#FF5555"; text = "#F8F8F2"; indicator = "#FF5555"; childBorder = "#FF5555"; };
-      placeholder = { border = "#282A36"; background = "#282A36"; text = "#F8F8F2"; indicator = "#282A36"; childBorder = "#282A36"; };
+      focused = {
+        border = "#6272A4";
+        background = "#6272A4";
+        text = "#F8F8F2";
+        indicator = "#6272A4";
+        childBorder = "#6272A4";
+      };
+      focusedInactive = {
+        border = "#44475A";
+        background = "#44475A";
+        text = "#F8F8F2";
+        indicator = "#44475A";
+        childBorder = "#44475A";
+      };
+      unfocused = {
+        border = "#282A36";
+        background = "#282A36";
+        text = "#BFBFBF";
+        indicator = "#282A36";
+        childBorder = "#282A36";
+      };
+      urgent = {
+        border = "#44475A";
+        background = "#FF5555";
+        text = "#F8F8F2";
+        indicator = "#FF5555";
+        childBorder = "#FF5555";
+      };
+      placeholder = {
+        border = "#282A36";
+        background = "#282A36";
+        text = "#F8F8F2";
+        indicator = "#282A36";
+        childBorder = "#282A36";
+      };
       background = "#F8F8F2";
     };
 
@@ -64,7 +90,6 @@
       "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
       "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
     };
-
   };
 
   extraSessionCommands = ''

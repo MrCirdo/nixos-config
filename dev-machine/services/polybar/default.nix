@@ -29,8 +29,7 @@ let
 
   config = import ./config.nix colors fonts;
   modules = import ./modules.nix pkgs colors fonts;
-in
-{
+in {
   enable = false;
 
   package = pkgs.polybar.override {

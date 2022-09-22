@@ -1,6 +1,5 @@
 # Config from https://github.com/TristanFloch/dotfiles-nix
-pkgs: colors: fonts:
-{
+pkgs: colors: fonts: {
   "module/space" = {
     type = "custom/text";
     content-background = colors.background;
@@ -168,7 +167,6 @@ pkgs: colors: fonts:
     # <ramp-coreload>;
     format = "<label>";
 
-
     # Available tokens:;
     # %percentage% (default) - total cpu load;
     # %percentage-cores% - load percentage for each core;
@@ -198,7 +196,6 @@ pkgs: colors: fonts:
     format-prefix-font = fonts.icons;
     format-prefix-foreground = colors.pink;
   };
-
 
   "module/date" = {
     type = "internal/date";
