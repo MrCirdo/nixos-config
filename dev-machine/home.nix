@@ -8,9 +8,18 @@
     homeDirectory = "/home/odric";
     stateVersion = "22.05";
     packages = let
-      python-packages = (pkgs.python310.withPackages
-        (ps: with ps; [ pwntools z3 angr numpy matplotlib jinja2 ])).override
-        (args: { ignoreCollisions = true; });
+      python-packages = (pkgs.python310.withPackages (ps:
+        with ps; [
+          pwntools
+          z3
+          angr
+          numpy
+          matplotlib
+          jinja2
+          yapf
+          docker
+          python-lsp-server
+        ])).override (args: { ignoreCollisions = true; });
     in with pkgs; [
       feh
       tree

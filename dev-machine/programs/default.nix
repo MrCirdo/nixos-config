@@ -10,7 +10,7 @@
   vscode = import ./vscode.nix { inherit pkgs; };
   emacs = import ./doom-emacs { };
   # emacs = import ./emacs.nix { };
-  neovim = import ./nvim.nix { inherit pkgs; };
+  neovim = import ./nvim { inherit pkgs; };
   ssh = import ./ssh.nix { };
   waybar = import ./waybar { inherit lib pkgs; };
   swaylock = import ./swaylock.nix { };

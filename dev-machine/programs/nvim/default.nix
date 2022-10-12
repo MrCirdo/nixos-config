@@ -17,10 +17,11 @@
     luasnip
     packer-nvim
     onedark-nvim
+    material-nvim
     gruvbox
     lightline-vim
     indent-blankline-nvim
   ];
 
-  extraConfig = builtins.readFile "./nvim.vim";
+  extraConfig = builtins.readFile ./nvim.vim;
 }
