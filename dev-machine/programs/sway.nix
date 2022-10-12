@@ -1,9 +1,30 @@
-# Thanks to Tristan Floch for the config.
-# https://github.com/TristanFloch/dotfiles-nix
-
 { pkgs, lib, ... }:
+let
+  bg_0 = "1C1917";
+  bg_1 = "292524";
+  bg_2 = "44403C";
+  dim_0 = "57534E";
+  fg_0 = "57534E";
+  fg_1 = "F5F5F4";
 
-{
+  red = "fa5750";
+  green = "75b938";
+  yellow = "dbb32d";
+  blue = "164E63";
+  magenta = "f275be";
+  cyan = "41c7b9";
+  orange = "ed8649";
+  violet = "af88eb";
+
+  br_red = "ff665c";
+  br_green = "84c747";
+  br_yellow = "ebc13d";
+  br_blue = "58a3ff";
+  br_magenta = "ff84cd";
+  br_cyan = "53d6c7";
+  br_orange = "fd9456";
+  br_violet = "bd96fa";
+in {
   enable = true;
   wrapperFeatures = {
     base = true;
@@ -13,9 +34,69 @@
   config = rec {
     modifier = "Mod4";
     terminal = "alacritty";
-    bars = [ ];
+
+    colors = {
+      focused = {
+        border = "#${blue}";
+        background = "#${blue}";
+        text = "#${fg_1}";
+        indicator = "#${blue}";
+        childBorder = "#${blue}";
+      };
+      focusedInactive = {
+        border = "#${bg_1}";
+        background = "#${bg_1}";
+        text = "#${fg_0}";
+        indicator = "#${bg_1}";
+        childBorder = "#${bg_1}";
+      };
+      unfocused = {
+        border = "#${bg_0}";
+        background = "#${bg_0}";
+        text = "#${dim_0}";
+        indicator = "#${bg_0}";
+        childBorder = "#${bg_0}";
+      };
+      urgent = {
+        border = "#${red}";
+        background = "#${red}";
+        text = "#${fg_1}";
+        indicator = "#${red}";
+        childBorder = "#${red}";
+      };
+    };
+
+    bars = [{
+      statusCommand = "${pkgs.i3status}/bin/i3status";
+      command = "${pkgs.sway}/bin/swaybar";
+      colors = {
+        background = "#${bg_0}";
+        statusline = "#${fg_0}";
+        separator = "#${fg_0}";
+        focusedWorkspace = {
+          border = "#${bg_1}";
+          background = "#${blue}";
+          text = "#${fg_1}";
+        };
+        activeWorkspace = {
+          border = "#${bg_0}";
+          background = "#${bg_1}";
+          text = "#${fg_1}";
+        };
+        inactiveWorkspace = {
+          border = "#${bg_0}";
+          background = "#${bg_0}";
+          text = "#${dim_0}";
+        };
+        urgentWorkspace = {
+          border = "#${bg_1}";
+          background = "#${red}";
+          text = "#${fg_1}";
+        };
+      };
+    }];
+
     workspaceAutoBackAndForth = true;
-    seat = { "*" = { xcursor_theme = "Dracula-cursors 16"; }; };
 
     input = {
       "type:keyboard" = {
@@ -43,54 +124,8 @@
     window.border = 0;
 
     gaps = {
-      inner = 14;
-      outer = -2;
       smartGaps = false;
       smartBorders = "on";
-    };
-
-    colors = {
-      focused = {
-        border = "#6272A4";
-        background = "#6272A4";
-        text = "#F8F8F2";
-        indicator = "#6272A4";
-        childBorder = "#6272A4";
-      };
-      focusedInactive = {
-        border = "#44475A";
-        background = "#44475A";
-        text = "#F8F8F2";
-        indicator = "#44475A";
-        childBorder = "#44475A";
-      };
-      unfocused = {
-        border = "#282A36";
-        background = "#282A36";
-        text = "#BFBFBF";
-        indicator = "#282A36";
-        childBorder = "#282A36";
-      };
-      urgent = {
-        border = "#44475A";
-        background = "#FF5555";
-        text = "#F8F8F2";
-        indicator = "#FF5555";
-        childBorder = "#FF5555";
-      };
-      placeholder = {
-        border = "#282A36";
-        background = "#282A36";
-        text = "#F8F8F2";
-        indicator = "#282A36";
-        childBorder = "#282A36";
-      };
-      background = "#F8F8F2";
-    };
-
-    keybindings = lib.mkOptionDefault {
-      "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
-      "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
     };
   };
 
