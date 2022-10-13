@@ -104,9 +104,9 @@ in {
     ];
 
     assigns = {
-      "0" = [{ app_id = "Alacritty"; }];
-      "1" = [{ app_id = "Discord"; }];
-      "2" = [{ app_id = "Spotify"; }];
+      "1" = [{ app_id = "Alacritty"; }];
+      "2" = [{ app_id = "Discord"; }];
+      "3" = [{ app_id = "Spotify"; }];
     };
 
     workspaceAutoBackAndForth = true;
