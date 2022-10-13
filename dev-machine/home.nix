@@ -54,6 +54,8 @@
       openssl
       spotify
       signal-desktop
+      whatsapp-for-linux
+      discord
     ];
   };
 
