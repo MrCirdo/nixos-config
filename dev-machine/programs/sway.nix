@@ -96,6 +96,19 @@ in {
       };
     }];
 
+    startup = [
+      { command = "alacritty"; }
+      { command = "firefox"; }
+      { command = "discord --enable-gpu-rasterization"; }
+      { command = "spotify"; }
+    ];
+
+    assigns = {
+      "0" = [{ app_id = "Alacritty"; }];
+      "1" = [{ app_id = "Discord"; }];
+      "2" = [{ app_id = "Spotify"; }];
+    };
+
     workspaceAutoBackAndForth = true;
 
     input = {
