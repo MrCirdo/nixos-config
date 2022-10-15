@@ -32,7 +32,10 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
+  networking = {
+    useDHCP = lib.mkDefault true;
+    nameservers = [ "1.1.1.1" "1.0.0.1" "208.67.222.222" "208.67.220.220" ];
+  };
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   hardware.cpu.intel.updateMicrocode =

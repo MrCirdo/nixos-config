@@ -9,5 +9,6 @@
     }];
 
     window = { opacity = 0.85; };
+    font.size = 9;
   };
 }

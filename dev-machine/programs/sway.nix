@@ -10,7 +10,7 @@ let
   red = "fa5750";
   green = "75b938";
   yellow = "dbb32d";
-  blue = "164E63";
+  blue = "1E3A8A";
   magenta = "f275be";
   cyan = "41c7b9";
   orange = "ed8649";
