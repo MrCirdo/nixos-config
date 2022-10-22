@@ -21,6 +21,7 @@
     gruvbox
     lightline-vim
     indent-blankline-nvim
+    vim-devicons
   ];
 
   extraConfig = builtins.readFile ./nvim.vim;
