@@ -1,6 +1,4 @@
-{ pkgs, lib, ... }:
-
-{
+{ pkgs, lib, ... }: {
   wayland.windowManager.sway = import programs/sway.nix { inherit pkgs lib; };
 
   home = {
@@ -8,6 +6,18 @@
     homeDirectory = "/home/odric";
     stateVersion = "22.05";
     packages = let
+      discord-wrapped = pkgs.discord.overrideAttrs (oldAttrs: {
+        buildInputs = (oldAttrs.buildInputs or [ ]) ++ [ pkgs.makeWrapper ];
+        postFixup = oldAttrs.postFixup or "" + ''
+          wrapProgram $out/bin/discord --add-flags "\
+          --ignore-gpu-blocklist \
+          --disable-features=UseOzonePlatform \
+          --enable-features=VaapiVideoDecoder \
+          --use-gl=desktop \
+          --enable-gpu-rasterization \
+          --enable-zero-copy"
+        '';
+      });
       python-packages = (pkgs.python310.withPackages (ps:
         with ps; [
           pwntools
@@ -55,7 +65,7 @@
       spotify
       signal-desktop
       whatsapp-for-linux
-      discord
+      discord-wrapped
       rustc
       cargo
       rust-analyzer

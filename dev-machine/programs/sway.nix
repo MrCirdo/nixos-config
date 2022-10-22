@@ -99,7 +99,7 @@ in {
     startup = [
       { command = "alacritty"; }
       { command = "firefox"; }
-      { command = "discord --enable-gpu-rasterization"; }
+      { command = "discord"; }
       { command = "spotify"; }
     ];
 
