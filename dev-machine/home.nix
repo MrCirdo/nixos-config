@@ -56,6 +56,9 @@
       signal-desktop
       whatsapp-for-linux
       discord
+      rustc
+      cargo
+      rust-analyzer
     ];
   };
 
