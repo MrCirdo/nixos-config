@@ -15,5 +15,5 @@
   waybar = import ./waybar { inherit lib pkgs; };
   swaylock = import ./swaylock.nix { };
   gpg = import ./gpg.nix { };
-  mako = import ./mako.nix {  };
+  mako = import ./mako.nix { };
 }

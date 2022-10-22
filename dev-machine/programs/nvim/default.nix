@@ -1,4 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  nvim-treesitter-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins
+    (plugins: [
+      plugins.tree-sitter-c
+      plugins.tree-sitter-cpp
+      plugins.tree-sitter-nix
+      plugins.tree-sitter-python
+      plugins.tree-sitter-rust
+    ]);
+in {
   enable = true;
   viAlias = true;
   vimAlias = true;
@@ -8,7 +18,7 @@
     vim-lastplace
     auto-pairs
     nerdtree
-    nvim-treesitter
+    nvim-treesitter-plugins
     null-ls-nvim
     nvim-lspconfig
     nvim-cmp

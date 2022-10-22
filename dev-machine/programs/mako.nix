@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   enable = true;
   backgroundColor = "#1E3A8A";
   borderColor = "#292524";
