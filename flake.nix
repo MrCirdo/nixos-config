@@ -1,61 +1,32 @@
 {
-  description = "My nixos dot-file";
-  inputs = {
-    nixpkgs = {
-      type = "github";
-      owner = "NixOs";
-      repo = "nixpkgs";
-      ref = "nixos-unstable";
-    };
+  description = "My personal nixos config.";
 
-    home-manager = {
-      type = "github";
-      owner = "nix-community";
-      repo = "home-manager";
-      ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; };
+    # only needed if you use as a package set:
+    nixpkgs-wayland.inputs.master.follows = "master";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-
+  outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, ... }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
 
     nixosConfigurations = let
-      system = "x86_64-linux";
-      modules = [ ./dev-machine/common ];
+      overlays =
+        [ (import ./overlays/electron.nix) (import ./overlays/discord.nix) ];
     in {
-      dev-machine-laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-
-        modules = modules
-          ++ [ ./dev-machine/config.nix ./dev-machine/laptop.nix ] ++ [
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.odric = {
-                imports = [ ./dev-machine/home.nix ];
-              };
-            }
-          ];
-
-      };
-
       dev-machine = nixpkgs.lib.nixosSystem {
-        inherit system;
-
-        modules = modules
-          ++ [ ./dev-machine/config.nix ./dev-machine/desktop.nix ] ++ [
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.odric = {
-                imports = [ ./dev-machine/home.nix ];
-              };
-            }
-          ];
+        system = "x86_64-linux";
+        modules = [
+          ./config/macbook-pro
+          home-manager.nixosModules.home-manager
+          ./home
+          ./wayland
+          { nixpkgs.overlays = [ nixpkgs-wayland.overlay ] ++ overlays; }
+        ];
       };
     };
   };
