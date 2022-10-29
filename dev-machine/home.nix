@@ -47,6 +47,7 @@
       thunderbird
       mpv
       jellyfin-mpv-shim
+      jellyfin-media-player
       bear
       htop
       ctags
@@ -69,6 +70,11 @@
       rustc
       cargo
       rust-analyzer
+      rustfmt
+      grim
+      slurp
+      wl-clipboard
+      rnix-lsp
     ];
   };
 
