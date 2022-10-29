@@ -32,6 +32,7 @@ in {
     lightline-vim
     indent-blankline-nvim
     vim-devicons
+    rust-vim
   ];
 
   extraConfig = builtins.readFile ./nvim.vim;
