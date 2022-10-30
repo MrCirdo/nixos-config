@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs = {
@@ -12,17 +12,23 @@
 
     gpg.enable = true;
 
-    mako = {
-      enable = true;
-      backgroundColor = "#1E3A8A";
-      borderColor = "#292524";
-      defaultTimeout = 10000;
-      borderRadius = 5;
-    };
-
     ssh = {
       enable = true;
       serverAliveInterval = 1;
+    };
+
+    vscode = {
+      enable = true;
+      userSettings = { "keyboard.dispatch" = "keyCode"; };
+      package = pkgs.vscodium;
+      extensions = with pkgs.vscode-extensions; [
+        vscodevim.vim
+        github.copilot
+        eamodio.gitlens
+        ms-python.python
+        ms-vscode.cpptools
+        jnoortheen.nix-ide
+      ];
     };
 
     zsh = {

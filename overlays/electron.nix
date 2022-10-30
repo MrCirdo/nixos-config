@@ -7,14 +7,12 @@ let
         ++ [ self.makeWrapper ];
       postFixup = (old.postFixup or "") + ''
         wrapProgram $out/bin/${bin} \
-        --add-flags "--enable-features=UseOzonePlatform" \
-        --add-flags "--ozone-platform=wayland"
+        --add-flags "--enable-features=UseOzonePlatform \
+        --ozone-platform=wayland"
       '';
     });
 in super: {
-  discord = enableWayland super.discord "discord";
   vscode = enableWayland super.vscode "code";
-  spotify = enableWayland super.spotify "spotify";
   signal-desktop = enableWayland super.signal-desktop "signal-desktop";
   bitwarden = enableWayland super.bitwarden "bitwarden";
 }

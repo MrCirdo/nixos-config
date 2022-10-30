@@ -12,7 +12,7 @@ let
   red = "fa5750";
   green = "75b938";
   yellow = "dbb32d";
-  blue = "1E3A8A";
+  blue = "3B82F6";
   magenta = "f275be";
   cyan = "41c7b9";
   orange = "ed8649";
@@ -42,7 +42,7 @@ in {
       keybindings = {
         "${default_config.modifier}+Return" = "exec ${default_config.terminal}";
         "${default_config.modifier}+Shift+q" = "kill";
-        "${default_config.modifier}+d" = "exec ${default_config.menu}";
+        "${default_config.modifier}+d" = "exec ${pkgs.wofi}/bin/wofi";
 
         "${default_config.modifier}+${default_config.left}" = "focus left";
         "${default_config.modifier}+${default_config.down}" = "focus down";
@@ -116,6 +116,14 @@ in {
         "${default_config.modifier}+r" = "mode resize";
         "XF86MonBrightnessDown" = "exec ${pkgs.light}/bin/light -U 3";
         "XF86MonBrightnessUp" = "exec ${pkgs.light}/bin/light -A 3";
+
+        "F2" =
+          "exec ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy --type 'image/png'";
+        "F3" =
+          "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\"  - | ${pkgs.wl-clipboard}/bin/wl-copy --type 'image/png'";
+
+          "${default_config.modifier}+Alt+l" = 
+          "exec ${pkgs.swaylock-effects}/bin/swaylock -C $HOME/.config/swaylock-effects/config";
       };
 
       colors = {
@@ -149,35 +157,7 @@ in {
         };
       };
 
-      bars = [{
-        statusCommand = "${pkgs.i3status}/bin/i3status";
-        command = "${pkgs.sway}/bin/swaybar";
-        colors = {
-          background = "#${bg_0}";
-          statusline = "#${fg_0}";
-          separator = "#${fg_0}";
-          focusedWorkspace = {
-            border = "#${bg_1}";
-            background = "#${blue}";
-            text = "#${fg_1}";
-          };
-          activeWorkspace = {
-            border = "#${bg_0}";
-            background = "#${bg_1}";
-            text = "#${fg_1}";
-          };
-          inactiveWorkspace = {
-            border = "#${bg_0}";
-            background = "#${bg_0}";
-            text = "#${dim_0}";
-          };
-          urgentWorkspace = {
-            border = "#${bg_1}";
-            background = "#${red}";
-            text = "#${fg_1}";
-          };
-        };
-      }];
+      bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
 
       workspaceAutoBackAndForth = true;
 
@@ -219,9 +199,10 @@ in {
 
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
-      export QT_QPA_PLATFORM=wayland
-      export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
       export _JAVA_AWT_WM_NONREPARENTING=1
+      export QT_QPA_PLATFORM=wayland
+      export XDG_CURRENT_DESKTOP=sway
+      export XDG_SESSION_DESKTOP=sway
       export MOZ_ENABLE_WAYLAND=1
     '';
   };

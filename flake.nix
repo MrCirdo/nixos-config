@@ -16,7 +16,7 @@
 
     nixosConfigurations = let
       overlays =
-        [ (import ./overlays/electron.nix) (import ./overlays/discord.nix) ];
+        [ (import ./overlays/spotify.nix) (import ./overlays/electron.nix) ];
     in {
       dev-machine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

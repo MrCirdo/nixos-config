@@ -41,21 +41,30 @@ let
 
   shellPackages = with pkgs; [ tree zip unzip htop tmux openssl ];
 
-  socialPackages = with pkgs; [ signal-desktop whatsapp-for-linux ];
+  socialPackages = with pkgs; [
+    signal-desktop
+    whatsapp-for-linux
+    discord-canary
+    discord
+  ];
 
   reverseEngineeringPackages = with pkgs; [ ghidra ];
 
   otherPackages = with pkgs; [
     bitwarden
     spotify
-    signal-desktop
-    vscode
-    discord-canary
+    playerctl
+    grim
+    slurp
+    wl-clipboard
   ];
 in {
   home-manager.sharedModules = [{
     home.packages = devPackages ++ shellPackages ++ socialPackages
       ++ reverseEngineeringPackages ++ otherPackages ++ [ pythonPackages ];
   }];
+
+  # I need to configure wofi and swaylock effects.
+  imports = [ ./wofi ./swaylock-effects ];
 }
 

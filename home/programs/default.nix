@@ -1,3 +1,3 @@
-{ lib, pkgs, config, ... }:
-let commonPrograms = import ./common;
-in { home-manager.sharedModules = [ commonPrograms ]; }
+{ lib, pkgs, config, ... }: {
+  home-manager.sharedModules = [ (import ./common) (import ./wayland) ];
+}
