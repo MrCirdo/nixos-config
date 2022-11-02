@@ -26,6 +26,8 @@ let
   br_cyan = "53d6c7";
   br_orange = "fd9456";
   br_violet = "bd96fa";
+
+  defaultSinkPulseaudio = "44";
 in {
   wayland.windowManager.sway = {
     enable = true;
@@ -124,6 +126,14 @@ in {
 
           "${default_config.modifier}+Alt+l" = 
           "exec ${pkgs.swaylock-effects}/bin/swaylock -C $HOME/.config/swaylock-effects/config";
+
+          "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume ${defaultSinkPulseaudio} +10%";
+          "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume ${defaultSinkPulseaudio} 0%";
+          "XF86AudioLowerVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume ${defaultSinkPulseaudio} -10%";
+
+          "Shift+XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume ${defaultSinkPulseaudio} +1%";
+          "Shift+XF86AudioLowerVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume ${defaultSinkPulseaudio} -1%";
+
       };
 
       colors = {

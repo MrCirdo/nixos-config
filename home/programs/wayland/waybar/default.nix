@@ -11,14 +11,13 @@
         modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "sway/window" ];
         modules-right = [
-          "tray"
           "cpu"
           "disk"
           "memory"
           "temperature"
+          "pulseaudio"
           "clock"
           "battery"
-          "wlr/taskbar"
         ];
 
         battery = {
@@ -63,19 +62,18 @@
           tooltip-format = "{used:0.1f}GiB / {total:0.1f}GiB used";
         };
 
-        "wlr/taskbar" = {
-          format = "{icon}";
-          icon-size = 15;
-          icon-theme = "Numix-Circle";
-          tooltip-format = "{title}";
-          on-click = "activate";
-          on-click-middle = "close";
-          ignore-list = [ "Alacritty" "firefox" "code" ];
-          "app_ids-mapping" = {
-            "firefoxdeveloperedition" = "firefox-developer-edition";
+        pulseaudio = {
+          format = "{volume}% {icon}";
+          format-bluetooth = "{volume}% {icon}";
+          format-muted = "";
+          format-icons = {
+            default = "";
+            speaker = "";
+            headphone = "";
           };
+          scroll-step = 1;
+          on-click = "pavucontrol";
         };
-
       }];
     };
   };

@@ -57,6 +57,10 @@ let
     grim
     slurp
     wl-clipboard
+    jellyfin-media-player
+    networkmanager_dmenu
+    pavucontrol
+    pulseaudio
   ];
 in {
   home-manager.sharedModules = [{
