@@ -65,12 +65,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -82,10 +76,13 @@
     description = "Odric";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "wheel" "docker" "video" ];
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
+  };
+
+  environment = {
+    variables = {
+      EDITOR = "vim";
+      VISUAL = "vim";
+    };
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -99,7 +96,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-  ];
+];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -127,5 +124,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
 
 }
