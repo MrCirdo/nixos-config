@@ -13,15 +13,8 @@
   };
 
   security.polkit.enable = true;
+  environment.loginShellInit = ''
+  [[ "$(tty)" == /dev/tty1 ]] && sway
+  '';
 
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.sway}/bin/sway";
-        user = "odric";
-      };
-      default_session = initial_session;
-    };
-  };
 }
