@@ -41,6 +41,11 @@ in {
       modifier = "Mod4";
       terminal = "alacritty";
 
+      fonts = {
+        names = ["Ubuntu"];
+        size = 12.0;
+      };
+
       keybindings = {
         "${default_config.modifier}+Return" = "exec ${default_config.terminal}";
         "${default_config.modifier}+Shift+q" = "kill";
