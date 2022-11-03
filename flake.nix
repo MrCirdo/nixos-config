@@ -21,7 +21,7 @@
       dev-machine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./config/macbook-pro
+          ./system
           home-manager.nixosModules.home-manager
           ./home
           ./wayland
