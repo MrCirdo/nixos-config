@@ -11,6 +11,7 @@ let
       yapf
       docker
       python-lsp-server
+      pytest
     ])).override (args: { ignoreCollisions = true; });
 
   devPackages = with pkgs; [
@@ -61,6 +62,8 @@ let
     networkmanager_dmenu
     pavucontrol
     pulseaudio
+    firefox
+    thunderbird
   ];
 in {
   home-manager.sharedModules = [{
