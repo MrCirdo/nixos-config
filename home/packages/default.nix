@@ -71,6 +71,8 @@
     thunderbird
     pmutils
     rclone
+    pandoc
+    texlive.combined.scheme-full
   ];
 
   gnomePackages = with pkgs.gnome; [nautilus eog evince];
