@@ -75,7 +75,7 @@
     texlive.combined.scheme-full
   ];
 
-  gnomePackages = with pkgs.gnome; [nautilus eog evince];
+  gnomePackages = with pkgs.gnome; [nautilus eog evince file-roller];
 in {
   home-manager.sharedModules = [
     {
