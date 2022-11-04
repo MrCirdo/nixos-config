@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   networking.hostName = "choucroute";
@@ -34,7 +34,6 @@
 
   users.users.odric = {
     isNormalUser = true;
-    description = "Odric";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" "video" ];
   };

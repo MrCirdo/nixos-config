@@ -7,7 +7,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nixpkgs-wayland = { url = "github:nix-community/nixpkgs-wayland"; };
-    # only needed if you use as a package set:
     nixpkgs-wayland.inputs.master.follows = "master";
   };
 
