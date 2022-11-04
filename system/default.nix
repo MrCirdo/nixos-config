@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   networking.hostName = "choucroute";
 
   networking.networkmanager.enable = true;
@@ -18,7 +16,7 @@
     LC_PAPER = "fr_FR.utf8";
     LC_TELEPHONE = "fr_FR.utf8";
     LC_TIME = "fr_FR.utf8";
-  }; 
+  };
 
   services.printing.enable = true;
 
@@ -32,10 +30,11 @@
     pulse.enable = true;
   };
 
-  users.users.odric = {
+  users.users.default = {
+    name = "odric";
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" "video" ];
+    extraGroups = ["networkmanager" "wheel" "docker" "video" "fuse"];
   };
 
   virtualisation.docker.enable = true;
@@ -47,11 +46,11 @@
     };
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "22.05"; # Did you read the comment?
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+  networking.nameservers = ["1.1.1.1" "1.0.0.1"];
 
-  imports = [ ./macbookpro ];
+  imports = [./macbookpro ./services ./programs];
 }

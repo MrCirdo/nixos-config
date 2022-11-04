@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   programs = {
     mako = {
       enable = true;
@@ -11,5 +9,5 @@
     };
   };
 
-  imports = [ ./waybar ];
+  imports = [./waybar];
 }

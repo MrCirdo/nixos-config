@@ -1,6 +1,6 @@
-{ pkgs, ... }:
-let
-  nvimTreesitterWithPlugins = pkgs.vimPlugins.nvim-treesitter.withPlugins
+{pkgs, ...}: let
+  nvimTreesitterWithPlugins =
+    pkgs.vimPlugins.nvim-treesitter.withPlugins
     (plugins: [
       plugins.tree-sitter-c
       plugins.tree-sitter-cpp

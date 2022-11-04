@@ -1,5 +1,9 @@
-{ lib, pkgs, config, ... }:
-let
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}: let
   pythonPackages = (pkgs.python310.withPackages (ps:
     with ps; [
       pwntools
@@ -12,7 +16,8 @@ let
       docker
       python-lsp-server
       pytest
-    ])).override (args: { ignoreCollisions = true; });
+    ]))
+  .override (args: {ignoreCollisions = true;});
 
   devPackages = with pkgs; [
     # C/C++
@@ -40,7 +45,7 @@ let
     rnix-lsp
   ];
 
-  shellPackages = with pkgs; [ tree zip unzip htop tmux openssl ];
+  shellPackages = with pkgs; [tree zip unzip htop tmux openssl];
 
   socialPackages = with pkgs; [
     signal-desktop
@@ -49,7 +54,7 @@ let
     discord
   ];
 
-  reverseEngineeringPackages = with pkgs; [ ghidra ];
+  reverseEngineeringPackages = with pkgs; [ghidra];
 
   otherPackages = with pkgs; [
     bitwarden
@@ -64,14 +69,25 @@ let
     pulseaudio
     firefox
     thunderbird
+    pmutils
+    rclone
   ];
+
+  gnomePackages = with pkgs.gnome; [nautilus eog evince];
 in {
-  home-manager.sharedModules = [{
-    home.packages = devPackages ++ shellPackages ++ socialPackages
-      ++ reverseEngineeringPackages ++ otherPackages ++ [ pythonPackages ];
-  }];
+  home-manager.sharedModules = [
+    {
+      home.packages =
+        devPackages
+        ++ shellPackages
+        ++ socialPackages
+        ++ reverseEngineeringPackages
+        ++ gnomePackages
+        ++ otherPackages
+        ++ [pythonPackages];
+    }
+  ];
 
   # I need to configure wofi and swaylock effects.
-  imports = [ ./wofi ./swaylock-effects ];
+  imports = [./wofi ./swaylock-effects];
 }
-

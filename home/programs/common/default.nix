@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs = {
     home-manager.enable = true;
     git = {
       enable = true;
       userEmail = "odricrouxparis@gmail.com";
       userName = "Odric Roux-Paris";
-      signing = { key = "0x8EA8FD02F063AB8F"; };
+      signing = {key = "0x8EA8FD02F063AB8F";};
     };
 
     gpg.enable = true;
@@ -19,7 +17,7 @@
 
     vscode = {
       enable = true;
-      userSettings = { "keyboard.dispatch" = "keyCode"; };
+      userSettings = {"keyboard.dispatch" = "keyCode";};
       package = pkgs.vscodium;
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
@@ -39,12 +37,12 @@
 
       # Useful when the app use java gui.
       envExtra = ''
-        _JAVA_AWT_WM_NONREPARENTING=1  
+        _JAVA_AWT_WM_NONREPARENTING=1
       '';
 
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "sudo" ];
+        plugins = ["git" "sudo"];
         theme = "robbyrussell";
       };
     };
@@ -52,16 +50,18 @@
     alacritty = {
       enable = true;
       settings = {
-        key_bindings = [{
-          key = "F11";
-          action = "ToggleFullscreen";
-        }];
+        key_bindings = [
+          {
+            key = "F11";
+            action = "ToggleFullscreen";
+          }
+        ];
 
-        window = { opacity = 0.85; };
+        window = {opacity = 0.85;};
         font.size = 9;
       };
     };
   };
 
-  imports = [ ./nvim ];
+  imports = [./nvim];
 }

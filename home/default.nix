@@ -1,10 +1,13 @@
-{ config, pkgs, home-manager, ... }:
-
 {
+  config,
+  pkgs,
+  home-manager,
+  ...
+}: {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.odric = {
+    users.default = {
       home = {
         stateVersion = "22.11";
         homeDirectory = "/home/odric";
@@ -17,8 +20,8 @@
     ubuntu_font_family
     source-code-pro
     font-awesome
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 
-  imports = [ ./packages ./programs ./services ./wayland ];
+  imports = [./packages ./programs ./services ./wayland];
 }

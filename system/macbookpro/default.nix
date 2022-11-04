@@ -1,5 +1,3 @@
-{ ... }:
-
-{
-  imports = [ ./hardware-configuration.nix ./boot-configuration.nix ];
+{...}: {
+  imports = [./hardware-configuration.nix ./boot-configuration.nix];
 }
