@@ -40,6 +40,7 @@
     rustc
     cargo
     rust-analyzer
+    rustfmt
 
     # Nix
     rnix-lsp
