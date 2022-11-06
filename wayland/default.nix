@@ -29,7 +29,7 @@ in {
     settings = rec {
       initial_session = {
         command = "${launchSway}/bin/launch_sway.sh";
-        user = "odric";
+        user = config.users.users.default.name;
       };
       default_session = initial_session;
     };

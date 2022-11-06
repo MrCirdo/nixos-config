@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  networking.hostName = "choucroute";
+  networking.hostName = "Wookiee";
 
   networking.networkmanager.enable = true;
 
@@ -23,18 +23,14 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
+  users.mutableUsers = true;
   users.users.default = {
     name = "odric";
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = ["networkmanager" "wheel" "docker" "video" "fuse"];
+    initialPassword = "root";
   };
 
   virtualisation.docker.enable = true;

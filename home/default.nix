@@ -10,7 +10,6 @@
     users.default = {
       home = {
         stateVersion = "22.11";
-        homeDirectory = "/home/odric";
       };
     };
   };
