@@ -1,3 +1,5 @@
 {...}: {
-  programs.fuse.userAllowOther = true;
+  programs = {
+    fuse.userAllowOther = true;
+  };
 }

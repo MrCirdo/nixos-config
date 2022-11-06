@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  ...
+}: let
   launchSway =
     pkgs.writeShellScriptBin "launch_sway.sh"
     ''
