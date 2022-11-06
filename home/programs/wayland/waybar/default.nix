@@ -14,6 +14,9 @@
             "memory"
             "temperature"
             "pulseaudio"
+            "custom/spotify-prev"
+            "custom/spotify"
+            "custom/spotify-next"
             "clock"
             "battery"
           ];
@@ -70,6 +73,39 @@
             };
             scroll-step = 1;
             on-click = "pavucontrol";
+          };
+
+          "custom/spotify" = let
+            mediaPlayer = pkgs.callPackage ./mediaplayer {};
+          in {
+            format = "";
+            max-length = 35;
+            exec = "${mediaPlayer}/bin/mediaplayer.py 2> /dev/null";
+            exec-if = "${pkgs.procps} spotify";
+            return-type = "json";
+
+            on-scroll-up = "${pkgs.playerctl}/bin/playerctl --player=spotify position 5+";
+            on-scroll-down = "${pkgs.playerctl}/bin/playerctl --player=spotify position 5-";
+            on-click = "${pkgs.playerctl}/bin/playerctl --player=spotify play-pause";
+            on-click-right = "${pkgs.sway}/bin/swaymsg [class=Spotify] focus";
+          };
+
+          "custom/spotify-next" = {
+            format = "{}";
+            interval = 10;
+            exec = "echo "; # ﭡ
+            exec-if = "${pkgs.procps}/bin/pgrep spotify";
+            on-click = "${pkgs.playerctl}/bin/playerctl --player=spotify next";
+            tooltip = false;
+          };
+
+          "custom/spotify-prev" = {
+            format = "{}";
+            interval = 10;
+            exec = "echo "; # ﭣ
+            exec-if = "${pkgs.procps}/bin/pgrep spotify";
+            on-click = "${pkgs.playerctl}/bin/playerctl  --player=spotify previous";
+            tooltip = false;
           };
         }
       ];

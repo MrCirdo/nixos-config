@@ -40,12 +40,48 @@ window#waybar {
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode, #taskbar, #pulseaudio {
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#taskbar {
     padding: 0 3px;
     margin: 0 2px;
 }
 
-#clock:hover, #battery:hover, #cpu:hover, #memory:hover, #network:hover, #pulseaudio:hover, #custom-spotify:hover, #tray:hover, #mode:hover, #taskbar:hover, #pulseaudio:hover{
+#custom-spotify {
+    margin: 0px;
+    padding: 0px;
+}
+
+#custom-spotify-prev {
+    padding-left: 3px;
+    padding-right: 1px;
+    margin: 0 1px;
+}
+
+#custom-spotify-next {
+    padding-right: 3px;
+    padding-left: 1px;
+    margin: 0 1px;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#custom-spotify:hover,
+#custom-spotify-next:hover,
+#custom-spotify-prev:hover,
+#tray:hover,
+#mode:hover,
+#taskbar:hover {
     background: rgba(0, 0, 0, 0.4);
 }
 
