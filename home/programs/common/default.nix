@@ -5,10 +5,8 @@
       enable = true;
       userEmail = "odricrouxparis@gmail.com";
       userName = "Odric Roux-Paris";
-      signing = {key = "0x8EA8FD02F063AB8F";};
+      signing = {key = "0xCFB01BFD5F9F7922";};
     };
-
-    gpg.enable = true;
 
     ssh = {
       enable = true;

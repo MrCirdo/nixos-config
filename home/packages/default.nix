@@ -73,6 +73,8 @@
     rclone
     pandoc
     texlive.combined.scheme-full
+    pinentry-curses
+    gnupg
   ];
 
   gnomePackages = with pkgs.gnome; [nautilus eog evince file-roller];
