@@ -1,8 +1,14 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  theme = config.theme;
+in {
   programs = {
     waybar = {
       enable = true;
-      style = ./style.css;
+      style = import ./style.nix {inherit theme;};
       settings = [
         {
           layer = "top";

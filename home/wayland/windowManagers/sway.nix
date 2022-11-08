@@ -5,6 +5,7 @@
   ...
 }: let
   defaultConfig = config.wayland.windowManager.sway.config;
+  theme = config.theme;
 
   bg_0 = "1C1917";
   bg_1 = "292524";
@@ -134,11 +135,11 @@ in {
 
       colors = {
         focused = {
-          border = "#${blue}";
-          background = "#${blue}";
+          border = "${theme.focusColor}";
+          background = "${theme.focusColor}";
           text = "#${fg_1}";
-          indicator = "#${blue}";
-          childBorder = "#${blue}";
+          indicator = "${theme.focusColor}";
+          childBorder = "${theme.focusColor}";
         };
         focusedInactive = {
           border = "#${bg_1}";

@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  home-manager,
-  ...
-}: {
+{pkgs, ...}: {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -22,5 +17,5 @@
     (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 
-  imports = [./packages ./programs ./services ./wayland];
+  imports = [./theme ./packages ./programs ./services ./wayland];
 }

@@ -1,7 +1,1 @@
-{
-  config,
-  lib,
-  ...
-}: let
-  windowManagers = import ./windowManagers;
-in {home-manager.sharedModules = [windowManagers];}
+{...}: {home-manager.sharedModules = [(import ./windowManagers)];}
