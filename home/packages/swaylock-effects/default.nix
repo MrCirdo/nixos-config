@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   home-manager.sharedModules = [
-    {
-      xdg.configFile."swaylock-effects/config".source = ./config;
+    ({config, ...}: {
+      xdg.configFile."swaylock-effects/config".text = import ./config.nix {theme = config.theme;};
       home.packages = with pkgs; [swaylock-effects];
-    }
+    })
   ];
 }

@@ -1,9 +1,9 @@
-{...}: {
+{config, ...}: {
   programs = {
     mako = {
       enable = true;
-      backgroundColor = "#3B82F6";
-      borderColor = "#292524";
+      backgroundColor = config.theme.focusColor;
+      borderColor = config.theme.focusColor2;
       defaultTimeout = 10000;
       borderRadius = 8;
     };

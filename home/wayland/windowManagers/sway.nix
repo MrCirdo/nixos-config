@@ -6,32 +6,6 @@
 }: let
   defaultConfig = config.wayland.windowManager.sway.config;
   theme = config.theme;
-
-  bg_0 = "1C1917";
-  bg_1 = "292524";
-  bg_2 = "44403C";
-  dim_0 = "57534E";
-  fg_0 = "57534E";
-  fg_1 = "F5F5F4";
-
-  red = "fa5750";
-  green = "75b938";
-  yellow = "dbb32d";
-  blue = "3B82F6";
-  magenta = "f275be";
-  cyan = "41c7b9";
-  orange = "ed8649";
-  violet = "af88eb";
-
-  br_red = "ff665c";
-  br_green = "84c747";
-  br_yellow = "ebc13d";
-  br_blue = "58a3ff";
-  br_magenta = "ff84cd";
-  br_cyan = "53d6c7";
-  br_orange = "fd9456";
-  br_violet = "bd96fa";
-
   defaultSinkPulseaudio = "@DEFAULT_SINK@";
 in {
   wayland.windowManager.sway = {
@@ -137,30 +111,30 @@ in {
         focused = {
           border = "${theme.focusColor}";
           background = "${theme.focusColor}";
-          text = "#${fg_1}";
+          text = "${theme.textColor}";
           indicator = "${theme.focusColor}";
           childBorder = "${theme.focusColor}";
         };
         focusedInactive = {
-          border = "#${bg_1}";
-          background = "#${bg_1}";
-          text = "#${fg_0}";
-          indicator = "#${bg_1}";
-          childBorder = "#${bg_1}";
+          border = "${theme.backgroundColor2}";
+          background = "${theme.backgroundColor2}";
+          text = "${theme.textColor2}";
+          indicator = "${theme.backgroundColor2}";
+          childBorder = "${theme.backgroundColor2}";
         };
         unfocused = {
-          border = "#${bg_0}";
-          background = "#${bg_0}";
-          text = "#${dim_0}";
-          indicator = "#${bg_0}";
-          childBorder = "#${bg_0}";
+          border = "${theme.backgroundColor3}";
+          background = "${theme.backgroundColor3}";
+          text = "${theme.textColor3}";
+          indicator = "${theme.backgroundColor3}";
+          childBorder = "${theme.backgroundColor3}";
         };
         urgent = {
-          border = "#${red}";
-          background = "#${red}";
-          text = "#${fg_1}";
-          indicator = "#${red}";
-          childBorder = "#${red}";
+          border = "${theme.alertColor}";
+          background = "${theme.alertColor}";
+          text = "${theme.textColor}";
+          indicator = "${theme.alertColor}";
+          childBorder = "${theme.alertColor}";
         };
       };
 

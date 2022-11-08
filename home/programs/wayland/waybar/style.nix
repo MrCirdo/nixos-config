@@ -4,7 +4,7 @@
       font-family: "Ubuntu Nerd Font";
       font-size: 13px;
       min-height: 0;
-      color: white;
+      color: ${theme.textColor}
   }
 
   button {
@@ -16,8 +16,8 @@
   }
 
   window#waybar {
-      background: #1C1917;
-      color: white;
+      background: ${theme.backgroundColor};
+      color: ${theme.textColor};
   }
 
   #window {
@@ -32,13 +32,13 @@
   }
 
   #workspaces button.focused {
-      color: white;
+      color: ${theme.textColor};
       background: ${theme.focusColor};
   }
 
   #mode {
-      background: #64727D;
-      border-bottom: 3px solid white;
+      background: ${theme.backgroundColor2};
+      border-bottom: 3px solid ${theme.textColor};
   }
 
   #clock,
@@ -83,31 +83,6 @@
   #tray:hover,
   #mode:hover,
   #taskbar:hover {
-      background: rgba(0, 0, 0, 0.4);
+      background: ${theme.backgroundColor};
   }
-
-  @keyframes blink {
-      to {
-          background-color: #ffffff;
-          color: black;
-      }
-  }
-
-  #battery.warning:not(.charging) {
-      color: white;
-      animation-name: blink;
-      animation-duration: 0.5s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-  }
-
-  #network.disconnected {
-      background: #f53c3c;
-  }
-
-  #custom-spotify {
-      color: rgb(102, 220, 105);
-  }
-
 ''
