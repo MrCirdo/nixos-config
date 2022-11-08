@@ -46,7 +46,7 @@
     rnix-lsp
   ];
 
-  shellPackages = with pkgs; [tree zip unzip htop tmux openssl];
+  shellPackages = with pkgs; [tree zip unzip htop tmux openssl neofetch];
 
   socialPackages = with pkgs; [
     signal-desktop

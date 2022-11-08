@@ -30,6 +30,7 @@
       enable = true;
       initExtraFirst = ''
         set -o vi
+        neofetch
       '';
 
       # Useful when the app use java gui.
