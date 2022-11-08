@@ -16,6 +16,7 @@ self: let
 in
   super: {
     vscode = enableWayland super.vscode "code";
+    vscodium = enableWayland super.vscodium "codium";
     signal-desktop = enableWayland super.signal-desktop "signal-desktop";
     bitwarden = enableWayland super.bitwarden "bitwarden";
   }

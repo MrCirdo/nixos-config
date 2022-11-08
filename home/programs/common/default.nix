@@ -16,7 +16,6 @@
     vscode = {
       enable = true;
       userSettings = {"keyboard.dispatch" = "keyCode";};
-      package = pkgs.vscodium;
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         github.copilot
