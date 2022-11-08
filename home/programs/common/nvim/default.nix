@@ -29,6 +29,7 @@ in {
       packer-nvim
       onedark-nvim
       material-nvim
+      neovim-ayu
       gruvbox
       lightline-vim
       indent-blankline-nvim

@@ -1,7 +1,6 @@
 " lsp
 set number
 syntax enable
-colorscheme material
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
@@ -12,8 +11,11 @@ set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 
+colorscheme ayu-mirage
+
 
 lua << EOF
+
 -- Default configuration.
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
