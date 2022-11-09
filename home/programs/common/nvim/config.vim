@@ -117,14 +117,35 @@ cmp.setup {
         },
 }
 
+
 require'nvim-treesitter.configs'.setup {
-    -- parser_install_dir = os.getenv("HOME") .. "/treesitter/",
-    ensure_installed = { "c", "rust", "python", "nix", "rnix" },
+    parser_install_dir = os.getenv("HOME") .. "/treesitter/",
+    ensure_installed = {  
+      "c",
+      "cpp",
+      "nix",
+      "python",
+      "rust",
+      "go",
+      "yaml",
+      "make",
+      "json",
+      "java",
+      "html",
+      "bash",
+      "agda",
+      "latex",
+      "cmake",
+      "markdown",
+      "dockerfile",
+      "lua"
+      },
+
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
         },
     }
--- vim.opt.runtimepath:append(os.getenv("HOME") .. "/treesitter/")
+    vim.opt.runtimepath:append(os.getenv("HOME") .. "/treesitter/")
 EOF
 

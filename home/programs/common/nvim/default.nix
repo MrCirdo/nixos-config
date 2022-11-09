@@ -1,13 +1,27 @@
 {pkgs, ...}: let
   nvimTreesitterWithPlugins =
     pkgs.vimPlugins.nvim-treesitter.withPlugins
-    (plugins: [
-      plugins.tree-sitter-c
-      plugins.tree-sitter-cpp
-      plugins.tree-sitter-nix
-      plugins.tree-sitter-python
-      plugins.tree-sitter-rust
-    ]);
+    (plugins:
+      with plugins; [
+        tree-sitter-c
+        tree-sitter-cpp
+        tree-sitter-nix
+        tree-sitter-python
+        tree-sitter-rust
+        tree-sitter-go
+        tree-sitter-yaml
+        tree-sitter-make
+        tree-sitter-json
+        tree-sitter-java
+        tree-sitter-html
+        tree-sitter-bash
+        tree-sitter-agda
+        tree-sitter-latex
+        tree-sitter-cmake
+        tree-sitter-markdown
+        tree-sitter-dockerfile
+        tree-sitter-lua
+      ]);
 in {
   programs.neovim = {
     enable = true;
