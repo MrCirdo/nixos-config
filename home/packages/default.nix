@@ -41,6 +41,7 @@
     cargo
     rust-analyzer
     rustfmt
+    clippy
 
     # Nix
     rnix-lsp
