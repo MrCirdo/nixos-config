@@ -26,25 +26,6 @@
       ];
     };
 
-    zsh = {
-      enable = true;
-      initExtraFirst = ''
-        set -o vi
-        neofetch
-      '';
-
-      # Useful when the app use java gui.
-      envExtra = ''
-        _JAVA_AWT_WM_NONREPARENTING=1
-      '';
-
-      oh-my-zsh = {
-        enable = true;
-        plugins = ["git" "sudo"];
-        theme = "robbyrussell";
-      };
-    };
-
     alacritty = {
       enable = true;
       settings = {
@@ -121,5 +102,5 @@
       '';
     };
   };
-  imports = [./nvim];
+  imports = [./nvim ./zsh];
 }
