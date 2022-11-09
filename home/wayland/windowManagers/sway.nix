@@ -97,7 +97,8 @@ in {
 
         "${defaultConfig.modifier}+Alt+l" = "exec ${pkgs.swaylock-effects}/bin/swaylock -C $HOME/.config/swaylock-effects/config";
         "${defaultConfig.modifier}+Alt+Shift+h" = "exec ${pkgs.swaylock-effects}/bin/swaylock -f -C $HOME/.config/swaylock-effects/config && sleep 2 && systemctl hybrid-sleep";
-        "${defaultConfig.modifier}+Alt+Shift+s" = "exec ${pkgs.swaylock-effects}/bin/swaylock -f -C $HOME/.config/swaylock-effects/config && sleep 2 && systemctl syspend";
+        "${defaultConfig.modifier}+Alt+Shift+s" =
+          "exec ${pkgs.swaylock-effects}/bin/swaylock -f -C $HOME/.config/swaylock-effects/config && sleep 2 && systemctl suspend";
 
         "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume ${defaultSinkPulseaudio} +10%";
         "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-mute ${defaultSinkPulseaudio} toggle";
