@@ -45,7 +45,7 @@ in {
 
           cpu = {
             format = "{usage}% ";
-            on-click-right = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.htop}/bin/htop";
+            on-click-right = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.btop}/bin/btop";
           };
 
           clock = {format-alt = "{:%a, %d. %b  %H:%M} ";};
