@@ -14,6 +14,8 @@
     ubuntu_font_family
     source-code-pro
     font-awesome
+    fira-code
+    fira-code-symbols
     (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 
