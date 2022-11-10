@@ -145,16 +145,16 @@ in {
 
       input = {
         "1452:627:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad" = {
-          repeat_delay = "150";
-          repeat_rate = "40";
+          repeat_delay = "200";
+          repeat_rate = "75";
           xkb_options = "caps:escape";
           xkb_layout = "fr";
           xkb_variant = "mac";
         };
 
         "2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard" = {
-          repeat_delay = "150";
-          repeat_rate = "40";
+          repeat_delay = "200";
+          repeat_rate = "75";
           xkb_options = "caps:escape";
           xkb_layout = "us";
           xkb_variant = "intl";
