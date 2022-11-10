@@ -41,7 +41,6 @@
       border-bottom: 3px solid ${theme.textColor};
   }
 
-  #clock,
   #battery,
   #cpu,
   #memory,
@@ -50,8 +49,8 @@
   #tray,
   #mode,
   #taskbar {
-      padding: 0 3px;
-      margin: 0 2px;
+      padding: 2 12px;
+      margin: 2 0px;
   }
 
   #custom-spotify {
