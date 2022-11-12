@@ -1,7 +1,6 @@
 width=600
 height=500
 location=center
-show=run
 prompt=   Search...
 allow_markup=true
 no_actions=true
