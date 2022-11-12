@@ -10,7 +10,10 @@
 
     ssh = {
       enable = true;
-      serverAliveInterval = 1;
+      serverAliveInterval = 10;
+      extraConfig = ''
+        TCPKeepAlive yes
+      '';
     };
 
     vscode = {
