@@ -105,5 +105,5 @@
       '';
     };
   };
-  imports = [./nvim ./zsh];
+  imports = [./nvim ./zsh ./doom-emacs];
 }
