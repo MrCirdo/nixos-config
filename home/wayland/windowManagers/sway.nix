@@ -165,8 +165,8 @@ in {
         "*" = {
           bg =
             builtins.fetchurl {
-              url = "https://i.redd.it/hv2q6ot89fl91.jpg";
-              sha256 = "04d7d10145d235e42a4e9448dd3405ecc1cab0c20993a67cb28d18663b355696";
+              url = "https://i.redd.it/gayvb53tnjx91.png";
+              sha256 = "55f3f11decab62d4171cd19688ca5aa446ac7c63cc4a56cf379cfa9ae05d570e";
             }
             + " fill";
         };
