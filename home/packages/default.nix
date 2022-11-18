@@ -77,6 +77,13 @@
     texlive.combined.scheme-full
     pinentry-curses
     gnupg
+    duf
+    gitui
+    lazygit
+    fd
+    ripgrep
+    du-dust
+    tealdeer
   ];
 
   gnomePackages = with pkgs.gnome; [nautilus eog evince file-roller];
