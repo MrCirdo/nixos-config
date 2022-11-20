@@ -29,7 +29,7 @@
     name = "odric";
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = ["networkmanager" "wheel" "docker" "video" "fuse"];
+    extraGroups = ["networkmanager" "wheel" "docker" "video" "fuse" "adbusers"];
     initialPassword = "root";
   };
 
