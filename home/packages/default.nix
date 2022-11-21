@@ -84,6 +84,7 @@
     ripgrep
     du-dust
     tealdeer
+    htop
   ];
 
   gnomePackages = with pkgs.gnome; [nautilus eog evince file-roller];
