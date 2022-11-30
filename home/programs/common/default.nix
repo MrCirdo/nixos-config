@@ -104,6 +104,13 @@
           )
       '';
     };
+
+    helix = {
+      enable = true;
+      settings = {
+          theme = "onedark";
+        };
+    };
   };
 
   imports = [./nvim ./zsh];
