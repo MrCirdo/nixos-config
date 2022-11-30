@@ -85,6 +85,7 @@
     du-dust
     tealdeer
     htop
+    bat
   ];
 
   gnomePackages = with pkgs.gnome; [nautilus eog evince file-roller];
