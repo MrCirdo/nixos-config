@@ -78,7 +78,6 @@
     pinentry-curses
     gnupg
     duf
-    gitui
     lazygit
     fd
     ripgrep
