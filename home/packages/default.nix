@@ -85,6 +85,11 @@
     tealdeer
     htop
     bat
+    libseccomp
+    v4l-utils
+    freetube
+    wget
+    bcc
   ];
 
   gnomePackages = with pkgs.gnome; [nautilus eog evince file-roller];
