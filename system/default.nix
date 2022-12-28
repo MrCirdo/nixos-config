@@ -45,7 +45,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "22.11"; # Did you read the comment?
   networking.nameservers = ["1.1.1.1" "1.0.0.1"];
 
   imports = [./macbookpro ./services ./programs];
