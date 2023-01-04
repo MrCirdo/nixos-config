@@ -5,4 +5,7 @@
 }: let
   commonServices = import ./common;
   waylandServices = import ./wayland;
-in {home-manager.sharedModules = [commonServices waylandServices];}
+in {
+  imports = [./common/spotifyd.nix];
+  home-manager.sharedModules = [commonServices waylandServices];
+}
