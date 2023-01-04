@@ -5,6 +5,4 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  imports = [./rclone-epita-onedrive.nix];
 }
