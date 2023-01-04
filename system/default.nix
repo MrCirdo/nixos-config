@@ -48,5 +48,6 @@
   system.stateVersion = "22.11"; # Did you read the comment?
   networking.nameservers = ["1.1.1.1" "1.0.0.1"];
 
+  hardware.opengl.enable = true;
   imports = [./macbookpro ./services ./programs];
 }
