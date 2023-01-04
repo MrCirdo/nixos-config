@@ -1,0 +1,7 @@
+key:
+  - &wookie age16lvr5ltrr60ku4mfl8yfu06czuf05dylf86rcruk0vnw8fmv0fjqqvme4e
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml$
+    key_groups:
+    - age:
+      - *wookie

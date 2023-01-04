@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   networking.hostName = "Wookiee";
 
   networking.networkmanager.enable = true;
@@ -18,6 +22,7 @@
     LC_TIME = "fr_FR.utf8";
   };
 
+  sops.age.keyFile = "${config.users.users.default.home}/.config/sops/age/keys.txt";
   services.printing.enable = true;
 
   sound.enable = true;
