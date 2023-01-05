@@ -90,6 +90,7 @@
     freetube
     wget
     bcc
+    spotify-tui
   ];
 
   gnomePackages = with pkgs.gnome; [nautilus eog evince file-roller];

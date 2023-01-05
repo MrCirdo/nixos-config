@@ -81,36 +81,26 @@ in {
             on-click = "pavucontrol";
           };
 
-          "custom/spotify" = let
-            mediaPlayer = pkgs.callPackage ./mediaplayer {};
-          in {
-            format = "";
-            max-length = 35;
-            exec = "${mediaPlayer}/bin/mediaplayer.py 2> /dev/null";
-            exec-if = "${pkgs.procps} spotify";
-            return-type = "json";
-
-            on-scroll-up = "${pkgs.playerctl}/bin/playerctl --player=spotify position 5+";
-            on-scroll-down = "${pkgs.playerctl}/bin/playerctl --player=spotify position 5-";
-            on-click = "${pkgs.playerctl}/bin/playerctl --player=spotify play-pause";
-            on-click-right = "${pkgs.sway}/bin/swaymsg [class=Spotify] focus";
+          "custom/spotify" = {
+            format = " {}";
+            max-length = 100;
+            exec = "${pkgs.spotify-tui}/bin/spt playback -d \"NixSauce\"  -f \"%t - %a\"";
+            on-click = "${pkgs.spotify-tui}/bin/spt playback -d \"NixSauce\" -t";
+            on-click-right = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.spotify-tui}/bin/spt";
+            interval = 10;
           };
 
           "custom/spotify-next" = {
-            format = "{}";
+            format = "";
             interval = 10;
-            exec = "echo "; # ﭡ
-            exec-if = "${pkgs.procps}/bin/pgrep spotify";
-            on-click = "${pkgs.playerctl}/bin/playerctl --player=spotify next";
+            on-click = "${pkgs.spotify-tui}/bin/spt --next";
             tooltip = false;
           };
 
           "custom/spotify-prev" = {
-            format = "{}";
+            format = "";
             interval = 10;
-            exec = "echo "; # ﭣ
-            exec-if = "${pkgs.procps}/bin/pgrep spotify";
-            on-click = "${pkgs.playerctl}/bin/playerctl  --player=spotify previous";
+            on-click = "${pkgs.spotify-tui}/bin/spt --previous";
             tooltip = false;
           };
         }
