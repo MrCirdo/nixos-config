@@ -13,17 +13,13 @@ in {
         {
           layer = "top";
           modules-left = ["sway/workspaces" "sway/mode"];
-          modules-center = ["sway/window"];
+          modules-center = ["clock"];
           modules-right = [
             "cpu"
             "disk"
             "memory"
             "temperature"
             "pulseaudio"
-            "custom/spotify-prev"
-            "custom/spotify"
-            "custom/spotify-next"
-            "clock"
             "battery"
           ];
 

@@ -1,87 +1,81 @@
 {theme}: ''
-  * {
-      border: none;
-      font-family: "Ubuntu Nerd Font";
-      font-size: 13px;
-      min-height: 0;
-      color: ${theme.textColor}
+    * {
+        border: none;
+        font-family: "Ubuntu Nerd Font";
+        font-size: 13px;
+        min-height: 0;
+        color: ${theme.textColor};
+    }
+
+    button {
+        box-shadow: inset 0 -3px transparent;
+        border-radius: 10px;
+        padding: 0 5px;
+        background: ${theme.backgroundColor};
+        border: 2px solid ${theme.backgroundColor2};
+    }
+
+    window#waybar {
+        background: rgba(43, 48, 59, 0.5);
+        color: ${theme.textColor};
+        border-bottom: 3px solid ${theme.backgroundColor};
+    }
+
+    #window {
+        font-weight: bold;
+        font-family: "Ubuntu";
+    }
+
+    #workspaces {
+        margin: 5px;
   }
 
-  button {
-      /* Use box-shadow instead of border so the text isn't offset */
-      box-shadow: inset 0 -3px transparent;
-      /* Avoid rounded borders under each button name */
-      border: none;
-      border-radius: 0;
+    #workspaces button {
+        background: ${theme.backgroundColor};
+        color: ${theme.textColor};
+        margin: 2px;
+    }
+
+    #workspaces button.focused {
+        color: ${theme.textColor};
+        background: ${theme.focusColor};
+        border: 2px solid ${theme.focusColor2};
+    }
+
+    #mode {
+        background: ${theme.backgroundColor2};
+        border-bottom: 3px solid ${theme.textColor};
+    }
+
+  .modules-right {
+        margin: 5px 5px;
+        background: ${theme.backgroundColor};
+        border: 2px solid ${theme.backgroundColor2};
+        border-radius: 10px;
   }
 
-  window#waybar {
-      background: ${theme.backgroundColor};
-      color: ${theme.textColor};
-  }
-
-  #window {
-      font-weight: bold;
-      font-family: "Ubuntu";
-  }
-
-  #workspaces button {
-      padding: 0 5px;
-      background: transparent;
-      color: white;
-  }
-
-  #workspaces button.focused {
-      color: ${theme.textColor};
-      background: ${theme.focusColor};
-  }
-
-  #mode {
-      background: ${theme.backgroundColor2};
-      border-bottom: 3px solid ${theme.textColor};
-  }
-
-  #battery,
   #cpu,
+  #disk,
   #memory,
-  #network,
   #pulseaudio,
-  #tray,
-  #mode,
-  #taskbar {
-      padding: 2 12px;
-      margin: 2 0px;
-  }
-
-  #custom-spotify {
-      margin: 0px;
-      padding: 0px;
-  }
-
-  #custom-spotify-prev {
-      padding-left: 3px;
-      padding-right: 1px;
-      margin: 0 1px;
-  }
-
-  #custom-spotify-next {
-      padding-right: 3px;
-      padding-left: 1px;
-      margin: 0 1px;
+  #temperature,
+  #clock,
+  #battery {
+      margin: 2px 8px;
   }
 
   #clock:hover,
-  #battery:hover,
-  #cpu:hover,
-  #memory:hover,
-  #network:hover,
-  #pulseaudio:hover,
-  #custom-spotify:hover,
-  #custom-spotify-next:hover,
-  #custom-spotify-prev:hover,
-  #tray:hover,
-  #mode:hover,
-  #taskbar:hover {
-      background: ${theme.backgroundColor};
-  }
+    #battery:hover,
+    #cpu:hover,
+    #memory:hover,
+    #network:hover,
+    #pulseaudio:hover,
+    #custom-spotify:hover,
+    #custom-spotify-next:hover,
+    #custom-spotify-prev:hover,
+    #tray:hover,
+    #mode:hover,
+    #taskbar:hover {
+        background: ${theme.backgroundColor};
+    }
 ''
