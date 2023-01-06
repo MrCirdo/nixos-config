@@ -177,6 +177,9 @@ in {
       gaps = {
         smartGaps = false;
         smartBorders = "on";
+
+        inner = 14;
+        outer = -2;
       };
     };
 
