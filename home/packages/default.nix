@@ -30,6 +30,7 @@
     ctags
     clang-tools
     gdb
+    rr
     gcc
     gnumake
     man-pages

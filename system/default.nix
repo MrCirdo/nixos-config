@@ -9,6 +9,10 @@
 
   time.timeZone = "Europe/Paris";
 
+  boot.kernel.sysctl = {
+    "kernel.perf_event_paranoid" = 1;
+  };
+
   i18n.defaultLocale = "en_US.utf8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.utf8";
