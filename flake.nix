@@ -6,7 +6,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    sops-nix.url = github:Mic92/sops-nix;
+    sops-nix.url = "github:Mic92/sops-nix";
+    helix.url = "github:helix-editor/helix";
   };
 
   outputs = {
@@ -14,8 +15,8 @@
     nixpkgs,
     home-manager,
     sops-nix,
-    ...
-  }: {
+    helix,
+  } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
     nixosConfigurations = let
@@ -31,6 +32,13 @@
           ./home
           ./wayland
           {nixpkgs.overlays = overlays;}
+          ({...}: {
+            home-manager.sharedModules = [
+              ({...}: {
+                _module.args.inputs = inputs;
+              })
+            ];
+          })
         ];
       };
     };

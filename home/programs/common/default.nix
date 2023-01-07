@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   programs = {
     home-manager.enable = true;
     git = {
@@ -107,6 +111,7 @@
 
     helix = {
       enable = true;
+      package = inputs.helix.packages.${pkgs.system}.default;
       settings = {
         theme = "onedark";
         editor.cursor-shape = {

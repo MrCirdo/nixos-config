@@ -51,7 +51,12 @@
     };
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    experimental-features = ["nix-command" "flakes"];
+    extra-substituters = ["https://helix.cachix.org" "https://nixpkgs-wayland.cachix.org"];
+    extra-trusted-public-keys = ["helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs=" "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="];
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "22.11"; # Did you read the comment?
