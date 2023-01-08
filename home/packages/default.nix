@@ -46,6 +46,7 @@
 
     # Nix
     rnix-lsp
+    nil
   ];
 
   shellPackages = with pkgs; [tree zip unzip btop tmux openssl neofetch zsh-powerlevel10k];
