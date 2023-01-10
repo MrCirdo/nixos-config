@@ -54,6 +54,7 @@
         border-radius: 10px;
   }
 
+  #custom-rss,
   #cpu,
   #disk,
   #memory,
@@ -75,6 +76,7 @@
     #custom-spotify-prev:hover,
     #tray:hover,
     #mode:hover,
+    #custom-rss:hover,
     #taskbar:hover {
         background: ${theme.backgroundColor};
     }

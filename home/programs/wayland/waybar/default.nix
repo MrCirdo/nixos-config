@@ -15,6 +15,7 @@ in {
           modules-left = ["sway/workspaces" "sway/mode"];
           modules-center = ["clock"];
           modules-right = [
+            "custom/rss"
             "cpu"
             "disk"
             "memory"
@@ -75,6 +76,18 @@ in {
             };
             scroll-step = 1;
             on-click = "pavucontrol";
+          };
+
+          "custom/rss" = let
+            launchNewsBoat = pkgs.writeShellScriptBin "launch_newsboat.sh" ''
+              while rt=`${pkgs.procps}/bin/pgrep -x "newsboat"` && [[ "$rt" -gt 0 ]]; do :; done;
+              ${pkgs.alacritty}/bin/alacritty -e ${pkgs.newsboat}/bin/newsboat
+            '';
+          in {
+            format = "{} ";
+            exec = "${pkgs.newsboat}/bin/newsboat -x reload print-unread | ${pkgs.coreutils}/bin/cut -d ' ' -f 1";
+            interval = 600; # 10 minutes
+            on-click = "${launchNewsBoat}/bin/launch_newsboat.sh";
           };
 
           "custom/spotify" = {

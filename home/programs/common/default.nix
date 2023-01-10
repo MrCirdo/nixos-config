@@ -121,6 +121,63 @@
         };
       };
     };
+
+    newsboat = {
+      enable = true;
+      extraConfig = ''
+        unbind-key UP
+        bind-key k up
+
+        unbind-key DOWN
+        bind-key j down
+
+        color background          white    black
+        color listnormal          white    black
+        color listfocus           white    color63   bold
+        color listnormal_unread   magenta  black
+        color listfocus_unread    magenta  color63   bold
+        color title               white    color63   bold
+        color info                white    default   bold
+        color hint-key            white    default   bold
+        color hint-keys-delimiter white    default
+        color hint-separator      white    default   bold
+        color hint-description    white    default   bold
+        color article             white    black
+      '';
+      urls = [
+        {
+          title = "Korben";
+          tags = ["Tech"];
+          url = "https://korben.info/rss";
+        }
+
+        {
+          title = "RedHat";
+          tags = ["Linux" "Tech"];
+          url = "https://redhat.com/en/rss/blog";
+        }
+        {
+          title = "Linux Embedded";
+          tags = ["Linux" "Tech"];
+          url = "https://www.linuxembedded.fr/rss";
+        }
+        {
+          title = "Digital Ocean";
+          tags = ["Cloud" "Tech" "Linux"];
+          url = "https://www.digitalocean.com/blog/rss";
+        }
+        {
+          title = "Drew DeVault's blog";
+          tags = ["Personal" "Tech"];
+          url = "https://drewdevault.com/blog/index.xml";
+        }
+        {
+          title = "Embedded";
+          tags = ["Embedded"];
+          url = "https://www.embedded.com/rss";
+        }
+      ];
+    };
   };
 
   imports = [./nvim ./zsh];
