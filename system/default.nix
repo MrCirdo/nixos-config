@@ -63,5 +63,11 @@
   networking.nameservers = ["1.1.1.1" "1.0.0.1"];
 
   hardware.opengl.enable = true;
+
+  powerManagement = {
+    enable = true;
+    powerDownCommands = "${pkgs.swaylock-effects}/bin/swaylock -C $HOME/.config/swaylock-effects/config";
+  };
+
   imports = [./macbookpro ./services ./programs];
 }
