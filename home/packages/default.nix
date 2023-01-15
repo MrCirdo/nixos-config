@@ -93,6 +93,8 @@
     wget
     bcc
     spotify-tui
+    qemu_kvm
+    virt-manager
   ];
 
   gnomePackages = with pkgs.gnome; [nautilus eog evince file-roller];
