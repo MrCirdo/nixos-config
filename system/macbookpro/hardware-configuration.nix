@@ -17,11 +17,14 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
+  boot.kernelParams = ["resume_offset=14596096"];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/4f2609f9-0e39-47c0-a3fd-72affaa250e8";
     fsType = "ext4";
   };
+
+  boot.resumeDevice = "/dev/disk/by-uuid/4f2609f9-0e39-47c0-a3fd-72affaa250e8";
 
   boot.initrd.luks.devices."luks-fb6e9567-a32a-431d-a7ac-e923c8e37141".device = "/dev/disk/by-uuid/fb6e9567-a32a-431d-a7ac-e923c8e37141";
 
@@ -31,7 +34,10 @@
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/6e5f19db-2ca8-40d7-834d-93073b6e788f";}
+    {
+      device = "/dev/disk/by-uuid/6e5f19db-2ca8-40d7-834d-93073b6e788f";
+      priority = 32767;
+    }
   ];
 
   boot.tmpOnTmpfs = true;
