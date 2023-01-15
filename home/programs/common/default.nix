@@ -176,6 +176,11 @@
           tags = ["Embedded"];
           url = "https://www.embedded.com/rss";
         }
+        {
+          title = "Lwn";
+          tags = ["Linux" "Kernel"];
+          url = "https://lwn.net/headlines/newrss";
+        }
       ];
     };
   };
