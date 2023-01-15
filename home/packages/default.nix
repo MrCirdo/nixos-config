@@ -36,6 +36,7 @@
     man-pages
     man-pages-posix
     vagrant
+    valgrind
 
     # Rust
     rustc
