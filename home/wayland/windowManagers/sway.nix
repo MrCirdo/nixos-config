@@ -117,18 +117,18 @@ in {
           childBorder = "${theme.focusColor}";
         };
         focusedInactive = {
-          border = "${theme.backgroundColor2}";
-          background = "${theme.backgroundColor2}";
-          text = "${theme.textColor2}";
-          indicator = "${theme.backgroundColor2}";
-          childBorder = "${theme.backgroundColor2}";
+          border = "${theme.backgroundColor}";
+          background = "${theme.backgroundColor}";
+          text = "${theme.textColor}";
+          indicator = "${theme.backgroundColor}";
+          childBorder = "${theme.backgroundColor}";
         };
         unfocused = {
-          border = "${theme.backgroundColor3}";
-          background = "${theme.backgroundColor3}";
-          text = "${theme.textColor3}";
-          indicator = "${theme.backgroundColor3}";
-          childBorder = "${theme.backgroundColor3}";
+          border = "${theme.backgroundColor}";
+          background = "${theme.backgroundColor}";
+          text = "${theme.textColor}";
+          indicator = "${theme.backgroundColor}";
+          childBorder = "${theme.backgroundColor}";
         };
         urgent = {
           border = "${theme.alertColor}";
@@ -172,15 +172,21 @@ in {
         };
       };
 
-      window.border = 0;
+      window = {
+        border = 2;
+        titlebar = false;
+      };
 
       gaps = {
-        smartGaps = false;
+        smartGaps = true;
         smartBorders = "on";
+        inner = 10;
+        outer = 5;
 
-        inner = 14;
-        outer = -2;
+        top = 0;
       };
+
+      floating.titlebar = true;
     };
 
     extraSessionCommands = ''
