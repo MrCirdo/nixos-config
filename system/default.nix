@@ -69,13 +69,5 @@
     powerDownCommands = "${pkgs.swaylock-effects}/bin/swaylock -C $HOME/.config/swaylock-effects/config";
   };
 
-  swapDevices = [
-    {
-      device = "/swap";
-      priority = 0;
-      size = 8192;
-    }
-  ];
-
   imports = [./macbookpro ./services ./programs];
 }

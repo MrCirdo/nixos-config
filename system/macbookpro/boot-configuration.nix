@@ -16,6 +16,4 @@
 
   boot.initrd.luks.devices."luks-6caf388a-afa8-43a0-a29b-7b41e5128538".device = "/dev/disk/by-uuid/6caf388a-afa8-43a0-a29b-7b41e5128538";
   boot.initrd.luks.devices."luks-6caf388a-afa8-43a0-a29b-7b41e5128538".keyFile = "/crypto_keyfile.bin";
-
-  boot.resumeDevice = "/dev/disk/by-uuid/4f2609f9-0e39-47c0-a3fd-72affaa250e8";
 }
