@@ -68,7 +68,6 @@
     slurp
     wl-clipboard
     jellyfin-media-player
-    networkmanager_dmenu
     pavucontrol
     pulseaudio
     firefox
@@ -99,7 +98,7 @@
   ];
 
   gnomePackages = with pkgs.gnome; [gnome-tweaks dconf-editor gnome-themes-extra];
-  gnomeShellPackages = with pkgs.gnomeExtensions; [blur-my-shell openweather vitals aylurs-widgets just-perfection dash-to-dock];
+  gnomeShellPackages = with pkgs.gnomeExtensions; [blur-my-shell openweather vitals aylurs-widgets just-perfection dash-to-dock gsconnect];
 in {
   home-manager.sharedModules = [
     {

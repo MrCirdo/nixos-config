@@ -3,5 +3,5 @@
   lib,
   ...
 }: {
-  imports = [./sway.nix];
+  imports = [./sway.nix ./gnome];
 }
