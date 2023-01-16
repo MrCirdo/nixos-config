@@ -55,7 +55,6 @@
   socialPackages = with pkgs; [
     signal-desktop
     whatsapp-for-linux
-    discord-canary
     discord
   ];
 

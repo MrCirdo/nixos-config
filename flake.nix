@@ -20,7 +20,7 @@
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
     nixosConfigurations = let
-      overlays = [(import ./overlays/spotify.nix) (import ./overlays/electron.nix)];
+      overlays = [(import ./overlays/discord.nix)];
       system = "x86_64-linux";
     in {
       dev-machine = nixpkgs.lib.nixosSystem {

@@ -1,7 +1,7 @@
 # don't work :)
 let
   versionCanary = "0.0.142";
-  version = "0.0.21";
+  version = "0.0.24";
 in
   self: super: {
     discord-canary = super.discord-canary.overrideAttrs (oldAttrs: {
@@ -23,7 +23,7 @@ in
     discord = super.discord.overrideAttrs (oldAttrs: {
       src = builtins.fetchurl {
         url = "https://dl.discordapp.net/apps/linux/${version}/discord-${version}.tar.gz";
-        sha256 = "18rmw979vg8lxxvagji6sim2s5yyfq91lfabsz1wzbniqfr98ci8";
+        sha256 = "486fb7e1fb74993aad83dac5888eb437a24838dcaa17c73c4a59d1727e5ae177";
       };
 
       buildInputs = (oldAttrs.buildInputs or []) ++ [self.makeWrapper];
@@ -32,8 +32,12 @@ in
         or ""
         + ''
           wrapProgram $out/bin/discord \
-          --add-flags "--enable-features=UseOzonePlatform " \
-          --add-flags "--ozone-platform=wayland" \
+          --add-flags "--ignore-gpu-blocklist " \
+          --add-flags "--disable-features=UseOzonePlatform " \
+          --add-flags "--enable-features=VaapiVideoDecoder " \
+          --add-flags "--use-gl=desktop " \
+          --add-flags "--enable-gpu-rasterization " \
+          --add-flags "--enable-zero-copy"
         '';
     });
   }
