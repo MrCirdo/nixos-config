@@ -47,5 +47,7 @@
   # high-resolution display
   hardware.video.hidpi.enable = lib.mkDefault true;
 
-  powerManagement.powertop.enable = true;
+  powerManagement.powertop.enable = false;
+
+  boot.kernelParams = ["i915.force_probe=162b"];
 }

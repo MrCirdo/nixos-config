@@ -65,7 +65,7 @@
   hardware.opengl.enable = true;
 
   powerManagement = {
-    enable = true;
+    enable = false;
     powerDownCommands = "${pkgs.swaylock-effects}/bin/swaylock -C $HOME/.config/swaylock-effects/config";
   };
 
