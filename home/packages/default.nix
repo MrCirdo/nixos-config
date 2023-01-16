@@ -96,9 +96,11 @@
     spotify-tui
     qemu_kvm
     virt-manager
+    gtk-engine-murrine
   ];
 
-  gnomePackages = with pkgs.gnome; [nautilus eog evince file-roller];
+  gnomePackages = with pkgs.gnome; [gnome-tweaks dconf-editor gnome-themes-extra];
+  gnomeShellPackages = with pkgs.gnomeExtensions; [blur-my-shell openweather vitals aylurs-widgets just-perfection dash-to-dock];
 in {
   home-manager.sharedModules = [
     {
@@ -108,6 +110,7 @@ in {
         ++ socialPackages
         ++ reverseEngineeringPackages
         ++ gnomePackages
+        ++ gnomeShellPackages
         ++ otherPackages
         ++ [pythonPackages];
     }

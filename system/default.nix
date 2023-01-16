@@ -70,4 +70,6 @@
   };
 
   imports = [./macbookpro ./services ./programs];
+
+  gnome.enable = true;
 }

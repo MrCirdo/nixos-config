@@ -30,7 +30,7 @@
           ./system
           home-manager.nixosModules.home-manager
           ./home
-          ./wayland
+          ./modules
           {nixpkgs.overlays = overlays;}
           ({...}: {
             home-manager.sharedModules = [

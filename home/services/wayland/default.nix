@@ -1,5 +1,9 @@
-{...}: {
-  services = {
+{
+  lib,
+  config,
+  ...
+}: {
+  services = lib.mkIf config.sway.enable {
     gammastep = {
       enable = true;
       dawnTime = "8:00";

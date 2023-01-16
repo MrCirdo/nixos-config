@@ -8,7 +8,7 @@
   theme = config.theme;
   defaultSinkPulseaudio = "@DEFAULT_SINK@";
 in {
-  wayland.windowManager.sway = {
+  wayland.windowManager.sway = lib.mkIf config.sway.enable {
     enable = true;
 
     wrapperFeatures = {

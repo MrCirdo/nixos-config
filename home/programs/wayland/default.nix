@@ -1,5 +1,9 @@
-{config, ...}: {
-  programs = {
+{
+  config,
+  lib,
+  ...
+}: {
+  programs = lib.mkIf config.sway.enable {
     mako = {
       enable = true;
       backgroundColor = config.theme.focusColor;
