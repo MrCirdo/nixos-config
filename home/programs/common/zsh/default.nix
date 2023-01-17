@@ -20,7 +20,6 @@ in {
       [[ ! -f ${p10k} ]] || source ${p10k}
 
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-      gpgconf --launch gpg-agent
     '';
 
     # Useful when the app use java gui.
