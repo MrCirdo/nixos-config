@@ -5,7 +5,7 @@
       enableZshIntegration = true;
       enableBashIntegration = true;
       enableSshSupport = true;
-      pinentryFlavor = "curses";
+      pinentryFlavor = "qt";
       extraConfig = "auto-expand-secmem 0x3000000\n";
     };
   };
