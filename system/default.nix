@@ -42,7 +42,10 @@
     initialPassword = "root";
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
 
   environment = {
     variables = {
