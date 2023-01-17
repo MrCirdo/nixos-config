@@ -99,6 +99,15 @@
 
   gnomePackages = with pkgs.gnome; [gnome-tweaks dconf-editor gnome-themes-extra];
   gnomeShellPackages = with pkgs.gnomeExtensions; [blur-my-shell openweather vitals aylurs-widgets just-perfection dash-to-dock gsconnect];
+
+  yubikey = with pkgs; [
+    yubikey-manager
+    yubikey-manager-qt
+    yubikey-personalization
+    yubikey-personalization-gui
+    yubico-piv-tool
+    yubioath-desktop
+  ];
 in {
   home-manager.sharedModules = [
     {
@@ -109,6 +118,7 @@ in {
         ++ reverseEngineeringPackages
         ++ gnomePackages
         ++ gnomeShellPackages
+        ++ yubikey
         ++ otherPackages
         ++ [pythonPackages];
     }
