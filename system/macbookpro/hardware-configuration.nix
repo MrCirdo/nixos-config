@@ -34,7 +34,7 @@
     {device = "/dev/disk/by-uuid/6e5f19db-2ca8-40d7-834d-93073b6e788f";}
   ];
 
-  boot.tmpOnTmpfs = true;
+  boot.tmpOnTmpfs = false;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
