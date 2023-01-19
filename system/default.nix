@@ -9,6 +9,8 @@
 
   time.timeZone = "Europe/Paris";
 
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+
   boot.kernel.sysctl = {
     "kernel.perf_event_paranoid" = 1;
   };
