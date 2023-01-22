@@ -8,6 +8,8 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     helix.url = "github:helix-editor/helix";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = {
@@ -16,6 +18,7 @@
     home-manager,
     sops-nix,
     helix,
+    nixos-hardware
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
@@ -26,6 +29,7 @@
       dev-machine = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
+          nixos-hardware.nixosModules.apple-macbook-pro-12-1
           sops-nix.nixosModules.sops
           ./system
           home-manager.nixosModules.home-manager
