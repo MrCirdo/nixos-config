@@ -17,7 +17,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
-  boot.kernelParams = ["resume_offset=14596096"];
+  boot.kernelParams = ["resume_offset=2482176"];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/4f2609f9-0e39-47c0-a3fd-72affaa250e8";
@@ -38,6 +38,12 @@
       device = "/dev/disk/by-uuid/6e5f19db-2ca8-40d7-834d-93073b6e788f";
       priority = 32767;
     }
+    # This swap is to unblocked the hibernation fails :)
+    {
+      device = "/swap";
+      priority = 0;
+      size = 8192;
+    }
   ];
 
   boot.tmpOnTmpfs = false;
@@ -54,6 +60,4 @@
   hardware.video.hidpi.enable = lib.mkDefault true;
 
   powerManagement.powertop.enable = false;
-
-  boot.kernelParams = ["i915.force_probe=162b"];
 }

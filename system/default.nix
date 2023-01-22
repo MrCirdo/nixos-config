@@ -69,18 +69,7 @@
 
   hardware.opengl.enable = true;
 
-  powerManagement = {
-    enable = false;
-    powerDownCommands = "${pkgs.swaylock-effects}/bin/swaylock -C $HOME/.config/swaylock-effects/config";
-  };
-
-  swapDevices = [
-    {
-      device = "/swap";
-      priority = 0;
-      size = 8192;
-    }
-  ];
+  powerManagement.enable = true;
 
   imports = [./macbookpro ./services ./programs];
 
