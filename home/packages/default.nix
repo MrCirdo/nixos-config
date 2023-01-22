@@ -95,6 +95,7 @@
     qemu_kvm
     virt-manager
     gtk-engine-murrine
+    chromium
   ];
 
   gnomePackages = with pkgs.gnome; [gnome-tweaks dconf-editor gnome-themes-extra];
