@@ -18,7 +18,7 @@
     home-manager,
     sops-nix,
     helix,
-    nixos-hardware
+    nixos-hardware,
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
@@ -35,6 +35,7 @@
           home-manager.nixosModules.home-manager
           ./home
           ./modules
+          ./kernel/march-native-compilation.nix
           {nixpkgs.overlays = overlays;}
           ({...}: {
             home-manager.sharedModules = [

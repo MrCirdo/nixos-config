@@ -1,9 +1,10 @@
-{pkgs, ...}:
-{
-  #extraMakeFlags =  [ "KCFLAGS=-march=native" "KCPPFLAGS=-march=native"];
-  #ignoreConfigErrors = true;
-  nixpkgs.overlay = [(self: super: {
-      linuxPackages_zen.kernel = super.linuxPackages_zen.kernel.ovverideAttrs(oldAttrs: {
+{pkgs, ...}: {
+  nixpkgs.overlays = [
+    (self: super: {
+      linuxPackages_zen = pkgs.linuxPackagesFor (super.linuxPackages_zen.kernel.override {
+        extraMakeFlags = ["KCFLAGS=-march=native" "KCPPFLAGS=-march=native"];
+        ignoreConfigErrors = true;
       });
-  })];  
+    })
+  ];
 }
