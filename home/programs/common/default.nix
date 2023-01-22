@@ -183,6 +183,14 @@
         }
       ];
     };
+
+    gpg = {
+      enable = true;
+      settings = {
+        auto-key-locate = ["cert" "pka" "dane" "wkd" "keyserver"];
+        auto-key-retrieve = true;
+      };
+    };
   };
 
   imports = [./nvim ./zsh];

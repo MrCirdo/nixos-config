@@ -9,7 +9,6 @@
         if config.gnome.enable
         then "gnome3"
         else "qt";
-      extraConfig = "auto-expand-secmem 0x3000000\n";
     };
   };
 }
