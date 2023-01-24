@@ -3,9 +3,10 @@
   config,
   ...
 }: {
-  networking.hostName = "Wookiee";
-
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "Wookiee";
+    networkmanager.enable = true;
+  };
 
   time.timeZone = "Europe/Paris";
 
