@@ -35,7 +35,6 @@
           home-manager.nixosModules.home-manager
           ./home
           ./modules
-          ./kernel/march-native-compilation.nix
           {nixpkgs.overlays = overlays;}
           ({...}: {
             home-manager.sharedModules = [

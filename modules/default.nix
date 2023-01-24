@@ -1,3 +1,3 @@
 {...}: {
-  imports = [./wm];
+  imports = [./wm ./kernel];
 }

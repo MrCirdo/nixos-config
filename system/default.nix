@@ -9,11 +9,16 @@
 
   time.timeZone = "Europe/Paris";
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_zen;
+    loader.grub.theme = pkgs.nixos-grub2-theme;
 
-  boot.kernel.sysctl = {
-    "kernel.perf_event_paranoid" = 1;
+    kernel.sysctl = {
+      "kernel.perf_event_paranoid" = 1;
+    };
   };
+
+  march-native.kernel.zen.enable = true;
 
   i18n.defaultLocale = "en_US.utf8";
   i18n.extraLocaleSettings = {
