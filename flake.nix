@@ -10,6 +10,11 @@
     helix.url = "github:helix-editor/helix";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -19,31 +24,37 @@
     sops-nix,
     helix,
     nixos-hardware,
-  } @ inputs: {
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-
-    nixosConfigurations = let
-      overlays = [(import ./overlays/discord.nix)];
-      system = "x86_64-linux";
-    in {
-      dev-machine = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          nixos-hardware.nixosModules.apple-macbook-pro-12-1
-          sops-nix.nixosModules.sops
-          ./system
-          home-manager.nixosModules.home-manager
-          ./home
-          ./modules
-          {nixpkgs.overlays = overlays;}
+    nixos-generators,
+  } @ inputs: let
+    modules = [
+      sops-nix.nixosModules.sops
+      home-manager.nixosModules.home-manager
+      ./system
+      ./home
+      ./modules
+      ({...}: {
+        home-manager.sharedModules = [
           ({...}: {
-            home-manager.sharedModules = [
-              ({...}: {
-                _module.args.inputs = inputs;
-              })
-            ];
+            _module.args.inputs = inputs;
           })
         ];
+      })
+    ];
+    system = "x86_64-linux";
+  in {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+
+    packages.x86_64-linux = {
+      kvm = nixos-generators.nixosGenerate {
+        inherit modules;
+        inherit system;
+        format = "vm";
+      };
+    };
+    nixosConfigurations = {
+      dev-machine = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = modules ++ [./system/macbookpro nixos-hardware.nixosModules.apple-macbook-pro-12-1];
       };
     };
   };

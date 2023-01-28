@@ -77,7 +77,7 @@
 
   powerManagement.enable = true;
 
-  imports = [./macbookpro ./services ./programs];
+  imports = [./services ./programs];
 
   gnome.enable = true;
 }
