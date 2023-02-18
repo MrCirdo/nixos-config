@@ -212,6 +212,12 @@
         auto-key-retrieve = true;
       };
     };
+
+    tmux = {
+      enable = true;
+      mouse = true;
+      keyMode = "vi";
+    };
   };
 
   imports = [./nvim ./zsh];
