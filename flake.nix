@@ -58,7 +58,7 @@
       };
       vroumvroum = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = modules ++ [./system/xps9500 nixos-hardware.nixosModules.dell-xps-15-9500];
+        modules = modules ++ [./system/xps9500 nixos-hardware.nixosModules.dell-xps-15-9500-nvidia];
       };
     };
   };
