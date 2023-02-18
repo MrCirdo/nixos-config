@@ -46,13 +46,17 @@
     name = "odric";
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = ["networkmanager" "wheel" "docker" "video" "fuse" "adbusers" "kvm" "libvirt"];
+    extraGroups = ["networkmanager" "wheel" "docker" "video" "fuse" "adbusers" "kvm" "libvirt" "qemu-libvirtd"];
     initialPassword = "root";
   };
 
   virtualisation = {
-    docker.enable = true;
+    docker = {
+      enable = true;
+      daemon.settings."insecure-registries" = ["https://gitlab.quodfinancial.com:5050"];
+    };
     spiceUSBRedirection.enable = true;
+    libvirtd.enable = true;
   };
 
   environment = {
