@@ -52,9 +52,13 @@
       };
     };
     nixosConfigurations = {
-      dev-machine = nixpkgs.lib.nixosSystem {
+      peufpeuf = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = modules ++ [./system/macbookpro nixos-hardware.nixosModules.apple-macbook-pro-12-1];
+      };
+      vroumvroum = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = modules ++ [./system/xps9500 nixos-hardware.nixosModules.dell-xps-15-9500];
       };
     };
   };
