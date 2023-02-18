@@ -34,7 +34,15 @@
 
     vscode = {
       enable = true;
-      userSettings = {"keyboard.dispatch" = "keyCode";};
+      userSettings = {
+        "keyboard.dispatch" = "keyCode";
+        "editor.largeFileOptimizations" = true;
+        "window.titleBarStyle" = "custom";
+        "workbench.colorTheme" = "One Dark Pro";
+        "editor.fontSize" = 11;
+        "editor.fontFamily" = "'Source Code Pro', 'monospace', monospace";
+      };
+
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         github.copilot
@@ -42,6 +50,7 @@
         ms-python.python
         ms-vscode.cpptools
         jnoortheen.nix-ide
+        mskelton.one-dark-theme
       ];
     };
 
