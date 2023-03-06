@@ -53,7 +53,10 @@
   virtualisation = {
     docker = {
       enable = true;
-      daemon.settings."insecure-registries" = ["https://gitlab.quodfinancial.com:5050"];
+      daemon.settings = {
+        "insecure-registries" = ["https://gitlab.quodfinancial.com:5050"];
+        "features"."buildkit" = true;
+      };
     };
     spiceUSBRedirection.enable = true;
     libvirtd.enable = true;
