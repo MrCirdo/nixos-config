@@ -1,3 +1,3 @@
 {...}: {
-  imports = [./gnome.nix ./sway.nix];
+  imports = [./gnome ./sway];
 }
