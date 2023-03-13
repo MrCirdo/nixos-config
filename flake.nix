@@ -11,6 +11,8 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    hyprland.url = "github:hyprwm/Hyprland";
+
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,13 +27,13 @@
     helix,
     nixos-hardware,
     nixos-generators,
+    hyprland,
   } @ inputs: let
     overlays = [(import ./overlays/spotify.nix) (import ./overlays/electron.nix)];
     modules = [
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
-      ./system
-      ./home
+      ./common
       ./modules
       {nixpkgs.overlays = overlays;}
       ({...}: {
@@ -56,11 +58,11 @@
     nixosConfigurations = {
       peufpeuf = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = modules ++ [./system/macbookpro nixos-hardware.nixosModules.apple-macbook-pro-12-1];
+        modules = modules ++ [./machine/macbookpro nixos-hardware.nixosModules.apple-macbook-pro-12-1];
       };
       vroumvroum = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = modules ++ [./system/xps9500 nixos-hardware.nixosModules.dell-xps-15-9500-nvidia];
+        modules = modules ++ [./machine/xps9500 nixos-hardware.nixosModules.dell-xps-15-9500];
       };
     };
   };
