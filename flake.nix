@@ -31,11 +31,15 @@
   } @ inputs: let
     overlays = [(import ./overlays/spotify.nix) (import ./overlays/electron.nix)];
     modules = [
+      {nixpkgs.overlays = overlays;}
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
       ./common
       ./modules
       {nixpkgs.overlays = overlays;}
+      ({...}: {
+        _module.args.inputs = inputs;
+      })
       ({...}: {
         home-manager.sharedModules = [
           ({...}: {

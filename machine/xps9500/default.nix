@@ -1,5 +1,6 @@
 {...}: {
   gnome.enable = false;
-  sway.enable = true;
+  sway.enable = false;
+  hyprland.enable = true;
   imports = [./system];
 }
