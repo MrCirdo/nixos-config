@@ -5,5 +5,6 @@
     bcc.enable = true;
     gnupg.dirmngr.enable = true;
     steam.enable = true;
+    zsh.enable = true;
   };
 }

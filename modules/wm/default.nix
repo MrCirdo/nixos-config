@@ -1,3 +1,3 @@
 {...}: {
-  imports = [./gnome ./sway];
+  imports = [./gnome ./sway ./hyprland];
 }
