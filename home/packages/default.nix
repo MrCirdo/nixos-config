@@ -6,96 +6,99 @@
 }: let
   pythonPackages = (pkgs.python310.withPackages (ps:
     with ps; [
-      pwntools
-      z3
       angr
-      numpy
-      matplotlib
-      jinja2
-      yapf
       docker
-      python-lsp-server
+      jinja2
+      matplotlib
+      numpy
+      pwntools
       pytest
+      python-lsp-server
+      yapf
+      z3
     ]))
   .override (args: {ignoreCollisions = true;});
 
   devPackages = with pkgs; [
     # C/C++
-    automake
-    autogen
     autoconf
+    autogen
+    automake
     bear
     ccls
+    clang-tools
     cmake
     ctags
-    clang-tools
-    gdb
-    rr
     gcc
+    gdb
     gnumake
     man-pages
     man-pages-posix
+    rr
     vagrant
     valgrind
 
     # Rust
-    rustc
     cargo
-    rust-analyzer
-    rustfmt
     clippy
+    rust-analyzer
+    rustc
+    rustfmt
 
     # Nix
-    rnix-lsp
     nil
+    rnix-lsp
   ];
 
   shellPackages = with pkgs; [tree zip unzip btop tmux openssl neofetch zsh-powerlevel10k];
 
   socialPackages = with pkgs; [
+    discord
     signal-desktop
     whatsapp-for-linux
-    discord
   ];
 
   reverseEngineeringPackages = with pkgs; [ghidra];
 
   otherPackages = with pkgs; [
-    bitwarden
-    spotify
-    playerctl
-    grim
-    slurp
-    wl-clipboard
-    jellyfin-media-player
-    pavucontrol
-    pulseaudio
-    firefox
-    thunderbird
-    pmutils
-    rclone
-    pandoc
-    texlive.combined.scheme-full
-    pinentry-curses
-    gnupg
-    duf
-    lazygit
-    fd
-    ripgrep
-    du-dust
-    tealdeer
-    htop
     bat
-    libseccomp
-    v4l-utils
-    freetube
-    wget
     bcc
-    spotify-tui
-    qemu_kvm
-    virt-manager
-    gtk-engine-murrine
+    bitwarden
     chromium
+    du-dust
+    duf
+    fd
+    firefox
+    freetube
+    gitlab-runner
+    gnupg
+    grim
+    gtk-engine-murrine
+    htop
+    jellyfin-media-player
+    lazygit
+    libseccomp
+    nodejs-16_x
+    pandoc
+    pavucontrol
+    pinentry-curses
+    playerctl
+    pmutils
+    pre-commit
+    pulseaudio
+    qemu_kvm
+    rclone
+    ripgrep
+    slurp
+    spotify
+    spotify-tui
+    tealdeer
+    texlive.combined.scheme-full
+    thunderbird
+    v4l-utils
+    virt-manager
+    wget
+    wl-clipboard
   ];
 
   gnomePackages = with pkgs.gnome; [gnome-tweaks dconf-editor gnome-themes-extra];

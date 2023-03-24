@@ -3,24 +3,24 @@
     pkgs.vimPlugins.nvim-treesitter.withPlugins
     (plugins:
       with plugins; [
+        tree-sitter-agda
+        tree-sitter-bash
         tree-sitter-c
+        tree-sitter-cmake
         tree-sitter-cpp
+        tree-sitter-dockerfile
+        tree-sitter-go
+        tree-sitter-html
+        tree-sitter-java
+        tree-sitter-json
+        tree-sitter-latex
+        tree-sitter-lua
+        tree-sitter-make
+        tree-sitter-markdown
         tree-sitter-nix
         tree-sitter-python
         tree-sitter-rust
-        tree-sitter-go
         tree-sitter-yaml
-        tree-sitter-make
-        tree-sitter-json
-        tree-sitter-java
-        tree-sitter-html
-        tree-sitter-bash
-        tree-sitter-agda
-        tree-sitter-latex
-        tree-sitter-cmake
-        tree-sitter-markdown
-        tree-sitter-dockerfile
-        tree-sitter-lua
       ]);
 in {
   programs.neovim = {
@@ -29,25 +29,25 @@ in {
     vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      vim-nix
-      vim-lastplace
       auto-pairs
-      nerdtree
-      nvimTreesitterWithPlugins
-      null-ls-nvim
-      nvim-lspconfig
-      nvim-cmp
-      cmp-nvim-lsp
       cmp_luasnip
+      cmp-nvim-lsp
+      gruvbox
+      indent-blankline-nvim
+      lightline-vim
       luasnip
-      packer-nvim
-      onedark-nvim
       material-nvim
       neovim-ayu
-      gruvbox
-      lightline-vim
-      indent-blankline-nvim
+      nerdtree
+      null-ls-nvim
+      nvim-cmp
+      nvim-lspconfig
+      nvimTreesitterWithPlugins
+      onedark-nvim
+      packer-nvim
       vim-devicons
+      vim-lastplace
+      vim-nix
     ];
 
     extraConfig = builtins.readFile ./config.vim;
