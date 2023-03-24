@@ -1,4 +1,15 @@
 {pkgs, ...}: let
+  github-copilot-latest = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    pname = "github-copilot-latest.vim";
+    version = "1.8.3";
+    src = pkgs.fetchFromGitHub {
+      owner = "github";
+      repo = "copilot.vim";
+      rev = "9e869d29e62e36b7eb6fb238a4ca6a6237e7d78b";
+      sha256 = "B+2hHNTrabj6O9F6OoskNIUsjJXLrt+4XgjuiRoM80s=";
+    };
+  };
+
   nvimTreesitterWithPlugins =
     pkgs.vimPlugins.nvim-treesitter.withPlugins
     (plugins:
@@ -48,7 +59,7 @@ in {
       vim-devicons
       vim-lastplace
       vim-nix
-    ];
+    ] ++ [github-copilot-latest];
 
     extraConfig = builtins.readFile ./config.vim;
   };

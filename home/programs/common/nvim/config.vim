@@ -13,8 +13,11 @@ set expandtab        " expand tabs to spaces
 
 colorscheme ayu-mirage
 
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
 
 lua << EOF
+
 
 -- Default configuration.
 -- Mappings.
