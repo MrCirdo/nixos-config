@@ -65,8 +65,8 @@
             "org/gnome/desktop/background" = {
               color-shading-type = "solid";
               picture-options = "zoom";
-              picture-uri = "${./wallpapers/zhang-kaiyv.jpg}";
-              picture-uri-dark = "${./wallpapers/zhang-kaiyv.jpg}";
+              picture-uri = "${./wallpapers/khachik-simonian.jpg}";
+              picture-uri-dark = "${./wallpapers/khachik-simonian.jpg}";
               primary-color = "#000000000000";
               secondary-color = "#000000000000";
             };
@@ -164,7 +164,7 @@
             "org/gnome/desktop/screensaver" = {
               color-shading-type = "solid";
               picture-options = "zoom";
-              picture-uri = "${./wallpapers/zhang-kaiyv.jpg}";
+              picture-uri = "${./wallpapers/khachik-simonian.jpg}";
               primary-color = "#000000000000";
               secondary-color = "#000000000000";
             };
