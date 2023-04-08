@@ -26,12 +26,14 @@
     nixos-hardware,
     nixos-generators,
   } @ inputs: let
+    overlays = [(import ./overlays/spotify.nix) (import ./overlays/electron.nix)];
     modules = [
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
       ./system
       ./home
       ./modules
+      {nixpkgs.overlays = overlays;}
       ({...}: {
         home-manager.sharedModules = [
           ({...}: {
