@@ -1,4 +1,9 @@
-{lib, config, ...}: lib.mkIf config.hyprland.enable {
+{
+  lib,
+  config,
+  ...
+}:
+lib.mkIf config.hyprland.enable {
   home-manager.sharedModules = [
     ({
       pkgs,
@@ -6,7 +11,7 @@
       lib,
       ...
     }: {
-      wayland.windowManager.hyprland =  {
+      wayland.windowManager.hyprland = {
         enable = config.hyprland.enable;
         xwayland = {
           enable = true;

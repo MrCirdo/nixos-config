@@ -76,7 +76,7 @@ with lib.hm.gvariant; {
     };
 
     "org/gnome/mutter" = {
-      experimental-features = [ "scale-monitor-framebuffer" ];
+      experimental-features = ["scale-monitor-framebuffer"];
     };
 
     "org/gnome/desktop/interface" = {

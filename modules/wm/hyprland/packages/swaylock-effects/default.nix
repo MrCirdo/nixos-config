@@ -1,4 +1,8 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   security.pam.services = lib.mkIf config.hyprland.enable {
     swaylock = {};
     swaylock-effects = {};
