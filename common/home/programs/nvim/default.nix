@@ -39,27 +39,29 @@ in {
     viAlias = true;
     vimAlias = true;
 
-    plugins = with pkgs.vimPlugins; [
-      auto-pairs
-      cmp_luasnip
-      cmp-nvim-lsp
-      gruvbox
-      indent-blankline-nvim
-      lightline-vim
-      luasnip
-      material-nvim
-      neovim-ayu
-      nerdtree
-      null-ls-nvim
-      nvim-cmp
-      nvim-lspconfig
-      nvimTreesitterWithPlugins
-      onedark-nvim
-      packer-nvim
-      vim-devicons
-      vim-lastplace
-      vim-nix
-    ] ++ [github-copilot-latest];
+    plugins = with pkgs.vimPlugins;
+      [
+        auto-pairs
+        cmp_luasnip
+        cmp-nvim-lsp
+        gruvbox
+        indent-blankline-nvim
+        lightline-vim
+        luasnip
+        material-nvim
+        neovim-ayu
+        nerdtree
+        null-ls-nvim
+        nvim-cmp
+        nvim-lspconfig
+        nvimTreesitterWithPlugins
+        onedark-nvim
+        packer-nvim
+        vim-devicons
+        vim-lastplace
+        vim-nix
+      ]
+      ++ [github-copilot-latest];
 
     extraConfig = builtins.readFile ./config.vim;
   };
