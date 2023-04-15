@@ -27,10 +27,10 @@
   };
 
   swapDevices = [
-    {
+     {
       device = "/.swap";
       priority = 1000;
-      size = 65536;
+      size = 26860;
     }
   ];
 

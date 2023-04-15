@@ -316,7 +316,7 @@
             };
 
             "org/gnome/settings-daemon/plugins/power" = {
-              power-button-action = "hibernate";
+              power-button-action = "suspend";
               sleep-inactive-ac-timeout = 7200;
               sleep-inactive-ac-type = "nothing";
             };
