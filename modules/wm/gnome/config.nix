@@ -74,7 +74,7 @@
             "org/gnome/desktop/input-sources" = {
               per-window = false;
               show-all-sources = false;
-              sources = [(mkTuple ["xkb" "us+alt-intl"]) (mkTuple ["xkb" "fr+mac"])];
+              sources = [(mkTuple ["xkb" "us+alt-intl"]) (mkTuple ["xkb" "fr+oss"]) (mkTuple ["xkb" "fr+mac"])];
               xkb-options = ["terminate:ctrl_alt_bksp" "caps:swapescape" "lv3:ralt_switch"];
             };
 
