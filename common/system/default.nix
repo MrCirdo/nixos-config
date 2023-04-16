@@ -11,9 +11,6 @@
   time.timeZone = "Europe/Paris";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
-    loader.grub.theme = pkgs.nixos-grub2-theme;
-
     kernel.sysctl = {
       "kernel.perf_event_paranoid" = 1;
     };
