@@ -23,7 +23,7 @@
           terminal = "alacritty";
 
           fonts = {
-            names = ["Ubuntu"];
+            names = ["Souce Code Pro"];
             size = 12.0;
           };
 

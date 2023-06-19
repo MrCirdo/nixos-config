@@ -70,22 +70,22 @@
             font = {
               size = 9;
               normal = {
-                family = "Source CodePro";
+                family = "Source Code Pro";
                 style = "Regular";
               };
 
               bold = {
-                family = "Source CodePro";
+                family = "Source Code Pro";
                 style = "Bold";
               };
 
               italic = {
-                family = "Source CodePro";
+                family = "Source Code Pro";
                 style = "Italic";
               };
 
               bold_italic = {
-                family = "Source CodePro";
+                family = "Source Code Pro";
                 style = "Bold Italic";
               };
             };
