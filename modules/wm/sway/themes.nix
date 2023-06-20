@@ -10,9 +10,9 @@ in {
     backgroundColor2 = tailwindcss.gray."800";
     backgroundColor3 = tailwindcss.gray."700";
 
-    focusColor = tailwindcss.orange."500";
-    focusColor2 = tailwindcss.orange."400";
-    focusColor3 = tailwindcss.orange."300";
+    focusColor = tailwindcss.lime."500";
+    focusColor2 = tailwindcss.lime."400";
+    focusColor3 = tailwindcss.lime."300";
     textColor = tailwindcss.white;
     textColor2 = tailwindcss.gray."100";
     textColor3 = tailwindcss.gray."200";

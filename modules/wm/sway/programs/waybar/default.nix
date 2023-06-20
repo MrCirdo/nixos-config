@@ -7,6 +7,7 @@ in {
         pkgs,
         config,
         lib,
+        inputs,
         ...
       }: {
         programs = lib.mkIf config.sway.enable {
@@ -16,7 +17,7 @@ in {
             settings = [
               {
                 layer = "top";
-                modules-left = ["sway/workspaces" "sway/mode"];
+                modules-left = ["custom/launcher" "sway/workspaces"];
                 modules-center = ["clock"];
                 modules-right = [
                   "custom/rss"
@@ -28,15 +29,22 @@ in {
                   "battery"
                 ];
 
+                "sway/workspaces" = {
+                };
+
+                "custom/launcher" = {
+                  "format" = " ";
+                  "tooltip" = false;
+                };
+
                 battery = {
                   format = "{capacity}% {icon}";
                   format-icons = ["" "" "" "" ""];
+                  format-plugged = "{capacity}% ";
                   states = {
                     warning = 25;
                     critical = 10;
                   };
-
-                  full-at = 69; # Lol
                 };
 
                 tray = {

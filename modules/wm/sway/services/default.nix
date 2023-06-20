@@ -2,6 +2,7 @@
   home-manager.sharedModules = [
     (
       {
+        pkgs,
         lib,
         config,
         ...
@@ -19,6 +20,21 @@
             borderColor = config.theme.focusColor2;
             defaultTimeout = 10000;
             borderRadius = 8;
+          };
+          swayidle = {
+            enable = true;
+            events = [
+              {
+                event = "before-sleep";
+                command = "${pkgs.swaylock-effects}/bin/swaylock -f -C /home/odric/.config/swaylock-effects/config";
+              }
+            ];
+            timeouts = [
+              {
+                timeout = 300;
+                command = "${pkgs.swaylock-effects}/bin/swaylock -f -C $HOME/.config/swaylock-effects/config";
+              }
+            ];
           };
         };
       }

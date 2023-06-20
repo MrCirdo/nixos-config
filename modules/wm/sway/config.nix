@@ -154,7 +154,20 @@
               xkb_variant = "mac";
             };
 
+            "1:1:AT_Translated_Set_2_keyboard" = {
+              repeat_delay = "200";
+              repeat_rate = "75";
+              xkb_options = "caps:escape";
+              xkb_layout = "fr";
+            };
             "2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard" = {
+              repeat_delay = "200";
+              repeat_rate = "75";
+              xkb_options = "caps:escape";
+              xkb_layout = "us";
+              xkb_variant = "intl";
+            };
+            "1133:16522:Logitech_Wireless_Device_PID:408a" = {
               repeat_delay = "200";
               repeat_rate = "75";
               xkb_options = "caps:escape";
@@ -166,29 +179,27 @@
           output = {
             "*" = {
               bg =
-                builtins.fetchurl {
-                  url = "https://i.redd.it/ml78s1dmi3531.jpg";
-                  sha256 = "496da0ff4159f84b994eeb3615a7e6cc06f0e760fc549badcc43c3e70428d456";
-                }
-                + " fill";
+                "${./wallpapers/derek-story.jpg}" + " fill";
+            };
+
+            "DP-4" = {
+              scale = "1.5";
+            };
+            "DP-5" = {
+              scale = "1.5";
             };
           };
 
           window = {
-            border = 2;
+            border = 1;
             titlebar = false;
           };
 
           gaps = {
-            smartGaps = true;
             smartBorders = "on";
             inner = 10;
             outer = 5;
-
-            top = 0;
           };
-
-          floating.titlebar = true;
         };
 
         extraSessionCommands = ''
