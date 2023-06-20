@@ -10,7 +10,7 @@
 
   boot.resumeDevice = "/dev/disk/by-uuid/d0bcbd38-05f5-4daf-91ab-7d43034e574f";
   boot.kernelParams = ["resume_offset=13832192"];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_1; 
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_3;
 
   services.fprintd = {
     enable = true;
