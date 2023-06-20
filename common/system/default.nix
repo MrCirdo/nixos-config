@@ -33,7 +33,10 @@
   services.printing.enable = true;
 
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware = {
+    pulseaudio.enable = false;
+    opengl.enable = true;
+  };
   security.rtkit.enable = true;
 
   users.mutableUsers = true;
@@ -83,7 +86,6 @@
   system.stateVersion = "22.11"; # Did you read the comment?
   networking.nameservers = ["1.1.1.1" "1.0.0.1"];
 
-  hardware.opengl.enable = true;
 
   powerManagement.enable = true;
 
