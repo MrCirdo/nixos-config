@@ -8,7 +8,9 @@
       wireplumber.enable = true;
     };
 
-    udev.packages = [pkgs.yubikey-personalization];
+    tailscale.enable = true;
+
+    udev.packages = [pkgs.yubikey-personalization pkgs.logitech-udev-rules];
     pcscd.enable = true;
     gitlab-runner.enable = true;
   };
