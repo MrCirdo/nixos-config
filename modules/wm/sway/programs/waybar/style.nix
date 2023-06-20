@@ -20,6 +20,7 @@
   #memory,
   #temperature,
   #pulseaudio,
+  #network,
   #battery {
   	margin-top: 5px;
   	margin-bottom: 5px;
@@ -30,6 +31,16 @@
   	padding-top: 5px;
   	padding-bottom: 5px;
   	background-color: ${theme.backgroundColor};
+  }
+  #custom-powermenu {
+    color: ${theme.tailwindcss.red."500"};
+  	background-color: ${theme.backgroundColor};
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 5px
   }
 
   #custom-rss {
@@ -45,6 +56,20 @@
 
   #battery {
   	color: ${theme.tailwindcss.green."500"};
+  	border-radius: 0px 5px 5px 0px;
+  	margin-right: 10px;
+  	padding-right: 15px;
+  }
+
+  #battery.warning {
+  	color: ${theme.tailwindcss.yellow."500"};
+  	border-radius: 0px 5px 5px 0px;
+  	margin-right: 10px;
+  	padding-right: 15px;
+  }
+
+  #battery.critical {
+  	color: ${theme.tailwindcss.red."500"};
   	border-radius: 0px 5px 5px 0px;
   	margin-right: 10px;
   	padding-right: 15px;
@@ -66,6 +91,14 @@
   	color: ${theme.tailwindcss.violet."500"};
   }
 
+  #network {
+    color: ${theme.tailwindcss.emerald."500"};
+  }
+
+  #custom-launcher {
+    color: ${theme.tailwindcss.red."500"};
+  }
+
   #custom-launcher {
     margin-left: 5px;
     margin-right: 5px;
@@ -84,6 +117,7 @@
     margin-top: 4px;
     margin-bottom: 4px;
   }
+
 
   #workspaces button {
     color: ${theme.focusColor};

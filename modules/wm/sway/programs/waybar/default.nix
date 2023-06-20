@@ -21,12 +21,14 @@ in {
                 modules-center = ["clock"];
                 modules-right = [
                   "custom/rss"
+                  "network"
                   "cpu"
                   "disk"
                   "memory"
                   "temperature"
                   "pulseaudio"
                   "battery"
+                  "custom/powermenu"
                 ];
 
                 "sway/workspaces" = {
@@ -40,7 +42,7 @@ in {
                 battery = {
                   format = "{capacity}% {icon}";
                   format-icons = ["" "" "" "" ""];
-                  format-plugged = "{capacity}% ";
+                  "format-full" = "{capacity}% ";
                   states = {
                     warning = 25;
                     critical = 10;
@@ -90,6 +92,56 @@ in {
                   on-click = "pavucontrol";
                 };
 
+                network = {
+                  "format" = "{bandwidthUpBytes}   {bandwidthDownBytes} ";
+                  "format-disconnected" = "󰖪";
+                  "tooltip-format" = "{ipaddr}";
+                  "tooltip-format-wifi" = "{ipaddr} | {essid} | ({signalStrength}%) ";
+                  "tooltip-format-ethernet" = "{ipaddr}";
+                  "tooltip-format-disconnected" = "Disconnected";
+                  "max-length" = 50;
+                };
+
+                "custom/powermenu" = let
+                  launchPowerMenu = pkgs.writeShellScriptBin "powerMenuWofi.sh" ''
+                    menu=$(cat  <<EOF
+                    1. Poweroff
+                    2. Reboot
+                    3. Hibernate
+                    4. Hybrid Sleep
+                    5. Suspend
+                    6. Lock
+                    EOF
+                    )
+
+                    choice=$(echo "$menu" | wofi --dmenu --location 3 --prompt "What do you want ?" --allow-markup --parse-search --width 200 --height 300)
+
+                    case $choice in
+                      "1. Poweroff")
+                        systemctl poweroff
+                        ;;
+                      "2. Reboot")
+                        systemctl reboot
+                        ;;
+                      "3. Hibernate")
+                        systemctl hibernate
+                        ;;
+                      "4. Hybrid Sleep")
+                        systemctl hybrid-sleep
+                        ;;
+                      "5. Suspend")
+                        systemctl suspend
+                        ;;
+                      "6. Lock")
+                        ${pkgs.swaylock-effects}/bin/swaylock -f -C $HOME/.config/swaylock-effects/config
+                        ;;
+                    esac
+                  '';
+                in {
+                  format = "⏻";
+                  on-click = "${launchPowerMenu}/bin/powerMenuWofi.sh";
+                };
+
                 "custom/rss" = let
                   launchNewsBoat = pkgs.writeShellScriptBin "launch_newsboat.sh" ''
                     while rt=`${pkgs.procps}/bin/pgrep -x "newsboat"` && [[ "$rt" -gt 0 ]]; do :; done;
@@ -100,6 +152,7 @@ in {
                   exec = "${pkgs.newsboat}/bin/newsboat -x reload print-unread | ${pkgs.coreutils}/bin/cut -d ' ' -f 1";
                   interval = 600; # 10 minutes
                   on-click = "${launchNewsBoat}/bin/launch_newsboat.sh";
+                  output = ["eDP-1"];
                 };
 
                 "custom/spotify" = {
