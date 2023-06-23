@@ -100,6 +100,7 @@ in {
                   "tooltip-format-ethernet" = "{ipaddr}";
                   "tooltip-format-disconnected" = "Disconnected";
                   "max-length" = 50;
+                  on-click = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.networkmanager}/bin/nmtui";
                 };
 
                 "custom/powermenu" = let
