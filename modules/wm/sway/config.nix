@@ -174,6 +174,19 @@
               xkb_layout = "us";
               xkb_variant = "intl";
             };
+            "1133:16522:Logitech_Wireless_Keyboard_PID:408a" = {
+              repeat_delay = "200";
+              repeat_rate = "75";
+              xkb_options = "caps:escape";
+              xkb_layout = "us";
+              xkb_variant = "intl";
+            };
+
+            "1267:12572:DELL097D:00_04F3:311C_Touchpad" = {
+              scroll_method = "two_finger";
+              tap_button_map = "lrm";
+              tap = "enabled";
+            };
           };
 
           output = {
