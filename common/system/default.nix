@@ -37,7 +37,11 @@
     pulseaudio.enable = false;
     opengl.enable = true;
   };
-  security.rtkit.enable = true;
+
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
 
   users.mutableUsers = true;
   users.users.default = {

@@ -27,6 +27,12 @@
             size = 12.0;
           };
 
+          startup = [
+            {
+              command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+            }
+          ];
+
           keybindings = {
             "${defaultConfig.modifier}+Return" = "exec ${defaultConfig.terminal}";
             "${defaultConfig.modifier}+Shift+q" = "kill";
