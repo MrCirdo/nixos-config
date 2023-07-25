@@ -7,12 +7,10 @@
   	min-width: 0;
   }
 
-
   window#waybar {
   	color: white;
   	background-color: rgba(0, 0, 0, 0.3);
   }
-
 
   #custom-rss,
   #cpu,
@@ -32,6 +30,7 @@
   	padding-bottom: 5px;
   	background-color: ${theme.backgroundColor};
   }
+
   #custom-powermenu {
     color: ${theme.tailwindcss.red."500"};
   	background-color: ${theme.backgroundColor};
@@ -123,6 +122,11 @@
     color: ${theme.focusColor};
     padding-left: 4px;
     padding-right: 4px
+  }
+
+  #workspaces button.visible {
+    background-color: ${theme.backgroundColor2};
+    color: ${theme.focusColor};
   }
 
   #workspaces button.focused {
