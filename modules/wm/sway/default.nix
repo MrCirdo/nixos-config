@@ -49,22 +49,31 @@
               light.enable = true;
             };
 
-            services.xserver.displayManager.gdm = {
+            services.xserver = {
               enable = true;
-              wayland = true;
+              displayManager = {
+                session = [
+                  {
+                    manage = "destkop";
+                    name = "sway";
+                    start = "${launchSway}/bin/launch_sway.sh";
+                  }
+                ];
+
+                defaultSession = "sway";
+                autoLogin = {
+                  user = "odric";
+                  enable = true;
+                };
+
+                gdm = {
+                  enable = true;
+                  wayland = true;
+                };
+              };
             };
 
             security.polkit.enable = true;
-            services.greetd = {
-              enable = true;
-              settings = rec {
-                initial_session = {
-                  command = "${launchSway}/bin/launch_sway.sh";
-                  user = config.users.users.default.name;
-                };
-                default_session = initial_session;
-              };
-            };
 
             home-manager.sharedModules = let
               swayEnable = config.sway.enable;
