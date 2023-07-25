@@ -14,6 +14,11 @@
     kernel.sysctl = {
       "kernel.perf_event_paranoid" = 1;
     };
+    plymouth = {
+      enable = true;
+      themePackages = [pkgs.adi1090x-plymouth-themes];
+      theme = "darth_vader";
+    };
   };
 
   i18n.defaultLocale = "en_US.utf8";
