@@ -1,6 +1,13 @@
 {pkgs, lib, ...}: {
   gnome.enable = true;
   sway.enable = false;
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  gnome.enable = false;
+  sway.enable = true;
   hyprland.enable = false;
 
   powerManagement = {
