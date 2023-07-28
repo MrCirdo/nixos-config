@@ -16,6 +16,12 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -27,6 +33,7 @@
     nixos-hardware,
     nixos-generators,
     hyprland,
+    nix-doom-emacs,
   } @ inputs: let
     overlays = [(import ./overlays/spotify.nix) (import ./overlays/electron.nix)];
     modules = [
