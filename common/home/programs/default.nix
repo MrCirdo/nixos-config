@@ -12,7 +12,10 @@
           lfs.enable = true;
           userEmail = "odricrouxparis@gmail.com";
           userName = "Odric Roux-Paris";
-          signing = {key = "C608DE9D03A3BCDB75A51D12DD79BAE7510108AC";};
+          signing = {
+            key = "C608DE9D03A3BCDB75A51D12DD79BAE7510108AC";
+            signByDefault = true;
+          };
           difftastic = {
             enable = false;
             background = "dark";
