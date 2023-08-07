@@ -71,7 +71,7 @@
 
             window = {opacity = 0.85;};
             font = {
-              size = 9;
+              size = 11;
               normal = {
                 family = "Source Code Pro";
                 style = "Regular";
