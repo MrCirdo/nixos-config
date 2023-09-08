@@ -166,6 +166,7 @@
               xkb_options = "caps:escape";
               xkb_layout = "fr";
             };
+
             "2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard" = {
               repeat_delay = "200";
               repeat_rate = "75";
@@ -173,6 +174,7 @@
               xkb_layout = "us";
               xkb_variant = "intl";
             };
+
             "1133:16522:Logitech_Wireless_Device_PID:408a" = {
               repeat_delay = "200";
               repeat_rate = "75";
@@ -180,7 +182,16 @@
               xkb_layout = "us";
               xkb_variant = "intl";
             };
+
             "1133:16522:Logitech_Wireless_Keyboard_PID:408a" = {
+              repeat_delay = "200";
+              repeat_rate = "75";
+              xkb_options = "caps:escape";
+              xkb_layout = "us";
+              xkb_variant = "intl";
+            };
+
+            "1133:16522:Logitech_MX_Keys" = {
               repeat_delay = "200";
               repeat_rate = "75";
               xkb_options = "caps:escape";
@@ -202,10 +213,10 @@
             };
 
             "DP-4" = {
-              scale = "1.5";
+              scale = "1";
             };
             "DP-5" = {
-              scale = "1.5";
+              scale = "1";
             };
           };
 
