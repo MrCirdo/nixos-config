@@ -70,26 +70,33 @@
               }
             ];
 
+            env = {
+              TERM = "xterm-256color";
+            };
+
             window = {opacity = 0.85;};
             font = {
               size = 11;
+              offset = {
+                x = 0;
+              };
               normal = {
-                family = "Source Code Pro";
+                family = "Borg Sans Mono";
                 style = "Regular";
               };
 
               bold = {
-                family = "Source Code Pro";
+                family = "Borg Sans Mono";
                 style = "Bold";
               };
 
               italic = {
-                family = "Source Code Pro";
+                family = "Borg Sans Mono";
                 style = "Italic";
               };
 
               bold_italic = {
-                family = "Source Code Pro";
+                family = "Borg Sans Mono";
                 style = "Bold Italic";
               };
             };

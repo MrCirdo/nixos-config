@@ -10,12 +10,13 @@
   };
 
   fonts.fonts = with pkgs; [
+    nerdfonts
     ubuntu_font_family
     source-code-pro
     font-awesome
     fira-code
     fira-code-symbols
-    nerdfonts
+    borg-sans-mono
   ];
 
   imports = [./packages ./programs ./services];
