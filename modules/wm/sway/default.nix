@@ -14,15 +14,7 @@
     launchSway =
       pkgs.writeShellScriptBin "launch_sway.sh"
       ''
-        export XDG_SESSION_TYPE=wayland
-        export XDG_SESSION_DESKTOP=sway
-        export XDG_CURRENT_DESKTOP=sway
-        export MOZ_ENABLE_WAYLAND=1
-        export QT_QPA_PLATFORM=wayland
-        export SDL_VIDEODRIVER=wayland
-        export _JAVA_AWT_WM_NONREPARENTING=1
-
-        ${pkgs.sway}/bin/sway
+        exec ${pkgs.sway}/bin/sway
       '';
   in
     # The goal is if sway is enabled.
@@ -38,6 +30,7 @@
         }
         (
           mkIf config.sway.enable {
+            environment.sessionVariables.NIXOS_OZONE_WL = "1";
             services.dbus.enable = true;
             xdg.portal = {
               enable = true;
