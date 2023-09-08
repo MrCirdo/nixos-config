@@ -27,7 +27,7 @@
     automake
     bear
     ccls
-    clang-tools
+    clang-tools_15
     cmake
     ctags
     gcc
@@ -38,6 +38,7 @@
     rr
     vagrant
     valgrind
+    jetbrains.clion
 
     # Rust
     cargo
@@ -66,6 +67,7 @@
     bcc
     bitwarden
     chromium
+    direnv
     du-dust
     duf
     fd
@@ -73,6 +75,7 @@
     freetube
     gitlab-runner
     gnupg
+    go
     grim
     gtk-engine-murrine
     htop
