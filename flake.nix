@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-23.05";
 
     sops-nix.url = "github:Mic92/sops-nix";
@@ -34,10 +35,19 @@
     nixos-generators,
     hyprland,
     nix-doom-emacs,
+    emacs-overlay,
+    nixpkgs-unstable,
   } @ inputs: let
-    overlays = [(import ./overlays/spotify.nix) (import ./overlays/electron.nix)];
+    system = "x86_64-linux";
+
+    overlays = [(import ./overlays/electron.nix)];
+
+    nixpkgsUnstable = import nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
     modules = [
-      {nixpkgs.overlays = overlays;}
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
       ./common
@@ -45,16 +55,15 @@
       {nixpkgs.overlays = overlays;}
       ({...}: {
         _module.args.inputs = inputs;
-      })
-      ({...}: {
+        _module.args.pkgs-unstable = nixpkgsUnstable;
         home-manager.sharedModules = [
           ({...}: {
             _module.args.inputs = inputs;
+            _module.args.pkgs-unstable = nixpkgsUnstable;
           })
         ];
       })
     ];
-    system = "x86_64-linux";
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 

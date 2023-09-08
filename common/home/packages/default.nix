@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  pkgs-unstable,
   ...
 }: let
   pythonPackages = (pkgs.python310.withPackages (ps:
@@ -50,9 +51,9 @@
     rnix-lsp
   ];
 
-  shellPackages = with pkgs; [tree zip unzip btop tmux openssl neofetch zsh-powerlevel10k];
+  shellPackages = with pkgs; [tree zip unzip btop openssl neofetch zsh-powerlevel10k];
 
-  socialPackages = with pkgs; [
+  socialPackages = with pkgs-unstable; [
     discord
     signal-desktop
     whatsapp-for-linux
@@ -94,11 +95,15 @@
     spotify-tui
     tealdeer
     texlive.combined.scheme-full
-    thunderbird
     v4l-utils
     virt-manager
     wget
     wl-clipboard
+  ];
+
+  unstablePackage = with pkgs-unstable; [
+    vscode
+    thunderbird
   ];
 
   gnomePackages = with pkgs.gnome; [gnome-tweaks dconf-editor gnome-themes-extra];
@@ -124,6 +129,7 @@ in {
         ++ gnomeShellPackages
         ++ yubikey
         ++ otherPackages
+        ++ unstablePackage
         ++ [pythonPackages];
     }
   ];

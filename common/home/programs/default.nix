@@ -1,5 +1,6 @@
-{...}: {
+{inputs, ...}: {
   home-manager.sharedModules = [
+    inputs.nix-doom-emacs.hmModule
     ({
       inputs,
       pkgs,
@@ -38,7 +39,7 @@
         };
 
         vscode = {
-          enable = true;
+          enable = false;
           userSettings = {
             "keyboard.dispatch" = "keyCode";
             "editor.largeFileOptimizations" = true;
