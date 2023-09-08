@@ -1,6 +1,3 @@
-{pkgs, lib, ...}: {
-  gnome.enable = true;
-  sway.enable = false;
 {
   pkgs,
   lib,
