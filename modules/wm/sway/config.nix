@@ -18,6 +18,9 @@
           gtk = true;
         };
 
+        extraConfig = ''
+          for_window [app_id="code-url-handler"] opacity 0.8
+        '';
         config = rec {
           modifier = "Mod4";
           terminal = "alacritty";
@@ -209,7 +212,7 @@
           output = {
             "*" = {
               bg =
-                "${./wallpapers/derek-story.jpg}" + " fill";
+                "${./wallpapers/moon-tl.jpg}" + " fill";
             };
 
             "DP-4" = {
