@@ -12,7 +12,6 @@
     autogen
     automake
     bear
-    ccls
     clang-tools_15
     cmake
     ctags
@@ -22,9 +21,6 @@
     man-pages
     man-pages-posix
     rr
-    vagrant
-    valgrind
-    jetbrains.clion
 
     # Rust
     cargo
@@ -36,6 +32,7 @@
     # Nix
     nil
     rnix-lsp
+
     #python
     python3
   ];
@@ -45,25 +42,19 @@
   socialPackages = with pkgs-unstable; [
     discord
     signal-desktop
-    whatsapp-for-linux
   ];
 
   reverseEngineeringPackages = with pkgs; [ghidra];
 
   otherPackages = with pkgs; [
     bat
-    bcc
-    bitwarden
     chromium
     direnv
     du-dust
     duf
     fd
     firefox
-    freetube
-    gitlab-runner
     gnupg
-    go
     grim
     gtk-engine-murrine
     htop
@@ -71,22 +62,14 @@
     lazygit
     libseccomp
     nodejs-16_x
-    pandoc
     pavucontrol
     pinentry-curses
-    playerctl
     pmutils
-    pre-commit
     pulseaudio
-    qemu_kvm
     rclone
     ripgrep
     slurp
     spotify
-    spotify-tui
-    tealdeer
-    texlive.combined.scheme-full
-    v4l-utils
     virt-manager
     wget
     wl-clipboard
@@ -101,11 +84,11 @@ in {
     {
       home.packages =
         devPackages
+        ++ otherPackages
+        ++ reverseEngineeringPackages
         ++ shellPackages
         ++ socialPackages
-        ++ reverseEngineeringPackages
-        ++ otherPackages
-        ++ unstablePackage
+        ++ unstablePackage;
     }
   ];
 }
