@@ -109,8 +109,6 @@
     thunderbird
   ];
 
-  gnomePackages = with pkgs.gnome; [gnome-tweaks dconf-editor gnome-themes-extra];
-  gnomeShellPackages = with pkgs.gnomeExtensions; [blur-my-shell openweather vitals aylurs-widgets just-perfection dash-to-dock gsconnect hibernate-status-button];
 
   yubikey = with pkgs; [
     yubikey-manager
@@ -128,8 +126,6 @@ in {
         ++ shellPackages
         ++ socialPackages
         ++ reverseEngineeringPackages
-        ++ gnomePackages
-        ++ gnomeShellPackages
         ++ yubikey
         ++ otherPackages
         ++ unstablePackage
