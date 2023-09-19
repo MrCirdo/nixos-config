@@ -5,20 +5,6 @@
   pkgs-unstable,
   ...
 }: let
-  pythonPackages = (pkgs.python310.withPackages (ps:
-    with ps; [
-      angr
-      docker
-      jinja2
-      matplotlib
-      numpy
-      pwntools
-      pytest
-      python-lsp-server
-      yapf
-      z3
-    ]))
-  .override (args: {ignoreCollisions = true;});
 
   devPackages = with pkgs; [
     # C/C++
@@ -50,6 +36,8 @@
     # Nix
     nil
     rnix-lsp
+    #python
+    python3
   ];
 
   shellPackages = with pkgs; [tree zip unzip btop openssl neofetch zsh-powerlevel10k];
@@ -129,7 +117,6 @@ in {
         ++ yubikey
         ++ otherPackages
         ++ unstablePackage
-        ++ [pythonPackages];
     }
   ];
 }
