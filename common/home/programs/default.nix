@@ -215,6 +215,11 @@
               tags = ["Linux" "Kernel"];
               url = "https://lwn.net/headlines/newrss";
             }
+            {
+              title = "ISO Cpp";
+              tags = ["Tech" "C++"];
+              url = "https://isocpp.org/blog/rss";
+            }
           ];
         };
 
