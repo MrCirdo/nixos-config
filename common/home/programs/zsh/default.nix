@@ -15,7 +15,6 @@ in {
       fi
 
       set -o vi
-      neofetch
 
       [[ ! -f ${p10k} ]] || source ${p10k}
 
