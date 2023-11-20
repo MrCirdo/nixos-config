@@ -5,7 +5,7 @@
 
   screenshots
 
-  effect-blur=10x10
+  effect-blur=20x20
 
   indicator
   indicator-radius=100
