@@ -40,7 +40,7 @@
             "${defaultConfig.modifier}+Return" = "exec ${defaultConfig.terminal}";
             "${defaultConfig.modifier}+Shift+q" = "kill";
             "${defaultConfig.modifier}+d" = "exec ${pkgs.wofi}/bin/wofi --show=drun";
-            "${defaultConfig.modifier}+Shift+d" = "exec ${pkgs.wofi}/bin/wofi --show=run";
+            "${defaultConfig.modifier}+Shift+d" = "exec ${pkgs.nix}/bin/nix run nixpkgs#$(${pkgs.wofi}/bin/wofi --dmenu)";
 
             "${defaultConfig.modifier}+${defaultConfig.left}" = "focus left";
             "${defaultConfig.modifier}+${defaultConfig.down}" = "focus down";
