@@ -14,7 +14,7 @@
   };
 
   services.fprintd = {
-    enable = false;
+    enable = true;
     tod = {
       enable = true;
       driver = pkgs.libfprint-2-tod1-goodix;
@@ -22,8 +22,8 @@
   };
 
   security.pam.services = {
-    login.fprintAuth = false;
-    sudo.fprintAuth = false;
+    login.fprintAuth = true;
+    sudo.fprintAuth = true;
   };
 
   imports = [./system];
