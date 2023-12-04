@@ -167,7 +167,8 @@
               repeat_delay = "200";
               repeat_rate = "75";
               xkb_options = "caps:escape";
-              xkb_layout = "fr";
+              xkb_layout = "us";
+              xkb_variant = "intl";
             };
 
             "2385:5842:Kingston_HyperX_Alloy_FPS_Pro_Mechanical_Gaming_Keyboard" = {
@@ -203,6 +204,11 @@
             };
 
             "1267:12572:DELL097D:00_04F3:311C_Touchpad" = {
+              scroll_method = "two_finger";
+              tap_button_map = "lrm";
+              tap = "enabled";
+            };
+            "1739:52934:SYNA801A:00_06CB:CEC6_Touchpad" = {
               scroll_method = "two_finger";
               tap_button_map = "lrm";
               tap = "enabled";

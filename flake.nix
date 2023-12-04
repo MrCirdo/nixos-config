@@ -83,6 +83,10 @@
         inherit system;
         modules = modules ++ [./machine/xps9500 nixos-hardware.nixosModules.dell-xps-15-9500];
       };
+      vroumvroooumm = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = modules ++ [./machine/p16sgen2];
+      };
     };
   };
 }
