@@ -55,15 +55,15 @@ in {
                 };
 
                 cpu = {
-                  format = "{usage}% ";
+                  format = "{usage}% ";
                   on-click-right = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.btop}/bin/btop";
                 };
 
-                clock = {format-alt = "{:%a, %d. %b  %H:%M} ";};
+                clock = {format-alt = "{:%a, %d. %b  %H:%M}";};
 
                 disk = {
                   interval = 30;
-                  format = "{free} ";
+                  format = "{free} ";
                   tooltip-format = "{used} out of {total} used ({percentage_used}%)";
                   path = "/";
                 };
@@ -71,7 +71,7 @@ in {
                 temperature = {
                   critical-threshold = 80;
                   tooltip = false;
-                  format = "{temperatureC} 糖";
+                  format = "{temperatureC} 󰔄";
                 };
 
                 memory = {
