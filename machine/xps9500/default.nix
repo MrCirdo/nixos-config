@@ -18,7 +18,6 @@
     kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
   };
 
-
   services.fprintd = {
     enable = true;
     tod = {

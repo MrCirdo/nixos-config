@@ -96,7 +96,6 @@
   system.stateVersion = "23.05"; # Did you read the comment?
   networking.nameservers = ["1.1.1.1" "1.0.0.1"];
 
-
   powerManagement.enable = true;
 
   imports = [./services ./programs];

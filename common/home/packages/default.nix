@@ -5,7 +5,6 @@
   pkgs-unstable,
   ...
 }: let
-
   devPackages = with pkgs; [
     # C/C++
     autoconf
@@ -61,7 +60,6 @@
     jellyfin-media-player
     lazygit
     libseccomp
-    nodejs-16_x
     pavucontrol
     pinentry-curses
     pmutils

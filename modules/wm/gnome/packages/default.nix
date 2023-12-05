@@ -1,4 +1,8 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   home-manager.sharedModules = lib.mkIf config.gnome.enable [
     ({pkgs, ...}: {
       home.packages = let
