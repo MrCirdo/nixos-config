@@ -3,6 +3,8 @@
     tailwindcss = config.theme.tailwindcss;
   in {
     theme = {
+      wallpaper = ./wallpaper/moon-tl.jpg;
+
       backgroundColor = tailwindcss.gray."900";
       backgroundColor2 = tailwindcss.gray."800";
       backgroundColor3 = tailwindcss.gray."700";

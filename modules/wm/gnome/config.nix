@@ -65,8 +65,8 @@
             "org/gnome/desktop/background" = {
               color-shading-type = "solid";
               picture-options = "zoom";
-              picture-uri = "${./wallpapers/khachik-simonian.jpg}";
-              picture-uri-dark = "${./wallpapers/khachik-simonian.jpg}";
+              picture-uri = "${theme.wallpapers}";
+              picture-uri-dark = "${theme.wallpapers}";
               primary-color = "#000000000000";
               secondary-color = "#000000000000";
             };

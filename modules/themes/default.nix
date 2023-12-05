@@ -19,6 +19,11 @@ in {
       '';
     };
 
+    wallpaper = mkOption {
+      type = types.path;
+      description = lib.mdDoc "The path of background image.";
+    };
+
     backgroundColor = mkOption {
       example = "#00000";
       type = types.str;
@@ -97,6 +102,11 @@ in {
                 '';
               };
 
+              wallpaper = mkOption {
+                type = types.path;
+                description = lib.mdDoc "The path of background image.";
+              };
+
               backgroundColor = mkOption {
                 example = "#00000";
                 type = types.str;
@@ -162,6 +172,7 @@ in {
       }
       {
         home-manager.sharedModules = let
+          wallpaper = config.theme.wallpaper;
           backgroundColor = config.theme.backgroundColor;
           backgroundColor2 = config.theme.backgroundColor2;
           backgroundColor3 = config.theme.backgroundColor3;
@@ -176,6 +187,7 @@ in {
           {
             theme = {
               inherit
+                wallpaper
                 backgroundColor
                 backgroundColor2
                 backgroundColor3

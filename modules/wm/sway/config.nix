@@ -218,7 +218,7 @@
           output = {
             "*" = {
               bg =
-                "${./wallpapers/moon-tl.jpg}" + " fill";
+                "${theme.wallpaper}" + " fill";
             };
 
             "DP-4" = {
