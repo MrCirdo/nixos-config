@@ -9,7 +9,7 @@
     };
   };
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     nerdfonts
     ubuntu_font_family
     source-code-pro
