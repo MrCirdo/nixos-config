@@ -220,6 +220,16 @@
               tags = ["Tech" "C++"];
               url = "https://isocpp.org/blog/rss";
             }
+            {
+              title = "Linux.com";
+              tags = ["Linux"];
+              url = "https://www.linux.com/rss";
+            }
+            {
+              title = "Oracle Linux";
+              tags = ["Linux"];
+              url = "https://blogs.oracle.com/linux/rss";
+            }
           ];
         };
 
