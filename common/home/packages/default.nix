@@ -11,7 +11,7 @@
     autogen
     automake
     bear
-    clang-tools_15
+    clang-tools_16
     cmake
     ctags
     gcc
