@@ -4,6 +4,7 @@
     ({
       inputs,
       pkgs,
+      config,
       ...
     }: {
       programs = {
@@ -75,6 +76,13 @@
             };
 
             window = {opacity = 0.85;};
+            colors = {
+              primary = {
+                background = config.theme.backgroundColor;
+                foreground = config.theme.textColor;
+              };
+            };
+
             font = {
               size = 11;
               offset = {

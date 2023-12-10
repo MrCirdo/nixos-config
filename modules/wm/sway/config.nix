@@ -130,14 +130,14 @@
             focusedInactive = {
               border = "${theme.backgroundColor}";
               background = "${theme.backgroundColor}";
-              text = "${theme.textColor}";
+              text = "${theme.textColor2}";
               indicator = "${theme.backgroundColor}";
               childBorder = "${theme.backgroundColor}";
             };
             unfocused = {
               border = "${theme.backgroundColor}";
               background = "${theme.backgroundColor}";
-              text = "${theme.textColor}";
+              text = "${theme.textColor2}";
               indicator = "${theme.backgroundColor}";
               childBorder = "${theme.backgroundColor}";
             };
@@ -218,7 +218,7 @@
           output = {
             "*" = {
               bg =
-                "${./wallpapers/moon-tl.jpg}" + " fill";
+                "${./wallpapers/jasper-guy.jpg}" + " fill";
             };
 
             "DP-4" = {

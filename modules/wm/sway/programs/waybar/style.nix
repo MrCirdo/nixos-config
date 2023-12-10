@@ -9,7 +9,7 @@
 
   window#waybar {
   	color: white;
-  	background-color: rgba(0, 0, 0, 0.3);
+  	background-color: rgba(0, 0, 0, 0.0);
   }
 
   #custom-rss,
