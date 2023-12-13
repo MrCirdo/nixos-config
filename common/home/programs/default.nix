@@ -31,6 +31,14 @@
           };
         };
 
+        bash = {
+          enable = true;
+          enableCompletion = true;
+          initExtra = ''
+            set -o vi
+          '';
+        };
+
         ssh = {
           enable = true;
           serverAliveInterval = 10;
