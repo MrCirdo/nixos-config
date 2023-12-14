@@ -6,7 +6,7 @@
   pkgs,
   ...
 }: {
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-094189c7-e343-4b84-b872-9d16eff25799".device = "/dev/disk/by-uuid/094189c7-e343-4b84-b872-9d16eff25799";

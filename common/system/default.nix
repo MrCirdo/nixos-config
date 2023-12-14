@@ -19,6 +19,27 @@
       themePackages = [pkgs.adi1090x-plymouth-themes];
       theme = "darth_vader";
     };
+
+    loader = {
+      grub2-theme = {
+        enable = true;
+        icon = "color";
+      };
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        extraEntries = ''
+          menuentry "Windows" --class windows {
+            insmod part_gpt
+            insmod fat
+            insmod search_fs_uuid
+            insmod chain
+            chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+          }
+        '';
+      };
+    };
   };
 
   i18n.defaultLocale = "en_US.utf8";

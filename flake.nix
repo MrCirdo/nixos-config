@@ -13,6 +13,8 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
+    grub2-themes.url = "github:/vinceliuice/grub2-themes/";
+
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,6 +39,7 @@
     nix-doom-emacs,
     emacs-overlay,
     nixpkgs-unstable,
+    grub2-themes,
   } @ inputs: let
     system = "x86_64-linux";
 
@@ -50,6 +53,7 @@
     modules = [
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
+      grub2-themes.nixosModules.default
       ./common
       ./modules
       {nixpkgs.overlays = overlays;}
