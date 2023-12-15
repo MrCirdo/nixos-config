@@ -8,7 +8,7 @@
     ({pkgs, ...}: {
       services = {
         spotifyd = {
-          enable = true;
+          enable = false;
           settings = {
             global = {
               username = "Cirdo";

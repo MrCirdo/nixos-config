@@ -42,6 +42,16 @@
     };
   };
 
+  networking.firewall.allowedTCPPorts = [8096 1900 8920 5001 2969];
+  networking.firewall.allowedUDPPorts = [1900 7359];
+
+  #ports:
+  #    - 8096:8096
+  #   - 1900:1900
+  # - 8920:8920 #optional
+  #  - 7359:7359/udp #optional
+  # - 1900:1900/udp #optional
+
   i18n.defaultLocale = "en_US.utf8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.utf8";
@@ -63,6 +73,10 @@
     pulseaudio.enable = false;
     opengl.enable = true;
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "nodejs-16.20.2"
+  ];
 
   security = {
     rtkit.enable = true;

@@ -1,10 +1,10 @@
 {...}: {
   programs = {
     fuse.userAllowOther = true;
-    adb.enable = true;
-    bcc.enable = true;
+    adb.enable = false;
+    bcc.enable = false;
     gnupg.dirmngr.enable = true;
-    steam.enable = true;
+    steam.enable = false;
     zsh.enable = true;
   };
 }

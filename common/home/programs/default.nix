@@ -119,7 +119,7 @@
           };
         };
         gitui = {
-          enable = true;
+          enable = false;
           keyConfig = ''
             (
               focus_right: Some(( code: Char('l'), modifiers: ( bits: 0,),)),
@@ -160,7 +160,7 @@
         };
 
         helix = {
-          enable = true;
+          enable = false;
           package = inputs.helix.packages.${pkgs.system}.default;
           settings = {
             theme = "onedark";
@@ -173,7 +173,7 @@
         };
 
         newsboat = {
-          enable = true;
+          enable = false;
           extraConfig = ''
             unbind-key UP
             bind-key k up
@@ -258,7 +258,7 @@
         };
 
         tmux = {
-          enable = true;
+          enable = false;
           mouse = true;
           keyMode = "vi";
         };
