@@ -30,7 +30,7 @@
     {
       device = "/.swap";
       priority = 1000;
-      size = 26860;
+      size = 64 * 1024;
     }
   ];
 
