@@ -11,6 +11,27 @@
     ####resumeDevice = "/dev/disk/by-uuid/d0bcbd38-05f5-4daf-91ab-7d43034e574f";
     #kernelParams = ["resume_offset=13832192"];
     kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
+
+    loader = {
+      grub2-theme = {
+        enable = true;
+        icon = "color";
+      };
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        extraEntries = ''
+          menuentry "Windows" --class windows {
+            insmod part_gpt
+            insmod fat
+            insmod search_fs_uuid
+            insmod chain
+            chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+          }
+        '';
+      };
+    };
   };
 
   services.fprintd = {
