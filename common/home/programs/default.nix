@@ -83,7 +83,7 @@
               TERM = "xterm-256color";
             };
 
-            window = {opacity = 0.5;};
+            window = {opacity = 0.75;};
             colors = {
               primary = {
                 background = config.theme.backgroundColor;
