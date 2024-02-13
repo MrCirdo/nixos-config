@@ -11,8 +11,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     grub2-themes.url = "github:/vinceliuice/grub2-themes/";
 
     nixos-generators = {
@@ -35,7 +33,6 @@
     helix,
     nixos-hardware,
     nixos-generators,
-    hyprland,
     nix-doom-emacs,
     emacs-overlay,
     nixpkgs-unstable,

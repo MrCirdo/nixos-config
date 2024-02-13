@@ -5,7 +5,6 @@
 }: {
   gnome.enable = false;
   sway.enable = true;
-  hyprland.enable = false;
 
   powerManagement = {
     powerUpCommands = "${pkgs.kmod}/bin/modprobe hci_uart && ${pkgs.kmod}/bin/modprobe ath11k_pci";

@@ -5,7 +5,6 @@
 }: {
   gnome.enable = false;
   sway.enable = true;
-  hyprland.enable = false;
 
   boot = {
     ####resumeDevice = "/dev/disk/by-uuid/d0bcbd38-05f5-4daf-91ab-7d43034e574f";
