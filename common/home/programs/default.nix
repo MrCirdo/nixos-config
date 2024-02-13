@@ -261,6 +261,7 @@
                 url = "https://github.com/MrCirdo.gpg";
                 hash = "sha256-VcMM8wf+1zPExshINV/RLRUjN/LhulncP7OfJmtgKzM=";
               };
+              trust = "ultimate";
             }
           ];
         };
