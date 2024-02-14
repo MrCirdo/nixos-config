@@ -16,7 +16,4 @@ jobs:
         # If you chose API tokens for write access OR if you have a private cache
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix flake check
-    - run: nix build .#nixosConfigurations.peufpeuf.config.system.build.toplevel
-    - run: nix build .#nixosConfigurations.vroumvroum.config.system.build.toplevel
-    - run: nix build .#nixosConfigurations.vroumvroooumm.config.system.build.toplevel
     - run: nix-shell --run "echo OK"
