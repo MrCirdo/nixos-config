@@ -68,13 +68,6 @@
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
-    packages.x86_64-linux = {
-      kvm = nixos-generators.nixosGenerate {
-        inherit modules;
-        inherit system;
-        format = "vm";
-      };
-    };
     nixosConfigurations = {
       peufpeuf = nixpkgs.lib.nixosSystem {
         inherit system;
