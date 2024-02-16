@@ -12,12 +12,15 @@
     kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
 
     loader = {
+      efi.efiSysMountPoint = "/boot/efi";
       grub2-theme = {
         enable = true;
         icon = "color";
       };
+
       grub = {
         enable = true;
+        enableCryptodisk = true;
         device = "nodev";
         efiSupport = true;
         extraEntries = ''
