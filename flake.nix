@@ -18,6 +18,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lanzaboote.url = "github:nix-community/lanzaboote";
+
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
@@ -37,6 +39,7 @@
     emacs-overlay,
     nixpkgs-unstable,
     grub2-themes,
+    lanzaboote,
   } @ inputs: let
     system = "x86_64-linux";
 
@@ -79,7 +82,7 @@
       };
       vroumvroooumm = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = modules ++ [./machine/p16sgen2];
+        modules = modules ++ [./machine/p16sgen2 lanzaboote.nixosModules.lanzaboote];
       };
     };
   };

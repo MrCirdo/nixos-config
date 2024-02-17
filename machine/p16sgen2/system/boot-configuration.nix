@@ -6,7 +6,16 @@
   pkgs,
   ...
 }: {
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/07425910-1a81-4a04-8366-2ce9560fb012";
+  boot = {
+    loader.efi.canTouchEfiVariables = true;
+    initrd.luks.devices."root".device = "/dev/disk/by-uuid/07425910-1a81-4a04-8366-2ce9560fb012";
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
+  };
+
+  environment.systemPackages = [
+    pkgs.sbctl
+  ];
 }

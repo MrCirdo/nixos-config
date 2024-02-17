@@ -14,12 +14,12 @@
     loader = {
       efi.efiSysMountPoint = "/boot/efi";
       grub2-theme = {
-        enable = true;
+        enable = false;
         icon = "color";
       };
 
       grub = {
-        enable = true;
+        enable = false;
         enableCryptodisk = true;
         device = "nodev";
         efiSupport = true;
