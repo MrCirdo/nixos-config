@@ -23,5 +23,7 @@
     wallpaper = ../../wallpapers/jrmnt-wallheaven.png;
   };
 
+  services.openssh.enable = true;
+
   imports = [./system];
 }

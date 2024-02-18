@@ -8,14 +8,14 @@
 }: {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
+  boot.loader.efi.efiSysMountPoint = "/boot";
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/00e8cfcc-ed57-4566-965d-fab56ce5486f";
+    fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."luks-6caf388a-afa8-43a0-a29b-7b41e5128538".device = "/dev/disk/by-uuid/6caf388a-afa8-43a0-a29b-7b41e5128538";
-  boot.initrd.luks.devices."luks-6caf388a-afa8-43a0-a29b-7b41e5128538".keyFile = "/crypto_keyfile.bin";
-
-  boot.resumeDevice = "/dev/disk/by-uuid/4f2609f9-0e39-47c0-a3fd-72affaa250e8";
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/540E-C77C";
+    fsType = "vfat";
+  };
 }
