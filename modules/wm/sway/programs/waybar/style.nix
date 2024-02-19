@@ -3,6 +3,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Ubuntu Nerd Font", Material Design Icons, JetBrainsMono Nerd Font, Iosevka Nerd Font;
     font-size: 15px;
+    font-weight: 500;
   	min-height: 0;
   	min-width: 0;
   }
@@ -91,7 +92,7 @@
   }
 
   #network {
-    color: ${theme.tailwindcss.emerald."500"};
+    color: ${theme.tailwindcss.yellow."500"};
   }
 
   #custom-launcher {
