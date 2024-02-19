@@ -28,7 +28,7 @@ in {
                   "temperature"
                   "pulseaudio"
                   "battery"
-                  "custom/powermenu"
+                  "group/powermenu"
                 ];
 
                 "sway/workspaces" = {
@@ -103,44 +103,36 @@ in {
                   on-click = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.networkmanager}/bin/nmtui";
                 };
 
-                "custom/powermenu" = let
-                  launchPowerMenu = pkgs.writeShellScriptBin "powerMenuWofi.sh" ''
-                    menu=$(cat  <<EOF
-                    1. Poweroff
-                    2. Reboot
-                    3. Hibernate
-                    4. Hybrid Sleep
-                    5. Suspend
-                    6. Lock
-                    EOF
-                    )
+                "custom/lock" = {
+                  format = "󰍁";
+                  tooltip = false;
+                  on-click = "${pkgs.swaylock-effects}/bin/swaylock -C $HOME/.config/swaylock-effects/config";
+                };
 
-                    choice=$(echo "$menu" | wofi --dmenu --location 3 --prompt "What do you want ?" --allow-markup --parse-search --width 200 --height 300)
+                "custom/reboot" = {
+                  format = "󰜉";
+                  tooltip = false;
+                  on-click = "${pkgs.systemd}/bin/systemctl reboot";
+                };
 
-                    case $choice in
-                      "1. Poweroff")
-                        systemctl poweroff
-                        ;;
-                      "2. Reboot")
-                        systemctl reboot
-                        ;;
-                      "3. Hibernate")
-                        systemctl hibernate
-                        ;;
-                      "4. Hybrid Sleep")
-                        systemctl hybrid-sleep
-                        ;;
-                      "5. Suspend")
-                        systemctl suspend
-                        ;;
-                      "6. Lock")
-                        ${pkgs.swaylock-effects}/bin/swaylock -f -C $HOME/.config/swaylock-effects/config
-                        ;;
-                    esac
-                  '';
-                in {
+                "custom/poweroff" = {
                   format = "⏻";
-                  on-click = "${launchPowerMenu}/bin/powerMenuWofi.sh";
+                  tooltip = false;
+                  on-click = "${pkgs.systemd}/bin/systemctl poweroff";
+                };
+
+                "group/powermenu" = {
+                  orientation = "inherit";
+                  drawer = {
+                    transition-duration = 200;
+                    children-class = "not-power";
+                    transition-left-to-right = false;
+                  };
+                  modules = [
+                    "custom/poweroff"
+                    "custom/lock"
+                    "custom/reboot"
+                  ];
                 };
 
                 "custom/rss" = let

@@ -32,15 +32,49 @@
   	background-color: ${theme.backgroundColor};
   }
 
-  #custom-powermenu {
+  #custom-reboot {
+  	margin-top: 5px;
+  	margin-bottom: 5px;
+  	margin-right: 0px;
+  	margin-left: 0px;
+  	padding-left: 8px;
+  	padding-right: 13px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+    color: ${theme.tailwindcss.lime."500"};
+
+  }
+
+  #custom-lock {
+  	margin-top: 5px;
+  	margin-bottom: 5px;
+  	margin-right: 0px;
+  	margin-left: 0px;
+  	padding-left: 8px;
+  	padding-right: 8px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+  	border-radius: 5px 0px 0px 5px;
+    color: ${theme.tailwindcss.sky."500"};
+  }
+
+  #custom-poweroff {
+  	border-radius: 5px 0px 0px 5px;
+    background-color: ${theme.backgroundColor};
     color: ${theme.tailwindcss.red."500"};
-  	background-color: ${theme.backgroundColor};
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    padding-right: 8px;
-    padding-left: 8px;
-    border-radius: 5px
+  	margin-top: 5px;
+  	margin-bottom: 5px;
+  	margin-right: 0px;
+  	margin-left: -5px;
+  	padding-left: 8px;
+  	padding-right: 8px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+  }
+
+  #custom-reboot,
+  #custom-lock {
+    background-color: ${theme.backgroundColor2};
   }
 
   #custom-rss {
