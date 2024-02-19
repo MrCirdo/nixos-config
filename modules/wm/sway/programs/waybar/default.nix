@@ -147,29 +147,6 @@ in {
                   on-click = "${launchNewsBoat}/bin/launch_newsboat.sh";
                   output = ["eDP-1"];
                 };
-
-                "custom/spotify" = {
-                  format = " {}";
-                  max-length = 100;
-                  exec = "${pkgs.spotify-tui}/bin/spt playback -d \"NixSauce\"  -f \"%t - %a\"";
-                  on-click = "${pkgs.spotify-tui}/bin/spt playback -d \"NixSauce\" -t";
-                  on-click-right = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.spotify-tui}/bin/spt";
-                  interval = 10;
-                };
-
-                "custom/spotify-next" = {
-                  format = "";
-                  interval = 10;
-                  on-click = "${pkgs.spotify-tui}/bin/spt --next";
-                  tooltip = false;
-                };
-
-                "custom/spotify-prev" = {
-                  format = "";
-                  interval = 10;
-                  on-click = "${pkgs.spotify-tui}/bin/spt --previous";
-                  tooltip = false;
-                };
               }
             ];
           };
