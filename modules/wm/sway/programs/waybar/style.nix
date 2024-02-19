@@ -129,11 +129,7 @@
     color: ${theme.tailwindcss.yellow."500"};
   }
 
-  #custom-launcher {
-    color: ${theme.tailwindcss.red."500"};
-  }
-
-  #custom-launcher {
+  #custom-nixos {
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 4px;

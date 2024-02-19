@@ -17,7 +17,7 @@ in {
             settings = [
               {
                 layer = "top";
-                modules-left = ["custom/launcher" "sway/workspaces"];
+                modules-left = ["custom/nixos" "sway/workspaces"];
                 modules-center = ["clock"];
                 modules-right = [
                   "custom/rss"
@@ -34,7 +34,7 @@ in {
                 "sway/workspaces" = {
                 };
 
-                "custom/launcher" = {
+                "custom/nixos" = {
                   "format" = " ";
                   "tooltip" = false;
                 };
