@@ -38,28 +38,11 @@
                 # command = "${pkgs.swaylock-effects}/bin/swaylock -f -C $HOME/.config/swaylock-effects/config; ${pkgs.sway}/bin/swaymsg output '*' dpms off";
                 # resumeCommand = "${pkgs.sway}/bin/swaymsg output '*' dpms on";
               }
-              (let
-                suspendOrTurnOffScreen = pkgs.writeShellScriptBin "suspendOrTurnOffScreen.sh" ''
-                  status_charging=$(cat /sys/class/power_supply/*/status)
-
-                  if [ $status_charging = "Discharging" ];
-                  then
-                    echo "Discarging"
-                    ${pkgs.systemd}/bin/systemctl suspend
-                  else
-                    echo "Charging"
-                    # I comment this for later.
-                    # wlroots bug, I disable this feature.
-                    # I can't re-enable my screens after :)
-                    # lol
-                    # ${pkgs.sway}/bin/swaymsg output '*' dpms off
-                  fi
-                '';
-              in {
+              {
                 timeout = 360;
-                command = "${suspendOrTurnOffScreen}/bin/suspendOrTurnOffScreen.sh";
-                # resumeCommand = "${pkgs.sway}/bin/swaymsg output '*' dpms on";
-              })
+                command = "${pkgs.sway}/bin/swaymsg output '*' dpms off";
+                resumeCommand = "${pkgs.sway}/bin/swaymsg output '*' dpms on";
+              }
             ];
           };
         };
