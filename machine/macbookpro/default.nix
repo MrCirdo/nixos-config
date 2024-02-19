@@ -25,5 +25,12 @@
 
   services.openssh.enable = true;
 
+  fileSystems."/home/odric/odricflix-hdd" = {
+    device = "/dev/disk/by-uuid/3d7b351b-8407-4523-859e-5645caac3911";
+    fsType = "ext4";
+  };
+
+  networking.firewall.allowedTCPPorts = [8096];
+
   imports = [./system];
 }
