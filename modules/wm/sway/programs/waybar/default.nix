@@ -23,8 +23,8 @@ in {
                   "custom/rss"
                   "network"
                   "cpu"
-                  "disk"
                   "memory"
+                  "disk"
                   "temperature"
                   "pulseaudio"
                   "battery"
@@ -75,7 +75,7 @@ in {
                 };
 
                 memory = {
-                  format = "{used:0.1f}GiB ";
+                  format = "{used:0.1f}GiB ";
                   tooltip-format = "{used:0.1f}GiB / {total:0.1f}GiB used";
                 };
 
