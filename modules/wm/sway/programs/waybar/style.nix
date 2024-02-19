@@ -156,7 +156,13 @@
   #workspaces button {
     color: ${theme.focusColor};
     padding-left: 4px;
-    padding-right: 4px
+    padding-right: 4px;
+    border:none;
+
+    box-shadow: none; /* Remove predefined box-shadow */
+    text-shadow: none; /* Remove predefined text-shadow */
+    background: none; /* Remove predefined background color (white) */
+    transition: none; /* Disable predefined animations */
   }
 
   #workspaces button.visible {
@@ -175,9 +181,8 @@
   }
 
   #workspaces button:hover {
-    padding: 0 3px;
+    background-color: ${theme.backgroundColor2};
     color: ${theme.focusColor};
-    background: ${theme.backgroundColor};
   }
 
   #clock {
