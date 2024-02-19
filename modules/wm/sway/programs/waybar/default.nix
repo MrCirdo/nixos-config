@@ -41,8 +41,8 @@ in {
 
                 battery = {
                   format = "{capacity}% {icon}";
-                  format-icons = ["" "" "" "" ""];
-                  "format-full" = "{capacity}% ";
+                  format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁"];
+                  format-full = "󰂄";
                   states = {
                     warning = 25;
                     critical = 10;
