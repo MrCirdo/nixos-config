@@ -32,6 +32,31 @@
   	background-color: ${theme.backgroundColor};
   }
 
+  #custom-hibernation {
+  	border-radius: 5px 0px 0px 5px;
+  	margin-top: 5px;
+  	margin-bottom: 5px;
+  	margin-right: 0px;
+  	margin-left: 0px;
+  	padding-left: 8px;
+  	padding-right: 13px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+    color: ${theme.tailwindcss.purple."500"};
+  }
+
+  #custom-sleep {
+  	margin-top: 5px;
+  	margin-bottom: 5px;
+  	margin-right: 0px;
+  	margin-left: 0px;
+  	padding-left: 8px;
+  	padding-right: 13px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+    color: ${theme.tailwindcss.yellow."500"};
+  }
+
   #custom-reboot {
   	margin-top: 5px;
   	margin-bottom: 5px;
@@ -54,7 +79,6 @@
   	padding-right: 8px;
   	padding-top: 5px;
   	padding-bottom: 5px;
-  	border-radius: 5px 0px 0px 5px;
     color: ${theme.tailwindcss.sky."500"};
   }
 
@@ -73,6 +97,8 @@
   }
 
   #custom-reboot,
+  #custom-sleep,
+  #custom-hibernation,
   #custom-lock {
     background-color: ${theme.backgroundColor2};
   }

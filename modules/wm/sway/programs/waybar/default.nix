@@ -105,20 +105,37 @@ in {
 
                 "custom/lock" = {
                   format = "󰍁";
-                  tooltip = false;
+                  tooltip = true;
+                  tooltip-format = "󰍁 Lock...";
                   on-click = "${pkgs.swaylock-effects}/bin/swaylock -C $HOME/.config/swaylock-effects/config";
                 };
 
                 "custom/reboot" = {
                   format = "󰜉";
-                  tooltip = false;
+                  tooltip = true;
+                  tooltip-format = "󰜉 Reboot...";
                   on-click = "${pkgs.systemd}/bin/systemctl reboot";
                 };
 
                 "custom/poweroff" = {
                   format = "⏻";
-                  tooltip = false;
+                  tooltip = true;
+                  tooltip-format = "⏻ Shutdown...";
                   on-click = "${pkgs.systemd}/bin/systemctl poweroff";
+                };
+
+                "custom/sleep" = {
+                  format = "";
+                  tooltip = true;
+                  tooltip-format = " Suspend...";
+                  on-click = "${pkgs.systemd}/bin/systemctl suspend";
+                };
+
+                "custom/hibernation" = {
+                  format = "󰒲";
+                  tooltip = true;
+                  tooltip-format = "󰒲 Hibernate...";
+                  on-click = "${pkgs.systemd}/bin/systemctl hibernate";
                 };
 
                 "group/powermenu" = {
@@ -130,6 +147,8 @@ in {
                   };
                   modules = [
                     "custom/poweroff"
+                    "custom/hibernation"
+                    "custom/sleep"
                     "custom/lock"
                     "custom/reboot"
                   ];
