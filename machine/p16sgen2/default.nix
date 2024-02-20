@@ -12,7 +12,7 @@
     kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
 
     loader = {
-      efi.efiSysMountPoint = "/boot/efi";
+      efi.efiSysMountPoint = "/boot";
       grub2-theme = {
         enable = false;
         icon = "color";
