@@ -9,12 +9,9 @@
       wireplumber.enable = true;
     };
 
-    tailscale.enable = true;
-
-    udev.packages = [pkgs.yubikey-personalization pkgs.logitech-udev-rules];
-    pcscd.enable = true;
-    gitlab-runner.enable = false;
-
+    cpupower-gui.enable = true;
     fwupd.enable = true;
+    pcscd.enable = true;
+    udev.packages = [pkgs.yubikey-personalization pkgs.logitech-udev-rules];
   };
 }
