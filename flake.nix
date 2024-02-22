@@ -44,11 +44,14 @@
     system = "x86_64-linux";
 
     overlays = [(import ./overlays/electron.nix)];
+    packages = ./pkgs;
 
     nixpkgsUnstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };
+
+    pkgs = import nixpkgs {};
 
     modules = [
       sops-nix.nixosModules.sops
@@ -70,6 +73,7 @@
     ];
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+    packages.x86_64-linux.kboot = pkgs.callPackage ./pkgs/kboot.nix {}; 
 
     nixosConfigurations = {
       peufpeuf = nixpkgs.lib.nixosSystem {
