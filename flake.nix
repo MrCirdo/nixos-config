@@ -82,7 +82,15 @@
       };
       vroumvroooumm = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = modules ++ [./machine/p16sgen2 lanzaboote.nixosModules.lanzaboote];
+        modules =
+          modules
+          ++ [
+            ./machine/p16sgen2
+            lanzaboote.nixosModules.lanzaboote
+            nixos-hardware.nixosModules.common-cpu-amd
+            nixos-hardware.nixosModules.common-pc-laptop
+            nixos-hardware.nixosModules.common-pc-ssd
+          ];
       };
     };
   };
