@@ -7,8 +7,8 @@
   sway.enable = true;
 
   boot = {
-    ####resumeDevice = "/dev/disk/by-uuid/d0bcbd38-05f5-4daf-91ab-7d43034e574f";
-    #kernelParams = ["resume_offset=13832192"];
+    resumeDevice = "/dev/disk/by-uuid/18aa1876-2f3a-4bf3-916e-c5d5e92ef789";
+    kernelParams = ["resume_offset=4100096"];
     kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
 
     loader = {
@@ -34,6 +34,13 @@
         '';
       };
     };
+  };
+
+  powerManagement = {
+    powerDownCommands = ''
+      ${pkgs.util-linux}/bin/rfkill block wlan && ${pkgs.coreutils}/bin/sleep 1 && ${pkgs.kmod}/bin/rmmod ath11k_pci && ${pkgs.coreutils}/bin/sleep 1
+    '';
+    powerUpCommands = "${pkgs.kmod}/bin/modprobe ath11k_pci && ${pkgs.coreutils}/bin/sleep 1 && ${pkgs.util-linux}/bin/rfkill unblock wlan";
   };
 
   services.fprintd = {
