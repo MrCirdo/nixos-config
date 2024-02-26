@@ -10,6 +10,19 @@ in {
   programs.zsh = {
     enable = true;
     initExtra = ''
+
+      function nrn() {
+       ${pkgs.nix}/bin/nix run nixpkgs#$1;
+      }
+
+      function nsn() {
+       ${pkgs.nix}/bin/nix shell nixpkgs#$1;
+      }
+
+      function ndn() {
+       ${pkgs.nix}/bin/nix develop nixpkgs#$1;
+      }
+
       if [[ -r "${homeDirectory}/.cache/p10k-instant-prompt-${username}.zsh" ]]; then
         source "${homeDirectory}/.cache/p10k-instant-prompt-${username}.zsh"
       fi
