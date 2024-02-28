@@ -33,7 +33,7 @@
   }
 
   #custom-hibernation {
-  	border-radius: 5px 0px 0px 5px;
+  	border-radius: 10px 0px 0px 10px;
   	margin-top: 5px;
   	margin-bottom: 5px;
   	margin-right: 0px;
@@ -83,7 +83,7 @@
   }
 
   #custom-poweroff {
-  	border-radius: 5px 0px 0px 5px;
+  	border-radius: 10px 0px 0px 10px;
     background-color: ${theme.backgroundColor};
     color: ${theme.tailwindcss.red."500"};
   	margin-top: 5px;
@@ -116,21 +116,21 @@
 
   #battery {
   	color: ${theme.tailwindcss.green."500"};
-  	border-radius: 0px 5px 5px 0px;
+  	border-radius: 0px 10px 10px 0px;
   	margin-right: 10px;
   	padding-right: 15px;
   }
 
   #battery.warning {
   	color: ${theme.tailwindcss.yellow."500"};
-  	border-radius: 0px 5px 5px 0px;
+  	border-radius: 0px 10px 10px 0px;
   	margin-right: 10px;
   	padding-right: 15px;
   }
 
   #battery.critical {
   	color: ${theme.tailwindcss.red."500"};
-  	border-radius: 0px 5px 5px 0px;
+  	border-radius: 0px 10px 10px 0px;
   	margin-right: 10px;
   	padding-right: 15px;
   }
@@ -162,14 +162,14 @@
     margin-bottom: 4px;
     padding-left: 8px;
     padding-right: 5px;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: ${theme.backgroundColor};
     color: ${theme.focusColor};
   }
 
   #workspaces {
     background-color: ${theme.backgroundColor};
-    border-radius: 8px;
+    border-radius: 10px;
     margin-top: 4px;
     margin-bottom: 4px;
   }
@@ -177,8 +177,8 @@
 
   #workspaces button {
     color: ${theme.focusColor};
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
     border:none;
 
     box-shadow: none; /* Remove predefined box-shadow */
@@ -210,11 +210,11 @@
   #clock {
     background-color: ${theme.backgroundColor};
     color: ${theme.focusColor};
-    border-radius: 8px;
+    border-radius: 10px;
     margin-top: 4px;
     margin-bottom: 4px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
 ''
