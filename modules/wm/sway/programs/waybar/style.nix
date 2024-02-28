@@ -13,7 +13,6 @@
   	background-color: rgba(0, 0, 0, 0.0);
   }
 
-  #custom-rss,
   #cpu,
   #disk,
   #memory,
@@ -30,6 +29,35 @@
   	padding-top: 5px;
   	padding-bottom: 5px;
   	background-color: ${theme.backgroundColor};
+  }
+
+  #custom-rss {
+  	margin-top: 5px;
+  	margin-bottom: 5px;
+  	margin-right: 0px;
+  	margin-left: 0px;
+  	padding-left: 8px;
+  	padding-right: 10px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+
+  	background-color: ${theme.backgroundColor};
+  	color: ${theme.tailwindcss.orange."500"};
+  	border-radius: 0px 10px 10px 0px;
+  }
+
+  #mpris {
+  	margin-top: 5px;
+  	margin-bottom: 5px;
+  	margin-right: 0px;
+  	margin-left: 0px;
+  	padding-left: 10px;
+  	padding-right: 8px;
+  	padding-top: 6px;
+  	padding-bottom: 6px;
+  	background-color: ${theme.backgroundColor};
+  	border-radius: 10px 0px 0px 10px;
+    color: ${theme.tailwindcss.green."500"};
   }
 
   #custom-hibernation {
@@ -103,12 +131,6 @@
     background-color: ${theme.backgroundColor2};
   }
 
-  #custom-rss {
-  	color: ${theme.tailwindcss.orange."500"};
-  	border-radius: 5px 0px 0px 5px;
-  	margin-left: 10px;
-  	padding-left: 15px;
-  }
 
   #pulseaudio {
   	color: ${theme.tailwindcss.pink."500"};
@@ -153,6 +175,18 @@
 
   #network {
     color: ${theme.tailwindcss.yellow."500"};
+  	border-radius: 10px 0px 0px 10px;
+  	margin-left: 10px;
+  	padding-left: 15px;
+  }
+
+  #mpris.firefox {
+    color: ${theme.tailwindcss.orange."500"};
+  }
+
+  #mpris.paused,
+  #mpris.stopped {
+    color: ${theme.focusColor};
   }
 
   #custom-nixos {

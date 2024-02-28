@@ -20,6 +20,7 @@ in {
                 modules-left = ["custom/nixos" "sway/workspaces"];
                 modules-center = ["clock"];
                 modules-right = [
+                  "mpris"
                   "custom/rss"
                   "network"
                   "cpu"
@@ -101,6 +102,19 @@ in {
                   "tooltip-format-disconnected" = "Disconnected";
                   "max-length" = 50;
                   on-click = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.networkmanager}/bin/nmtui";
+                };
+
+                mpris = {
+                  format = "{player_icon} {status_icon}";
+                  player-icons = {
+                    default = "󰝚";
+                    spotify = "";
+                    firefox = "󰈹";
+                  };
+                  status-icons = {
+                    paused = "";
+                    playing = "⏸";
+                  };
                 };
 
                 "custom/lock" = {

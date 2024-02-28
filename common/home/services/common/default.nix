@@ -10,5 +10,6 @@
         then "gnome3"
         else "qt";
     };
+    playerctld.enable = true;
   };
 }
