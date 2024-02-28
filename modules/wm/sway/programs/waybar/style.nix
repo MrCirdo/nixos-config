@@ -2,7 +2,7 @@
   * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Ubuntu Nerd Font", Material Design Icons, JetBrainsMono Nerd Font, Iosevka Nerd Font;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
   	min-height: 0;
   	min-width: 0;
@@ -21,7 +21,7 @@
   #network,
   #battery {
   	margin-top: 5px;
-  	margin-bottom: 5px;
+  	margin-bottom: 0px;
   	margin-right: 0px;
   	margin-left: 0px;
   	padding-left: 8px;
@@ -33,7 +33,7 @@
 
   #custom-rss {
   	margin-top: 5px;
-  	margin-bottom: 5px;
+  	margin-bottom: 0px;
   	margin-right: 0px;
   	margin-left: 0px;
   	padding-left: 8px;
@@ -48,7 +48,7 @@
 
   #mpris {
   	margin-top: 5px;
-  	margin-bottom: 5px;
+  	margin-bottom: 0px;
   	margin-right: 0px;
   	margin-left: 0px;
   	padding-left: 10px;
@@ -63,7 +63,7 @@
   #custom-hibernation {
   	border-radius: 10px 0px 0px 10px;
   	margin-top: 5px;
-  	margin-bottom: 5px;
+  	margin-bottom: 0px;
   	margin-right: 0px;
   	margin-left: 0px;
   	padding-left: 8px;
@@ -75,7 +75,7 @@
 
   #custom-sleep {
   	margin-top: 5px;
-  	margin-bottom: 5px;
+  	margin-bottom: 0px;
   	margin-right: 0px;
   	margin-left: 0px;
   	padding-left: 8px;
@@ -87,7 +87,7 @@
 
   #custom-reboot {
   	margin-top: 5px;
-  	margin-bottom: 5px;
+  	margin-bottom: 0px;
   	margin-right: 0px;
   	margin-left: 0px;
   	padding-left: 8px;
@@ -100,7 +100,7 @@
 
   #custom-lock {
   	margin-top: 5px;
-  	margin-bottom: 5px;
+  	margin-bottom: 0px;
   	margin-right: 0px;
   	margin-left: 0px;
   	padding-left: 8px;
@@ -115,7 +115,7 @@
     background-color: ${theme.backgroundColor};
     color: ${theme.tailwindcss.red."500"};
   	margin-top: 5px;
-  	margin-bottom: 5px;
+  	margin-bottom: 0px;
   	margin-right: 0px;
   	margin-left: -5px;
   	padding-left: 8px;
