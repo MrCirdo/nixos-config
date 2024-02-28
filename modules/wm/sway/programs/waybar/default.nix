@@ -60,7 +60,10 @@ in {
                   on-click-right = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.btop}/bin/btop";
                 };
 
-                clock = {format-alt = "{:%a, %d. %b  %H:%M}";};
+                clock = {
+                  format-alt = "󰥔 {:%a, %d. %b  %H:%M}";
+                  format = "󰥔 {:%H:%M}";
+                };
 
                 disk = {
                   interval = 30;

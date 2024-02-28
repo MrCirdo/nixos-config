@@ -245,10 +245,10 @@
     background-color: ${theme.backgroundColor};
     color: ${theme.focusColor};
     border-radius: 10px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 ''
