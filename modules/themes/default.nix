@@ -11,7 +11,7 @@ in {
     tailwindcss = mkOption {
       type = types.attrs;
       default = import ./tailwindcss.nix;
-      description = lib.mdDoc ''
+      description = mdDoc ''
         Set tailwindcss color
 
         Example :
@@ -22,61 +22,61 @@ in {
     backgroundColor = mkOption {
       example = "#00000";
       type = types.str;
-      description = lib.mdDoc "CSS Value of background color.";
+      description = mdDoc "CSS Value of background color.";
     };
 
     backgroundColor2 = mkOption {
       example = "#00000";
       type = types.str;
-      description = lib.mdDoc "CSS value of second background color.";
+      description = mdDoc "CSS value of second background color.";
     };
 
     backgroundColor3 = mkOption {
       example = "#00000";
       type = types.str;
-      description = lib.mdDoc "CSS value of third background color.";
+      description = mdDoc "CSS value of third background color.";
     };
 
     textColor = mkOption {
       example = "#00000";
       type = types.str;
-      description = lib.mdDoc "CSS value of text color.";
+      description = mdDoc "CSS value of text color.";
     };
 
     textColor2 = mkOption {
       example = "#00000";
       type = types.str;
-      description = lib.mdDoc "CSS value of second text color.";
+      description = mdDoc "CSS value of second text color.";
     };
 
     textColor3 = mkOption {
       example = "#00000";
       type = types.str;
-      description = lib.mdDoc "CSS value of third text color.";
+      description = mdDoc "CSS value of third text color.";
     };
 
     focusColor = mkOption {
       example = "blue";
       type = types.str;
-      description = lib.mdDoc "CSS Value of focus color.";
+      description = mdDoc "CSS Value of focus color.";
     };
 
     focusColor2 = mkOption {
       example = "blue";
       type = types.str;
-      description = lib.mdDoc "CSS Value of second background color.";
+      description = mdDoc "CSS Value of second background color.";
     };
 
     focusColor3 = mkOption {
       example = "blue";
       type = types.str;
-      description = lib.mdDoc "CSS Value of third background color.";
+      description = mdDoc "CSS Value of third background color.";
     };
 
     alertColor = mkOption {
       example = "blue";
       type = types.str;
-      description = lib.mdDoc "CSS Value of alert color.";
+      description = mdDoc "CSS Value of alert color.";
     };
   };
 }
