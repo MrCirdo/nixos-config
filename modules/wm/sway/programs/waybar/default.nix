@@ -116,7 +116,7 @@ in {
                   };
                   status-icons = {
                     paused = "";
-                    playing = "󰏥";
+                    playing = "⏸";
                     stopped = "";
                   };
                 };
