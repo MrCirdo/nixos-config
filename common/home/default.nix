@@ -7,6 +7,11 @@
         stateVersion = "22.11";
       };
     };
+    sharedModules = [
+      ./packages
+      ./programs
+      ./services
+    ];
   };
 
   fonts.packages = with pkgs; [
@@ -18,6 +23,4 @@
     fira-code-symbols
     borg-sans-mono
   ];
-
-  imports = [./packages ./programs ./services];
 }
