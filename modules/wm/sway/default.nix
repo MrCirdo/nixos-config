@@ -77,5 +77,5 @@
         )
       ];
 
-  imports = [./config.nix ./packages ./programs ./services ./themes.nix];
+  imports = [./config.nix ./packages ./programs ./services];
 }

@@ -4,10 +4,10 @@
       pkgs,
       lib,
       config,
+      theme,
       ...
     }: let
       defaultConfig = config.wayland.windowManager.sway.config;
-      theme = config.theme;
       defaultSinkPulseaudio = "@DEFAULT_SINK@";
     in {
       wayland.windowManager.sway = lib.mkIf config.sway.enable {

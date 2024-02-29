@@ -54,12 +54,16 @@
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
       grub2-themes.nixosModules.default
+      ./modules/themes
       ./common
       ./modules
       {nixpkgs.overlays = overlays;}
-      ({...}: {
+      ({config, ...}: {
         _module.args.inputs = inputs;
         _module.args.pkgs-unstable = nixpkgsUnstable;
+        home-manager.extraSpecialArgs = {
+          theme = config.theme;
+        };
         home-manager.sharedModules = [
           ({...}: {
             _module.args.inputs = inputs;
