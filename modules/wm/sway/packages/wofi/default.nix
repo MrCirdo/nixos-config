@@ -5,9 +5,11 @@
   ...
 }: {
   home-manager.sharedModules = [
-    ({config, ...}: let
-      theme = config.theme;
-    in
+    ({
+      config,
+      theme,
+      ...
+    }:
       lib.mkIf config.sway.enable {
         xdg.configFile."wofi/style.css".text = import ./style.nix {inherit theme;};
         xdg.configFile."wofi/config".source = ./config;

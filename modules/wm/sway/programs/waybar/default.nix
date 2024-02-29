@@ -1,6 +1,4 @@
-{config, ...}: let
-  theme = config.theme;
-in {
+{...}: {
   home-manager.sharedModules = [
     (
       {
@@ -8,6 +6,7 @@ in {
         config,
         lib,
         inputs,
+        theme,
         ...
       }: {
         programs = lib.mkIf config.sway.enable {

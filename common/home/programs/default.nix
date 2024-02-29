@@ -5,6 +5,7 @@
       inputs,
       pkgs,
       config,
+      theme,
       ...
     }: {
       programs = {
@@ -86,8 +87,8 @@
             window = {opacity = 0.75;};
             colors = {
               primary = {
-                background = config.theme.backgroundColor;
-                foreground = config.theme.textColor;
+                background = theme.backgroundColor;
+                foreground = theme.textColor;
               };
             };
 
