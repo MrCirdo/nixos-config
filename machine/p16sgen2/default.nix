@@ -73,6 +73,8 @@
     textColor3 = tailwindcss.indigo."300";
 
     alertColor = tailwindcss.red."500";
+
+    wallpaper = ../../wallpapers/jrmnt-wallheaven.png;
   };
 
   imports = [./system];

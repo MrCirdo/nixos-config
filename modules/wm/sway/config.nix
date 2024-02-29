@@ -218,7 +218,7 @@
           output = {
             "*" = {
               bg =
-                "${./wallpapers/jrmnt-wallheaven.png}" + " fill";
+                "${theme.wallpaper}" + " fill";
             };
 
             "DP-4" = {

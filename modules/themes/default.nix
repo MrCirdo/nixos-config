@@ -19,6 +19,16 @@ in {
       '';
     };
 
+    wallpaper = mkOption {
+      type = types.path;
+      description = mdDoc ''
+        wallpaper path.
+
+        Example :
+        theme.wallpaper = ./path/wallpaper.jpg;
+      '';
+    };
+
     backgroundColor = mkOption {
       example = "#00000";
       type = types.str;
