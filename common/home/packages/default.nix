@@ -78,15 +78,11 @@
     thunderbird
   ];
 in {
-  home-manager.sharedModules = [
-    {
-      home.packages =
-        devPackages
-        ++ otherPackages
-        ++ reverseEngineeringPackages
-        ++ shellPackages
-        ++ socialPackages
-        ++ unstablePackage;
-    }
-  ];
+  home.packages =
+    devPackages
+    ++ otherPackages
+    ++ reverseEngineeringPackages
+    ++ shellPackages
+    ++ socialPackages
+    ++ unstablePackage;
 }
