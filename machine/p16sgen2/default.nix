@@ -60,13 +60,13 @@
   theme = let
     tailwindcss = config.theme.tailwindcss;
   in {
-    backgroundColor = tailwindcss.indigo."950";
-    backgroundColor2 = tailwindcss.indigo."900";
-    backgroundColor3 = tailwindcss.indigo."800";
+    backgroundColor = tailwindcss.indigo."500";
+    backgroundColor2 = tailwindcss.indigo."400";
+    backgroundColor3 = tailwindcss.indigo."300";
 
-    focusColor = tailwindcss.indigo."500";
-    focusColor2 = tailwindcss.indigo."400";
-    focusColor3 = tailwindcss.indigo."300";
+    focusColor = tailwindcss.indigo."900";
+    focusColor2 = tailwindcss.indigo."800";
+    focusColor3 = tailwindcss.indigo."700";
 
     textColor = tailwindcss.indigo."100";
     textColor2 = tailwindcss.indigo."200";
