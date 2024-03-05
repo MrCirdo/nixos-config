@@ -26,6 +26,10 @@
         pull = {
           rebase = true;
         };
+        rerere = {
+          enable = true;
+          autoUpdate = true;
+        };
       };
     };
 
