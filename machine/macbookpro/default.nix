@@ -4,6 +4,24 @@
 
   networking.hostName = "Pipoune";
 
+  services = {
+    openssh.enable = true;
+    zoneminder = {
+      enable = true;
+      openFirewall = true;
+      database = {
+        createLocally = true;
+        username = "zoneminder";
+      };
+    };
+
+    tailscale.enable = true;
+  };
+
+  users.users.default = {
+    extraGroups = ["zoneminder" "mysql"];
+  };
+
   theme = let
     tailwindcss = config.theme.tailwindcss;
   in {
@@ -22,8 +40,6 @@
     alertColor = tailwindcss.red."500";
     wallpaper = ../../wallpapers/jrmnt-wallheaven.png;
   };
-
-  services.openssh.enable = true;
 
   fileSystems."/home/odric/odricflix-hdd" = {
     device = "/dev/disk/by-uuid/3d7b351b-8407-4523-859e-5645caac3911";
