@@ -76,15 +76,17 @@
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
     nixosConfigurations = {
-      peufpeuf = nixpkgs.lib.nixosSystem {
+      pipoune = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = modules ++ [./machine/macbookpro nixos-hardware.nixosModules.apple-macbook-pro-12-1];
       };
-      vroumvroum = nixpkgs.lib.nixosSystem {
+
+      wookie = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = modules ++ [./machine/xps9500 nixos-hardware.nixosModules.dell-xps-15-9500];
       };
-      vroumvroooumm = nixpkgs.lib.nixosSystem {
+
+      groot = nixpkgs.lib.nixosSystem {
         inherit system;
         modules =
           modules

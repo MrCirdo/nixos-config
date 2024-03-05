@@ -7,6 +7,8 @@
   gnome.enable = false;
   sway.enable = true;
 
+  networking.hostName = "Wookie";
+
   powerManagement = {
     powerDownCommands = "${pkgs.util-linux}/bin/rfkill block wlan && ${pkgs.coreutils}/bin/sleep 2 && ${pkgs.kmod}/bin/rmmod ath11k_pci hci_uart btqca && ${pkgs.coreutils}/bin/sleep 2";
     powerUpCommands = "${pkgs.kmod}/bin/modprobe ath11k_pci hci_uart btqca && ${pkgs.coreutils}/bin/sleep 2 && ${pkgs.util-linux}/bin/rfkill unblock wlan";

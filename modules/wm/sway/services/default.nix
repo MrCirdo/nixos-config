@@ -18,10 +18,11 @@
 
           mako = {
             enable = true;
-            backgroundColor = theme.focusColor;
-            borderColor = theme.focusColor2;
+            backgroundColor = theme.backgroundColor;
+            borderColor = theme.backgroundColor2;
+            textColor = theme.textColor;
             defaultTimeout = 10000;
-            borderRadius = 8;
+            borderRadius = 20;
           };
 
           swayidle = {

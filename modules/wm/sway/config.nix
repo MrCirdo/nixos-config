@@ -20,6 +20,7 @@
 
         extraConfig = ''
           for_window [app_id="code-url-handler"] opacity 0.8
+          for_window [app_id="firefox" workspace=9] floating enable, border none
         '';
         config = rec {
           modifier = "Mod4";

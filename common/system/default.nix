@@ -4,7 +4,6 @@
   ...
 }: {
   networking = {
-    hostName = "Wookiee";
     networkmanager.enable = true;
   };
 

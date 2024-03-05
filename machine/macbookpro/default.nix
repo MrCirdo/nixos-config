@@ -2,6 +2,8 @@
   gnome.enable = false;
   sway.enable = true;
 
+  networking.hostName = "Pipoune";
+
   theme = let
     tailwindcss = config.theme.tailwindcss;
   in {
