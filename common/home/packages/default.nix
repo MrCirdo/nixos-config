@@ -47,6 +47,7 @@
 
   otherPackages = with pkgs; [
     bat
+    bluez
     chromium
     direnv
     du-dust
