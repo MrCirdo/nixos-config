@@ -5,7 +5,7 @@
       enableZshIntegration = true;
       enableBashIntegration = true;
       enableSshSupport = true;
-      pinentryFlavor = "gnome3";
+      pinentryFlavor = "qt";
     };
     playerctld.enable = true;
   };
