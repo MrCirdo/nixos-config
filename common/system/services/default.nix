@@ -8,6 +8,7 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
+    tailscale.enable = true;
 
     cpupower-gui.enable = true;
     fwupd.enable = true;
