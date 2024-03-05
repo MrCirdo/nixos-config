@@ -14,6 +14,14 @@
     powerUpCommands = "${pkgs.kmod}/bin/modprobe ath11k_pci hci_uart btqca && ${pkgs.coreutils}/bin/sleep 2 && ${pkgs.util-linux}/bin/rfkill unblock wlan";
   };
 
+  hardware = {
+    bluetooth.enable = true;
+    enableAllFirmware = true;
+    firmware = [
+      pkgs.broadcom-bt-firmware
+    ];
+  };
+
   boot = {
     resumeDevice = "/dev/disk/by-uuid/d0bcbd38-05f5-4daf-91ab-7d43034e574f";
     kernelParams = ["resume_offset=24023040"];
