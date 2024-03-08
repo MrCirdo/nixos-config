@@ -44,6 +44,7 @@
     ssh = {
       enable = true;
       serverAliveInterval = 10;
+      forwardAgent = true;
       extraConfig = ''
         TCPKeepAlive yes
       '';
