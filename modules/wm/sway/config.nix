@@ -102,8 +102,12 @@
             "${defaultConfig.modifier}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
 
             "${defaultConfig.modifier}+r" = "mode resize";
+
             "XF86MonBrightnessDown" = "exec ${pkgs.light}/bin/light -U 3";
             "XF86MonBrightnessUp" = "exec ${pkgs.light}/bin/light -A 3";
+            "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+            "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+            "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
 
             "F2" = "exec ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy --type 'image/png'";
             "F3" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\"  - | ${pkgs.wl-clipboard}/bin/wl-copy --type 'image/png'";
