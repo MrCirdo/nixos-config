@@ -1,11 +1,18 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: let
+  zoneMinderStorageDir = "/zoneminder_images";
+in {
   gnome.enable = false;
   sway.enable = true;
 
   networking.hostName = "Pipoune";
-
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_5;
   services = {
     openssh.enable = true;
+
     zoneminder = {
       enable = true;
       openFirewall = true;
@@ -13,13 +20,40 @@
         createLocally = true;
         username = "zoneminder";
       };
+      storageDir = "${zoneMinderStorageDir}";
     };
 
     tailscale.enable = true;
   };
 
+  environment.systemPackages = [
+    pkgs.fuse3
+  ];
+
+  systemd.services.rcloneZoneminder = {
+    enable = true;
+    wantedBy = ["multi-user.target"];
+    after = ["network-online.target"];
+    before = ["zoneminder.service"];
+    description = "Mount zoneminder files";
+    serviceConfig = {
+      Type = "notify";
+      ExecStartPre = "/run/current-system/sw/bin/mkdir -p ${zoneMinderStorageDir}";
+      ExecStart = ''
+        ${pkgs.rclone}/bin/rclone  mount encrypted_backup: ${zoneMinderStorageDir} \
+          --config=/home/odric/.config/rclone/rclone.conf \
+          --vfs-cache-mode full \
+          --umask 0000 \
+          --allow-other \
+          --buffer-size 512M
+      '';
+      ExecStop = "/run/wrappers/bin/umount ${zoneMinderStorageDir}";
+      Environment = ["PATH=:/run/wrappers/bin:$PATH"];
+    };
+  };
+
   users.users.default = {
-    extraGroups = ["zoneminder" "mysql"];
+    extraGroups = ["zoneminder" "mysql" "video"];
   };
 
   theme = let
