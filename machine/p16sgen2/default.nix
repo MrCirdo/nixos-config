@@ -43,13 +43,6 @@
     };
   };
 
-  powerManagement = {
-    powerDownCommands = ''
-      ${pkgs.util-linux}/bin/rfkill block wlan && ${pkgs.coreutils}/bin/sleep 1 && ${pkgs.kmod}/bin/rmmod ath11k_pci && ${pkgs.coreutils}/bin/sleep 1
-    '';
-    powerUpCommands = "${pkgs.kmod}/bin/modprobe ath11k_pci && ${pkgs.coreutils}/bin/sleep 1 && ${pkgs.util-linux}/bin/rfkill unblock wlan";
-  };
-
   services.fprintd = {
     enable = true;
     tod = {
