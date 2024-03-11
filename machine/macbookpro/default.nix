@@ -11,8 +11,6 @@ in {
   networking.hostName = "Pipoune";
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_5;
   services = {
-    openssh.enable = true;
-
     zoneminder = {
       enable = true;
       openFirewall = true;

@@ -9,6 +9,7 @@
       wireplumber.enable = true;
     };
     tailscale.enable = true;
+    openssh.enable = true;
 
     fwupd.enable = true;
     pcscd.enable = true;

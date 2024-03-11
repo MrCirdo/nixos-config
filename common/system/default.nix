@@ -54,6 +54,9 @@
     shell = pkgs.zsh;
     extraGroups = ["networkmanager" "wheel" "docker" "video" "fuse" "adbusers" "kvm" "libvirt" "qemu-libvirtd"];
     initialPassword = "root";
+    openssh.authorizedKeys.keys = [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCsFzZ72Mtu3r5gtwQWa/M7jj9YS8BGUvyIc7rVTKZX/weH3eW7iGFlHNnnpnOHPu5AMgg8kojZ77NKyQzYYxkSIcAC6DaNvkoQf0QAfa1dgPT4OR5/0rd0ROlxUBjUgQSv9OHXbEq4idyU1VScxEVC5f6IovpPEWOxRmlXDUWFmoZ74DmNdKiRuxeiXfWtyDYUAp/UX16PolSkmJmQjHolB+CqrgKko1XzxqGN2ZajyHf+E8VxvmwEZS/DnFGvlu4/zyPF00PfSRSek7B2P0rmIPExACdYRB1jBP6FIU570qERzyGZ4/no0cGo3NhEupm6ykMeXaNabXQTxXes9lRpzGvmvHeT7MyGOAw79MH69IsYQnLaZCcmFwnXDnRFBOC23MaaXPwhRc7ZbLWleKYaFw4TOxtZNFbsZybIOXqTCx7Mkz2GIlAkSYVwMzh8ORIO22fGOTb8WxRSt2JEBLfozy7Dx0eentttgLFcnepj8sEtaon3saA0RIOW7VamGsz+xmsuOtkdGa9b/WFY9BMVuKbI30aiifQODnHE60bylqhooqAAX85aTKfqqT5Uulkjbt8K+TRhvCGVPmbl/6ACBJfqbQWcDQF/9/SOeLiknrN5rMkCSuOMbKuW4aNvXvorXXSq7XyEyCiGPyQ6SjrNSasJvVzgJnpWODZdY+QxYQ=="
+    ];
   };
 
   virtualisation = {
