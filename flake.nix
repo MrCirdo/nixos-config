@@ -50,6 +50,8 @@
       config.allowUnfree = true;
     };
 
+    pkgs = import nixpkgs {inherit system;};
+
     modules = [
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
@@ -74,6 +76,10 @@
     ];
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+
+    devShells.x86_64-linux = {
+      htop = import ./shells/htop.nix {inherit pkgs;};
+    };
 
     nixosConfigurations = {
       pipoune = nixpkgs.lib.nixosSystem {
