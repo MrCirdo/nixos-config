@@ -9,7 +9,10 @@
       wireplumber.enable = true;
     };
     tailscale.enable = true;
-    openssh.enable = true;
+    openssh = {
+      enable = true;
+      settings.X11Forwarding = true;
+    };
 
     fwupd.enable = true;
     pcscd.enable = true;
