@@ -93,7 +93,12 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "nix-2.15.3"
+    ];
+  };
 
   system.stateVersion = "23.05"; # Did you read the comment?
   networking.nameservers = ["1.1.1.1" "1.0.0.1"];
