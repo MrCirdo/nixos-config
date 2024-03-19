@@ -7,6 +7,8 @@
   gnome.enable = false;
   sway.enable = true;
 
+  nixpkgs.config.nvidia.acceptLicense = true;
+
   networking.hostName = "Wookie";
 
   powerManagement = {
