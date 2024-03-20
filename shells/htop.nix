@@ -12,5 +12,7 @@ in
         autoconf
         ncurses
         libunwindDebug
+        astyle
+        libiberty
       ];
     }
