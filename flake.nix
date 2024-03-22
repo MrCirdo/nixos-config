@@ -20,6 +20,8 @@
 
     lanzaboote.url = "github:nix-community/lanzaboote";
 
+    gitu.url = "github:altsem/gitu";
+
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
@@ -28,18 +30,19 @@
   };
 
   outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    sops-nix,
-    helix,
-    nixos-hardware,
-    nixos-generators,
-    nix-doom-emacs,
     emacs-overlay,
-    nixpkgs-unstable,
+    gitu,
     grub2-themes,
+    helix,
+    home-manager,
     lanzaboote,
+    nix-doom-emacs,
+    nixos-generators,
+    nixos-hardware,
+    nixpkgs,
+    nixpkgs-unstable,
+    self,
+    sops-nix,
   } @ inputs: let
     system = "x86_64-linux";
 
