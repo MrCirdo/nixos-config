@@ -166,7 +166,7 @@
       enable = true;
       package = inputs.helix.packages.${pkgs.system}.default;
       settings = {
-        theme = "onedark";
+        theme = "sonokai";
         editor.cursor-shape = {
           insert = "bar";
           normal = "block";

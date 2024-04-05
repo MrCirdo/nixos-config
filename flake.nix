@@ -7,7 +7,7 @@
     home-manager.url = "github:nix-community/home-manager/release-23.11";
 
     sops-nix.url = "github:Mic92/sops-nix";
-    helix.url = "github:helix-editor/helix";
+    helix.url = "github:helix-editor/helix/24.03";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
