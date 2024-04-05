@@ -25,6 +25,7 @@
   };
 
   boot = {
+    tmp.useTmpfs = true;
     resumeDevice = "/dev/disk/by-uuid/d0bcbd38-05f5-4daf-91ab-7d43034e574f";
     kernelParams = ["resume_offset=24023040"];
     kernelPackages = pkgs.linuxKernel.packages.linux_6_8;
