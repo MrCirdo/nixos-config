@@ -78,7 +78,6 @@
 
   unstablePackage = with pkgs-unstable; [
     vscode
-    thunderbird
   ];
 in {
   home.packages =
