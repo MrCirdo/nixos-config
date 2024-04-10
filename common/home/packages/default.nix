@@ -3,7 +3,6 @@
   pkgs,
   config,
   pkgs-unstable,
-  inputs,
   ...
 }: let
   devPackages = with pkgs; [
@@ -62,7 +61,6 @@
     jellyfin-media-player
     lazygit
     libseccomp
-    inputs.gitu.packages.${pkgs.system}.default
     pavucontrol
     pinentry-curses
     pmutils
