@@ -200,6 +200,14 @@
               xkb_variant = "intl";
             };
 
+            "1133:45915:MX_Keys_Keyboard" = {
+              repeat_delay = "200";
+              repeat_rate = "75";
+              xkb_options = "caps:escape";
+              xkb_layout = "us";
+              xkb_variant = "intl";
+            };
+
             "1133:16522:Logitech_MX_Keys" = {
               repeat_delay = "200";
               repeat_rate = "75";
