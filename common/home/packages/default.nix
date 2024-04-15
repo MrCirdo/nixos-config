@@ -58,9 +58,11 @@
     grim
     gtk-engine-murrine
     htop
+    inputs.gitu.packages.${pkgs.system}.default
     jellyfin-media-player
     lazygit
     libseccomp
+    openconnect
     pavucontrol
     pinentry-curses
     pmutils
