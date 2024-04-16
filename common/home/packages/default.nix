@@ -49,23 +49,16 @@
     bat
     bluez
     chromium
-    direnv
     du-dust
     duf
     fd
     firefox
     gnupg
-    grim
-    gtk-engine-murrine
     htop
     jellyfin-media-player
     lazygit
-    libseccomp
     openconnect
-    pavucontrol
-    pinentry-curses
     pmutils
-    pulseaudio
     rclone
     ripgrep
     slurp
