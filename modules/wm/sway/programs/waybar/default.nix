@@ -92,7 +92,7 @@
                     headphone = "";
                   };
                   scroll-step = 1;
-                  on-click = "pavucontrol";
+                  on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
                 };
 
                 network = {
