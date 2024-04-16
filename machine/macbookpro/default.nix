@@ -9,7 +9,6 @@ in {
   sway.enable = true;
 
   networking.hostName = "Pipoune";
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_5;
   services = {
     zoneminder = {
       enable = true;
