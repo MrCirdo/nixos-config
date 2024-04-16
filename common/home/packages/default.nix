@@ -46,6 +46,7 @@
 
   otherPackages = with pkgs; [
     bat
+    bluetuith
     bluez
     chromium
     du-dust
