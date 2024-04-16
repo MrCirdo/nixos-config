@@ -1,5 +1,9 @@
-{pkgs, ...}: let
-  libunwindDebug = pkgs.libunwind.overrideAttrs (old: {
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}: let
+  libunwindDebug = pkgs-unstable.libunwind.overrideAttrs (old: {
     configureFlags = old.configureFlags ++ ["--enable-debug"];
   });
 in
