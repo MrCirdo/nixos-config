@@ -39,7 +39,6 @@
   shellPackages = with pkgs; [tree zip unzip btop openssl neofetch zsh-powerlevel10k];
 
   socialPackages = with pkgs-unstable; [
-    discord
     signal-desktop
   ];
 
@@ -69,6 +68,7 @@
   ];
 
   unstablePackage = with pkgs-unstable; [
+    armcord
     vscode
   ];
 in {
