@@ -43,11 +43,27 @@
     };
   };
 
-  services.fprintd = {
-    enable = true;
-    tod = {
+  services = {
+    fprintd = {
       enable = true;
-      driver = pkgs.libfprint-2-tod1-goodix;
+      tod = {
+        enable = true;
+        driver = pkgs.libfprint-2-tod1-goodix;
+      };
+    };
+  };
+
+  programs = {
+    steam = {
+      enable = true;
+      # It's for nix unstable
+      # extest.enable = true;
+      gamescopeSession = {
+        enable = true;
+        args = [
+          # https://github.com/ValveSoftware/gamescope?tab=readme-ov-file#options
+        ];
+      };
     };
   };
 
