@@ -64,6 +64,7 @@
     slurp
     spotify
     virt-manager
+    wdisplays
     wget
     wl-clipboard
   ];
