@@ -65,6 +65,15 @@
         ];
       };
     };
+
+    gamemode = {
+      enable = true;
+      settings = {
+        general = {
+          renice = 5;
+        };
+      };
+    };
   };
 
   security.pam.services = {
