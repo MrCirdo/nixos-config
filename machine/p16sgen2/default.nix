@@ -6,6 +6,7 @@
 }: {
   gnome.enable = false;
   sway.enable = true;
+  kde.enable = false;
 
   networking.hostName = "Groot";
 
