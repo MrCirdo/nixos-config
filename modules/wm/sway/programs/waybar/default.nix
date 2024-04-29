@@ -93,6 +93,7 @@
                   };
                   scroll-step = 1;
                   on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+                  on-click-right = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.bluetuith}/bin/bluetuith";
                 };
 
                 network = {
