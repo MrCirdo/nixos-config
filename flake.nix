@@ -45,7 +45,7 @@
 
     overlays = [(import ./overlays/electron.nix)];
 
-    nixpkgsUnstable = import nixpkgs-unstable {
+    pkgs-unstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };
@@ -62,14 +62,14 @@
       {nixpkgs.overlays = overlays;}
       ({config, ...}: {
         _module.args.inputs = inputs;
-        _module.args.pkgs-unstable = nixpkgsUnstable;
+        _module.args.pkgs-unstable = pkgs-unstable;
         home-manager.extraSpecialArgs = {
           theme = config.theme;
         };
         home-manager.sharedModules = [
           ({...}: {
             _module.args.inputs = inputs;
-            _module.args.pkgs-unstable = nixpkgsUnstable;
+            _module.args.pkgs-unstable = pkgs-unstable;
           })
         ];
       })
@@ -80,7 +80,7 @@
     devShells.x86_64-linux = {
       htop = import ./shells/htop.nix {
         inherit pkgs;
-        pkgs-unstable = nixpkgsUnstable;
+        pkgs-unstable = pkgs-unstable;
       };
     };
 
