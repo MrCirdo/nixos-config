@@ -1,4 +1,11 @@
-{...}: {
+{
+  lib,
+  config,
+  ...
+}: {
+  services = lib.mkIf config.sway.enable {
+    tlp.enable = true;
+  };
   home-manager.sharedModules = [
     (
       {
