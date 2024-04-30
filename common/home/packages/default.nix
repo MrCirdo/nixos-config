@@ -36,7 +36,7 @@
     python3
   ];
 
-  shellPackages = with pkgs; [tree zip unzip btop openssl neofetch zsh-powerlevel10k];
+  shellPackages = with pkgs; [tree zip unzip btop openssl zsh-powerlevel10k];
 
   socialPackages = with pkgs-unstable; [
     signal-desktop
@@ -51,6 +51,7 @@
     chromium
     du-dust
     duf
+    fastfetch
     fd
     firefox
     gnupg

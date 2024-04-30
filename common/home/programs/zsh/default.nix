@@ -11,6 +11,8 @@ in {
     enable = true;
     initExtra = ''
 
+      ${pkgs.fastfetch}/bin/fastfetch
+
       function nrn() {
        ${pkgs.nix}/bin/nix run nixpkgs#$1;
       }
