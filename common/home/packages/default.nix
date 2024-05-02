@@ -70,8 +70,8 @@
   ];
 
   unstablePackage = with pkgs-unstable; [
-    armcord
     heroic
+    vesktop
     vscode
   ];
 in {
