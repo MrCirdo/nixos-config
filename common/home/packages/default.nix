@@ -11,7 +11,6 @@
     autogen
     automake
     bear
-    clang-tools_17
     cmake
     ctags
     gcc
@@ -74,6 +73,7 @@
     heroic
     vesktop
     vscode
+    clang-tools_18
   ];
 in {
   home.packages =
