@@ -92,7 +92,13 @@
 
       wookie = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = modules ++ [./machine/xps9500 nixos-hardware.nixosModules.dell-xps-15-9500];
+        modules =
+          modules
+          ++ [
+            ./machine/xps9500
+            nixos-hardware.nixosModules.dell-xps-15-9500
+            nixos-hardware.nixosModules.common-gpu-nvidia-disable
+          ];
       };
 
       groot = nixpkgs.lib.nixosSystem {
