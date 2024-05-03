@@ -63,6 +63,7 @@
     ripgrep
     slurp
     spotify
+    thunderbird
     virt-manager
     wdisplays
     wget
