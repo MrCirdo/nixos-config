@@ -57,6 +57,7 @@
     htop
     jellyfin-media-player
     lazygit
+    lf
     openconnect
     pmutils
     rclone
