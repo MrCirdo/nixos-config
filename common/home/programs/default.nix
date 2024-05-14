@@ -203,31 +203,10 @@
           tags = ["Tech"];
           url = "https://korben.info/rss";
         }
-
-        {
-          title = "RedHat";
-          tags = ["Linux" "Tech"];
-          url = "https://redhat.com/en/rss/blog";
-        }
-        {
-          title = "Linux Embedded";
-          tags = ["Linux" "Tech"];
-          url = "https://www.linuxembedded.fr/rss";
-        }
-        {
-          title = "Digital Ocean";
-          tags = ["Cloud" "Tech" "Linux"];
-          url = "https://www.digitalocean.com/blog/rss";
-        }
         {
           title = "Drew DeVault's blog";
           tags = ["Personal" "Tech"];
           url = "https://drewdevault.com/blog/index.xml";
-        }
-        {
-          title = "Embedded";
-          tags = ["Embedded"];
-          url = "https://www.embedded.com/rss";
         }
         {
           title = "Lwn";
@@ -248,6 +227,11 @@
           title = "Oracle Linux";
           tags = ["Linux"];
           url = "https://blogs.oracle.com/linux/rss";
+        }
+        {
+          title = "Phoronix";
+          tags = ["Linux"];
+          url = "https://www.phoronix.com/rss.php";
         }
       ];
     };
