@@ -85,21 +85,21 @@
   theme = let
     tailwindcss = config.theme.tailwindcss;
   in {
-    backgroundColor = tailwindcss.indigo."950";
-    backgroundColor2 = tailwindcss.indigo."900";
-    backgroundColor3 = tailwindcss.indigo."800";
+    backgroundColor = tailwindcss.slate."950";
+    backgroundColor2 = tailwindcss.slate."900";
+    backgroundColor3 = tailwindcss.slate."800";
 
-    focusColor = tailwindcss.indigo."500";
-    focusColor2 = tailwindcss.indigo."600";
-    focusColor3 = tailwindcss.indigo."400";
+    focusColor = tailwindcss.slate."500";
+    focusColor2 = tailwindcss.slate."600";
+    focusColor3 = tailwindcss.slate."400";
 
-    textColor = tailwindcss.indigo."100";
-    textColor2 = tailwindcss.indigo."200";
-    textColor3 = tailwindcss.indigo."300";
+    textColor = tailwindcss.slate."100";
+    textColor2 = tailwindcss.slate."200";
+    textColor3 = tailwindcss.slate."300";
 
     alertColor = tailwindcss.red."500";
 
-    wallpaper = ../../wallpapers/jrmnt-wallheaven.png;
+    wallpaper = ../../wallpapers/tankernejla-wallheaver.jpg;
   };
 
   imports = [./system];
