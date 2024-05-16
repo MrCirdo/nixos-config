@@ -233,6 +233,16 @@
           tags = ["Linux"];
           url = "https://www.phoronix.com/rss.php";
         }
+        {
+          title = "ArchLinux";
+          tags = ["Linux"];
+          url = "https://archlinux.org/feeds/news/";
+        }
+        {
+          title = "Nixos";
+          tags = ["Linux"];
+          url = "https://nixos.org/blog/feed.xml";
+        }
       ];
     };
 
