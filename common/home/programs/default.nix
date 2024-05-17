@@ -225,6 +225,11 @@
           tags = ["Linux"];
           url = "https://nixos.org/blog/feed.xml";
         }
+        {
+          title = "Neovim";
+          tags = ["Tech"];
+          url = "https://neovim.io/news.xml";
+        }
       ];
     };
 
