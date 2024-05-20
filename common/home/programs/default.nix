@@ -99,28 +99,10 @@
           offset = {
             x = 0;
           };
-          normal = {
-            family = "Borg Sans Mono";
-            style = "Regular";
-          };
-
-          bold = {
-            family = "Borg Sans Mono";
-            style = "Bold";
-          };
-
-          italic = {
-            family = "Borg Sans Mono";
-            style = "Italic";
-          };
-
-          bold_italic = {
-            family = "Borg Sans Mono";
-            style = "Bold Italic";
-          };
         };
       };
     };
+
     gitui = {
       enable = true;
       keyConfig = ''
