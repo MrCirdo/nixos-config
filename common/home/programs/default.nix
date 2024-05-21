@@ -230,6 +230,11 @@
           tags = ["Tech"];
           url = "https://neovim.io/news.xml";
         }
+        {
+          title = "Hacker News";
+          tags = ["Tech"];
+          url = "https://news.ycombinator.com/rss";
+        }
       ];
     };
 
