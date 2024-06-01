@@ -19,6 +19,9 @@
   #temperature,
   #pulseaudio,
   #network,
+  #group-trays,
+  #custom-tray-icon,
+  #tray,
   #battery {
   	margin-top: 5px;
   	margin-bottom: 0px;
@@ -29,6 +32,34 @@
   	padding-top: 5px;
   	padding-bottom: 5px;
   	background-color: ${theme.backgroundColor};
+  }
+
+  #custom-tray-icon {
+    color: ${theme.tailwindcss.teal."500"};
+  }
+
+  #custom-space-tray {
+  	margin-top: 5px;
+  	margin-bottom: 0px;
+  	margin-right: 0px;
+  	margin-left: 0px;
+  	padding-left: 8px;
+  	padding-right: 8px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+  	background-color: ${theme.backgroundColor3};
+  }
+
+  #tray {
+  	background-color: ${theme.backgroundColor3};
+  	margin-top: 5px;
+  	margin-bottom: 0px;
+  	margin-right: 0px;
+  	margin-left: 0px;
+  	padding-left: 0px;
+  	padding-right: 0px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
   }
 
   #custom-rss {
@@ -130,7 +161,6 @@
   #custom-lock {
     background-color: ${theme.backgroundColor2};
   }
-
 
   #pulseaudio {
   	color: ${theme.tailwindcss.pink."500"};

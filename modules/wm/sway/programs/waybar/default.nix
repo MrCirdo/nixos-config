@@ -20,6 +20,7 @@
                 modules-center = ["clock"];
                 modules-right = [
                   "mpris"
+                  "group/trays"
                   "custom/rss"
                   "network"
                   "cpu"
@@ -160,7 +161,6 @@
                   orientation = "inherit";
                   drawer = {
                     transition-duration = 200;
-                    children-class = "not-power";
                     transition-left-to-right = false;
                   };
                   modules = [
@@ -170,6 +170,30 @@
                     "custom/lock"
                     "custom/reboot"
                   ];
+                };
+
+                "custom/tray-icon" = {
+                  format = "󰵆";
+                  tooltip = true;
+                  tooltip-format = "󰵆 Trays icons...";
+                };
+
+                "group/trays" = {
+                  orientation = "inherit";
+                  drawer = {
+                    transition-duration = 200;
+                    transition-left-to-right = false;
+                  };
+                  modules = [
+                    "custom/tray-icon"
+                    "custom/space-tray"
+                    "tray"
+                    "custom/space-tray"
+                  ];
+                };
+
+                "custom/space-tray" = {
+                  format = " ";
                 };
 
                 "custom/rss" = let
