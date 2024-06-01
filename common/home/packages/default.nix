@@ -18,7 +18,6 @@
     gnumake
     man-pages
     man-pages-posix
-    rr
 
     # Rust
     cargo
@@ -76,6 +75,7 @@
     vesktop
     vscode
     clang-tools_18
+    rr
   ];
 in {
   home.packages =
