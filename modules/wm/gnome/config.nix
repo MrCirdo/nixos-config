@@ -66,8 +66,8 @@
             "org/gnome/desktop/background" = {
               color-shading-type = "solid";
               picture-options = "zoom";
-              picture-uri = "${theme.wallpapers}";
-              picture-uri-dark = "${theme.wallpapers}";
+              picture-uri = "${theme.wallpaper}";
+              picture-uri-dark = "${theme.wallpaper}";
               primary-color = "#000000000000";
               secondary-color = "#000000000000";
             };
