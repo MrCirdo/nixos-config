@@ -8,5 +8,6 @@
       pinentryFlavor = "qt";
     };
     playerctld.enable = true;
+    flameshot.enable = true;
   };
 }
