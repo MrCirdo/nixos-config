@@ -28,7 +28,6 @@
 
     # Nix
     nil
-    rnix-lsp
 
     #python
     python3

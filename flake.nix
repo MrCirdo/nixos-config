@@ -2,9 +2,9 @@
   description = "My personal nixos config.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
 
     sops-nix.url = "github:Mic92/sops-nix";
     helix.url = "github:helix-editor/helix/24.03";
