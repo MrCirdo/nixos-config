@@ -23,6 +23,9 @@
 
       delta = {enable = true;};
       extraConfig = {
+        push = {
+          autoSetupRemote = true;
+        };
         pull = {
           rebase = true;
         };
