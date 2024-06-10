@@ -75,13 +75,6 @@
     alacritty = {
       enable = true;
       settings = {
-        key_bindings = [
-          {
-            key = "F11";
-            action = "ToggleFullscreen";
-          }
-        ];
-
         env = {
           TERM = "xterm-256color";
         };

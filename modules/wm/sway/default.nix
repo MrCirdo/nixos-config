@@ -42,26 +42,29 @@
               light.enable = true;
             };
 
-            services.xserver = {
-              enable = true;
+            services = {
               displayManager = {
-                session = [
-                  {
-                    manage = "destkop";
-                    name = "sway";
-                    start = "${launchSway}/bin/launch_sway.sh";
-                  }
-                ];
-
                 defaultSession = "sway";
                 autoLogin = {
                   user = "odric";
                   enable = true;
                 };
+              };
+              xserver = {
+                enable = true;
+                displayManager = {
+                  session = [
+                    {
+                      manage = "destkop";
+                      name = "sway";
+                      start = "${launchSway}/bin/launch_sway.sh";
+                    }
+                  ];
 
-                gdm = {
-                  enable = true;
-                  wayland = true;
+                  gdm = {
+                    enable = true;
+                    wayland = true;
+                  };
                 };
               };
             };

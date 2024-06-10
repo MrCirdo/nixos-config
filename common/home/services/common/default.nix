@@ -1,11 +1,15 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   services = {
     gpg-agent = {
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
       enableSshSupport = true;
-      pinentryFlavor = "qt";
+      pinentryPackage = pkgs.pinentry-qt;
     };
     playerctld.enable = true;
     flameshot.enable = true;
