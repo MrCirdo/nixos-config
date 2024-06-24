@@ -98,6 +98,7 @@
             ./machine/xps9500
             nixos-hardware.nixosModules.dell-xps-15-9500
             nixos-hardware.nixosModules.common-gpu-nvidia-disable
+            lanzaboote.nixosModules.lanzaboote
           ];
       };
 
