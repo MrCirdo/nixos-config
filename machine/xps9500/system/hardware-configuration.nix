@@ -12,10 +12,18 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc"];
-  boot.initrd.kernelModules = ["dm-snapshot"];
-  boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
+  boot = {
+    initrd = {
+      availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc"];
+      kernelModules = ["dm-snapshot"];
+      luks.devices."root" = {
+        device = " /dev/disk/by-uuid/06c8dde2-8398-432f-87c2-fe52be6b41bd";
+        preLVM = true;
+      };
+    };
+    kernelModules = ["kvm-intel"];
+    extraModulePackages = [];
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/2df93c90-7c2f-4d56-a7d9-1a8b6c0c8537";
@@ -31,11 +39,6 @@
   swapDevices = [
     {device = "/dev/disk/by-uuid/a9f10cd9-36eb-40ca-99c2-7844094475e6";}
   ];
-
-  boot.initrd.luks.devices."root" = {
-    device = " /dev/disk/by-uuid/06c8dde2-8398-432f-87c2-fe52be6b41bd";
-    preLVM = true;
-  };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
