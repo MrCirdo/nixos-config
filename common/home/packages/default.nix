@@ -70,11 +70,12 @@
   ];
 
   unstablePackage = with pkgs-unstable; [
+    clang-tools_18
     heroic
+    protonmail-desktop
+    rr
     vesktop
     vscode
-    clang-tools_18
-    rr
   ];
 in {
   home.packages =
