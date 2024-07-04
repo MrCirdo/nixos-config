@@ -10,7 +10,7 @@
     git = {
       enable = true;
       lfs.enable = true;
-      userEmail = "odricrouxparis@gmail.com";
+      userEmail = "odric@roux-paris.fr";
       userName = "Odric Roux-Paris";
       signing = {
         key = "C608DE9D03A3BCDB75A51D12DD79BAE7510108AC";
