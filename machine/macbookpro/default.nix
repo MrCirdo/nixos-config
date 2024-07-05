@@ -11,7 +11,7 @@ in {
   networking.hostName = "Pipoune";
   services = {
     zoneminder = {
-      enable = true;
+      enable = false;
       openFirewall = true;
       database = {
         createLocally = true;
@@ -28,7 +28,7 @@ in {
   ];
 
   systemd.services.rcloneZoneminder = {
-    enable = true;
+    enable = false;
     wantedBy = ["multi-user.target"];
     after = ["network-online.target"];
     before = ["zoneminder.service"];
