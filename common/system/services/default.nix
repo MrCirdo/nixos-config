@@ -4,6 +4,22 @@
     pipewire = {
       enable = true;
       pulse.enable = true;
+      extraConfig.pipewire-pulse."50-network-party" = {
+        context.modules = [
+          {
+            name = "module-native-protocol-tcp";
+            args = {};
+          }
+          {
+            name = "module-zeroconf-discover";
+            args = {};
+          }
+          {
+            name = "module-zeroconf-publish";
+            args = {};
+          }
+        ];
+      };
     };
     tailscale.enable = true;
     openssh = {
