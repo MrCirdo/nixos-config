@@ -1,7 +1,13 @@
 {config, ...}: {
   sops = {
     defaultSopsFile = ./secrets/spotify.yaml;
-    secrets.spotify-password.mode = "444";
+    secrets = {
+      spotify-password = {
+        mode = "444";
+        owner = config.users.users.default.name;
+        group = config.users.users.default.group;
+      };
+    };
   };
 
   home-manager.sharedModules = [

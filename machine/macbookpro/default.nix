@@ -52,6 +52,11 @@ in {
   users.users.default = {
     extraGroups = ["zoneminder" "mysql" "video"];
   };
+  home-manager.sharedModules = [
+    ({lib, ...}: {
+      services.spotifyd.enable = lib.mkForce true;
+    })
+  ];
 
   theme = let
     tailwindcss = config.theme.tailwindcss;

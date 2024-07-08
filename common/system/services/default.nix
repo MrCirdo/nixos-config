@@ -4,6 +4,7 @@
     pipewire = {
       enable = true;
       pulse.enable = true;
+      alsa.enable = true;
       extraConfig.pipewire-pulse."50-network-party" = {
         context.modules = [
           {
