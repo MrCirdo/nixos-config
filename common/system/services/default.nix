@@ -5,23 +5,6 @@
       enable = true;
       pulse.enable = true;
       alsa.enable = true;
-      extraConfig.pipewire-pulse."50-network-party" = {
-        context.modules = [
-          {
-            name = "module-native-protocol-tcp";
-            args = {};
-          }
-          {
-            name = "module-zeroconf-discover";
-            args = {};
-          }
-          {
-            name = "module-zeroconf-publish";
-            args = {};
-          }
-        ];
-      };
-      alsa.enable = true;
     };
     tailscale.enable = true;
     openssh = {
