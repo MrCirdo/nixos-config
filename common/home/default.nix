@@ -14,6 +14,8 @@
     ];
   };
 
+  imports = [./services/common/spotifyd.nix];
+
   fonts.packages = with pkgs; [
     nerdfonts
     ubuntu_font_family

@@ -20,6 +20,7 @@
           }
         ];
       };
+      alsa.enable = true;
     };
     tailscale.enable = true;
     openssh = {
