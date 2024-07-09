@@ -57,6 +57,7 @@
       home-manager.nixosModules.home-manager
       grub2-themes.nixosModules.default
       ./modules/themes
+      ./modules/audio
       ./common
       ./modules
       {nixpkgs.overlays = overlays;}
