@@ -95,21 +95,21 @@
   theme = let
     tailwindcss = config.theme.tailwindcss;
   in {
-    backgroundColor = tailwindcss.slate."950";
-    backgroundColor2 = tailwindcss.slate."900";
-    backgroundColor3 = tailwindcss.slate."800";
+    backgroundColor = tailwindcss.orange."950";
+    backgroundColor2 = tailwindcss.orange."900";
+    backgroundColor3 = tailwindcss.orange."800";
 
-    focusColor = tailwindcss.slate."500";
-    focusColor2 = tailwindcss.slate."600";
-    focusColor3 = tailwindcss.slate."400";
+    focusColor = tailwindcss.orange."500";
+    focusColor2 = tailwindcss.orange."600";
+    focusColor3 = tailwindcss.orange."400";
 
-    textColor = tailwindcss.slate."100";
-    textColor2 = tailwindcss.slate."200";
-    textColor3 = tailwindcss.slate."300";
+    textColor = tailwindcss.orange."100";
+    textColor2 = tailwindcss.orange."200";
+    textColor3 = tailwindcss.orange."300";
 
     alertColor = tailwindcss.red."500";
 
-    wallpaper = ../../wallpapers/tankernejla-wallheaver.jpg;
+    wallpaper = ../../wallpapers/hexzit.jpg;
   };
 
   imports = [./system];
