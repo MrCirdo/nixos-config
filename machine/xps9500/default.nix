@@ -16,6 +16,13 @@
     kernelPackages = pkgs.linuxKernel.packages.linux_6_9;
   };
 
+  services = {
+    rpcbind.enable = true;
+    cachefilesd = {
+      enable = true;
+      cacheDir = "/home/odric/quod-projects/nfs/cache";
+    };
+  };
   services.fprintd = {
     enable = true;
     tod = {

@@ -56,6 +56,7 @@
     jellyfin-media-player
     lazygit
     lf
+    nfs-utils
     openconnect
     pmutils
     rclone
