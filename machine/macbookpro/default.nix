@@ -21,6 +21,14 @@ in {
     };
 
     tailscale.enable = true;
+    pipewire = {
+      rocSource = {
+        enable = true;
+        fecCode = "rs8m";
+        sinkName = "Bonne grosse enceinte";
+        openFirewall = true;
+      };
+    };
   };
 
   environment.systemPackages = [

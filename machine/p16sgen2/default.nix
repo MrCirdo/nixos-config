@@ -52,6 +52,16 @@
         driver = pkgs.libfprint-2-tod1-goodix;
       };
     };
+
+    pipewire = {
+      rocSink = {
+        enable = true;
+        remoteIp = "192.168.1.23";
+        fecCode = "rs8m";
+        sinkName = "Bonne grosse enceinte";
+        openFirewall = true;
+      };
+    };
   };
 
   programs = {
