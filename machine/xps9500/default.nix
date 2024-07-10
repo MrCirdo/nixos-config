@@ -22,12 +22,13 @@
       enable = true;
       cacheDir = "/home/odric/quod-projects/nfs/cache";
     };
-  };
-  services.fprintd = {
-    enable = true;
-    tod = {
+
+    fprintd = {
       enable = true;
-      driver = pkgs.libfprint-2-tod1-goodix;
+      tod = {
+        enable = true;
+        driver = pkgs.libfprint-2-tod1-goodix;
+      };
     };
   };
 
