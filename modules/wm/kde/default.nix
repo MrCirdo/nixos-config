@@ -21,20 +21,20 @@
       }
       (mkIf config.kde.enable {
         services = {
-          # Currently on unstable channel.
-          # desktopManager.plasma6.enable = true;
+          desktopManager = {
+            plasma6.enable = true;
+          };
+          displayManager = {
+            sddm.enable = true;
+            defaultSession = "plasma";
+            autoLogin = {
+              user = "odric";
+              enable = false;
+            };
+          };
           xserver = {
             enable = true;
-            desktopManager.plasma5 = {
-              enable = true;
-              useQtScaling = true;
-            };
             displayManager = {
-              sddm.enable = true;
-              autoLogin = {
-                user = "odric";
-                enable = false;
-              };
             };
           };
         };
