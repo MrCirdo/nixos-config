@@ -17,7 +17,7 @@
       "kernel.perf_event_paranoid" = 1;
     };
     plymouth = {
-      enable = true;
+      enable = false;
       themePackages = [pkgs.adi1090x-plymouth-themes];
       theme = "darth_vader";
     };

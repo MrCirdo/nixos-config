@@ -16,8 +16,29 @@
 
   boot = {
     resumeDevice = "/dev/disk/by-uuid/18aa1876-2f3a-4bf3-916e-c5d5e92ef789";
-    kernelParams = ["resume_offset=4100096"];
+    kernelParams = [
+      "resume_offset=4100096"
+      "iommu=pt"
+      "vfio-pci.ids=1002:15bf"
+      "kvm.ignore_msrs=1"
+      "video=vesafb:off,efifb:off"
+      # "console=ttyUSB0,115200n8"
+      # "console=tty1"
+    ];
+
+    modprobeConfig = {
+      enable = true;
+    };
+
+    # extraModprobeConfig = ''
+    #   options vfio-pci ids=1002:15bf disable_vga=1
+    #   softdep amdgpu pre: vfio-pci
+    #   softdep drm pre: vfio-pci
+    # '';
+
     kernelPackages = pkgs.linuxKernel.packages.linux_6_9;
+    # blacklistedKernelModules = ["amdgpu"];
+    # kernelModules = ["vfio-pci" "vfio" "vfio_iommu_type1"];
 
     loader = {
       efi.efiSysMountPoint = "/boot";
@@ -44,6 +65,16 @@
     };
   };
 
+  systemd.services."launch-vm" = {
+    enable = false;
+    wantedBy = ["multi-user.target"];
+    description = "Launch Mac os vm";
+    serviceConfig = {
+      Type = "exec";
+      ExecStart = "/home/odric/OSX-KVM/boot-passthrough.sh";
+    };
+  };
+
   services = {
     fprintd = {
       enable = true;
@@ -52,6 +83,10 @@
         driver = pkgs.libfprint-2-tod1-goodix;
       };
     };
+
+    udev.extraRules = ''
+      SUBSYSTEM=="vfio", OWNER="root", GROUP="kvm"
+    '';
 
     pipewire = {
       rocSink = {
