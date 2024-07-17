@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  pkgs-unstable,
   config,
   theme,
   ...
@@ -54,22 +55,61 @@
     };
 
     vscode = {
-      enable = false;
+      enable = true;
+      package = pkgs-unstable.vscode;
       userSettings = {
         "keyboard.dispatch" = "keyCode";
         "editor.largeFileOptimizations" = true;
         "window.titleBarStyle" = "custom";
-        "workbench.colorTheme" = "One Dark Pro";
-        "editor.fontSize" = 11;
-        "editor.fontFamily" = "'Source Code Pro', 'monospace', monospace";
+        "workbench.colorTheme" = "One Dark";
+        "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
+        "C_Cpp.intelliSenseEngine" = "disabled";
+        "editor.tokenColorCustomizations" = {
+          "textMateRules" = [
+            {
+              "name" = "One Dark italic";
+              "scope" = [
+                "comment"
+                "entity.other.attribute-name"
+                "keyword"
+                "markup.underline.link"
+                "storage.modifier"
+                "storage.type"
+                "string.url"
+                "variable.language.super"
+                "variable.language.this"
+              ];
+
+              "settings" = {
+                "fontStyle" = "italic";
+              };
+            }
+            {
+              "name" = "One Dark italic reset";
+              "scope" = [
+                "keyword.operator"
+                "keyword.other.type"
+                "storage.modifier.import"
+                "storage.modifier.package"
+                "storage.type.built-in"
+                "storage.type.function.arrow"
+                "storage.type.generic"
+                "storage.type.java"
+                "storage.type.primitive"
+              ];
+
+              "settings" = {
+                "fontStyle" = "";
+              };
+            }
+          ];
+        };
       };
 
-      extensions = with pkgs.vscode-extensions; [
+      extensions = with pkgs-unstable.vscode-extensions; [
         vscodevim.vim
-        github.copilot
         eamodio.gitlens
-        ms-python.python
-        ms-vscode.cpptools
+        llvm-vs-code-extensions.vscode-clangd
         jnoortheen.nix-ide
         mskelton.one-dark-theme
       ];

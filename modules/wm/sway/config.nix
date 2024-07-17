@@ -18,9 +18,6 @@
           gtk = true;
         };
 
-        extraConfig = ''
-          for_window [app_id="code-url-handler"] opacity 0.95
-        '';
         config = rec {
           modifier = "Mod4";
           terminal = "alacritty";
