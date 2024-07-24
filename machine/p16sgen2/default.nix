@@ -67,8 +67,7 @@
   programs = {
     steam = {
       enable = true;
-      # It's for nix unstable
-      # extest.enable = true;
+      extest.enable = true;
       gamescopeSession = {
         enable = true;
         args = [
