@@ -65,6 +65,12 @@
         "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
         "C_Cpp.intelliSenseEngine" = "disabled";
         "rust-analyzer.server.path" = "/etc/profiles/per-user/odric/bin/rust-analyzer";
+        "vim.handleKeys" = {
+          "<C-d>" = true;
+          "<C-s>" = false;
+          "<C-z>" = false;
+          "<C-p>" = false;
+        };
         "editor.tokenColorCustomizations" = {
           "textMateRules" = [
             {
