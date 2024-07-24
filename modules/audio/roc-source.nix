@@ -96,7 +96,6 @@ in {
                 args = {
                     fec.code = ${cfg.fecCode}
                     resampler.profile = medium
-                    sess.latency.msec = 100
                     local.ip = ${cfg.localIp}
                     local.source.port = ${builtins.toString cfg.sourcePort}
                     local.repair.port = ${builtins.toString cfg.repeairPort}
