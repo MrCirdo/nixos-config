@@ -12,11 +12,19 @@
     in {
       wayland.windowManager.sway = lib.mkIf config.sway.enable {
         enable = true;
+        package = pkgs.swayfx;
+        checkConfig = false;
 
         wrapperFeatures = {
           base = true;
           gtk = true;
         };
+
+        extraConfig = ''
+          blur enable
+          corner_radius 8
+          for_window [app_id="codium-url-handler"] opacity 0.9
+        '';
 
         config = rec {
           modifier = "Mod4";
