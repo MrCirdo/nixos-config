@@ -23,7 +23,9 @@
         extraConfig = ''
           blur enable
           corner_radius 8
+          smart_corner_radius on
           for_window [app_id="codium-url-handler"] opacity 0.9
+          for_window [app_id="discord"] opacity 0.9
         '';
 
         config = rec {
