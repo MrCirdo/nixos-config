@@ -75,7 +75,7 @@
     heroic
     protonmail-desktop
     rr
-    vesktop
+    discord
     vscodium
   ];
 in {
