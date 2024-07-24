@@ -117,9 +117,11 @@
         eamodio.gitlens
         jnoortheen.nix-ide
         llvm-vs-code-extensions.vscode-clangd
+        ms-vscode.cmake-tools
         mskelton.one-dark-theme
         rust-lang.rust-analyzer
         teabyii.ayu
+        twxs.cmake
         vadimcn.vscode-lldb
         vscodevim.vim
       ];
