@@ -75,7 +75,7 @@
     protonmail-desktop
     rr
     vesktop
-    vscode
+    vscodium
   ];
 in {
   home.packages =

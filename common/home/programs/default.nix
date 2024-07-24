@@ -56,14 +56,15 @@
 
     vscode = {
       enable = true;
-      package = pkgs-unstable.vscode;
+      package = pkgs-unstable.vscodium;
       userSettings = {
         "keyboard.dispatch" = "keyCode";
         "editor.largeFileOptimizations" = true;
         "window.titleBarStyle" = "custom";
-        "workbench.colorTheme" = "One Dark";
+        "workbench.colorTheme" = "Ayu Dark";
         "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
         "C_Cpp.intelliSenseEngine" = "disabled";
+        "rust-analyzer.server.path" = "/etc/profiles/per-user/odric/bin/rust-analyzer";
         "editor.tokenColorCustomizations" = {
           "textMateRules" = [
             {
@@ -107,11 +108,14 @@
       };
 
       extensions = with pkgs-unstable.vscode-extensions; [
-        vscodevim.vim
         eamodio.gitlens
-        llvm-vs-code-extensions.vscode-clangd
         jnoortheen.nix-ide
+        llvm-vs-code-extensions.vscode-clangd
         mskelton.one-dark-theme
+        rust-lang.rust-analyzer
+        teabyii.ayu
+        vadimcn.vscode-lldb
+        vscodevim.vim
       ];
     };
 
