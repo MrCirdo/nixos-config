@@ -95,17 +95,17 @@
   theme = let
     tailwindcss = config.theme.tailwindcss;
   in {
-    backgroundColor = tailwindcss.orange."950";
-    backgroundColor2 = tailwindcss.orange."900";
-    backgroundColor3 = tailwindcss.orange."800";
+    backgroundColor = tailwindcss.neutral."950";
+    backgroundColor2 = tailwindcss.neutral."900";
+    backgroundColor3 = tailwindcss.neutral."800";
 
-    focusColor = tailwindcss.orange."500";
-    focusColor2 = tailwindcss.orange."600";
-    focusColor3 = tailwindcss.orange."400";
+    focusColor = tailwindcss.neutral."500";
+    focusColor2 = tailwindcss.neutral."600";
+    focusColor3 = tailwindcss.neutral."400";
 
-    textColor = tailwindcss.orange."100";
-    textColor2 = tailwindcss.orange."200";
-    textColor3 = tailwindcss.orange."300";
+    textColor = tailwindcss.neutral."100";
+    textColor2 = tailwindcss.neutral."200";
+    textColor3 = tailwindcss.neutral."300";
 
     alertColor = tailwindcss.red."500";
 
