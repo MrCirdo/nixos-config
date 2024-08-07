@@ -26,6 +26,7 @@
           smart_corner_radius on
           for_window [app_id="codium-url-handler"] opacity 0.9
           for_window [app_id="discord"] opacity 0.9
+          for_window [app_id="firefox"] blur disable
         '';
 
         config = rec {
