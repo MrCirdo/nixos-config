@@ -50,20 +50,20 @@
   theme = let
     tailwindcss = config.theme.tailwindcss;
   in {
-    backgroundColor = tailwindcss.slate."900";
-    backgroundColor2 = tailwindcss.slate."800";
-    backgroundColor3 = tailwindcss.slate."700";
+    backgroundColor = tailwindcss.zinc."950";
+    backgroundColor2 = tailwindcss.zinc."900";
+    backgroundColor3 = tailwindcss.zinc."800";
 
-    focusColor = tailwindcss.slate."500";
-    focusColor2 = tailwindcss.slate."400";
-    focusColor3 = tailwindcss.slate."300";
+    focusColor = tailwindcss.zinc."500";
+    focusColor2 = tailwindcss.zinc."400";
+    focusColor3 = tailwindcss.zinc."300";
 
-    textColor = tailwindcss.slate."100";
-    textColor2 = tailwindcss.slate."200";
-    textColor3 = tailwindcss.slate."300";
+    textColor = tailwindcss.zinc."100";
+    textColor2 = tailwindcss.zinc."200";
+    textColor3 = tailwindcss.zinc."300";
 
     alertColor = tailwindcss.red."500";
-    wallpaper = ../../wallpapers/dasangrypanda-wallhaven.png;
+    wallpaper = ../../wallpapers/yotoon.jpg;
   };
 
   imports = [./system];
