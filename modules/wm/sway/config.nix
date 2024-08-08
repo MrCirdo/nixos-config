@@ -240,6 +240,7 @@
 
           output = {
             "*" = {
+              adaptive_sync = "on";
               bg =
                 "${theme.wallpaper}" + " fill";
             };
