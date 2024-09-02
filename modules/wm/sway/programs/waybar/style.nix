@@ -21,6 +21,7 @@
   #network,
   #group-trays,
   #custom-tray-icon,
+  #custom-notification,
   #tray,
   #battery {
   	margin-top: 5px;
@@ -77,7 +78,7 @@
   	border-radius: 0px 10px 10px 0px;
   }
 
-  #mpris {
+  #custom-notification {
   	margin-top: 5px;
   	margin-bottom: 0px;
   	margin-right: 0px;
@@ -88,7 +89,19 @@
   	padding-bottom: 6px;
   	background-color: ${theme.backgroundColor};
   	border-radius: 10px 0px 0px 10px;
+  }
+
+  #mpris {
     color: ${theme.tailwindcss.green."500"};
+    background-color: ${theme.backgroundColor};
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   #custom-hibernation {

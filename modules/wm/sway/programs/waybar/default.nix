@@ -19,6 +19,7 @@
                 modules-left = ["custom/nixos" "sway/workspaces"];
                 modules-center = ["clock"];
                 modules-right = [
+                  "custom/notification"
                   "mpris"
                   "group/trays"
                   "custom/rss"
@@ -120,6 +121,25 @@
                     playing = "⏸";
                     stopped = "";
                   };
+                };
+                "custom/notification" = {
+                  tooltip = false;
+                  format = "{icon}";
+                  format-icons = {
+                    notification = "<span foreground='red'><sup></sup></span>";
+                    none = "";
+                    dnd-notification = "<span foreground='red'><sup></sup></span>";
+                    dnd-none = "";
+                    inhibited-notification = "<span foreground='red'><sup></sup></span>";
+                    inhibited-none = "";
+                    dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+                    dnd-inhibited-none = "";
+                  };
+                  return-type = "json";
+                  exec = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
+                  on-click = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
+                  on-click-right = "s${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
+                  escape = true;
                 };
 
                 "custom/lock" = {
