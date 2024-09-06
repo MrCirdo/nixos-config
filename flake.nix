@@ -91,18 +91,6 @@
         modules = modules ++ [./machine/macbookpro nixos-hardware.nixosModules.apple-macbook-pro-12-1];
       };
 
-      wookie = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules =
-          modules
-          ++ [
-            ./machine/xps9500
-            nixos-hardware.nixosModules.dell-xps-15-9500
-            nixos-hardware.nixosModules.common-gpu-nvidia-disable
-            lanzaboote.nixosModules.lanzaboote
-          ];
-      };
-
       groot = nixpkgs.lib.nixosSystem {
         inherit system;
         modules =
