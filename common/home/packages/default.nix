@@ -68,12 +68,12 @@
     wdisplays
     wget
     wl-clipboard
+    heroic
   ];
 
   unstablePackage = with pkgs-unstable; [
     clang-tools_18
     discord
-    heroic
     prismlauncher
     protonmail-desktop
     rr
