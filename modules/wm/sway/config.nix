@@ -239,6 +239,9 @@
               tap_button_map = "lrm";
               tap = "enabled";
             };
+            "12538:1024:USB_Optical_Mouse" = {
+              pointer_accel = "-0.5";
+            };
           };
 
           output = {
