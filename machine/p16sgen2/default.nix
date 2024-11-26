@@ -18,7 +18,6 @@
   boot = {
     resumeDevice = "/dev/disk/by-uuid/18aa1876-2f3a-4bf3-916e-c5d5e92ef789";
     kernelParams = ["resume_offset=4100096"];
-    kernelPackages = pkgs-unstable.linuxKernel.packages.linux_6_10;
 
     loader = {
       efi.efiSysMountPoint = "/boot";
