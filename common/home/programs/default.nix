@@ -310,5 +310,5 @@
     };
   };
 
-  imports = [./nvim ./zsh];
+  imports = [./zsh];
 }

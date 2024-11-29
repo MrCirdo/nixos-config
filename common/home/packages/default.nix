@@ -74,6 +74,7 @@
   unstablePackage = with pkgs-unstable; [
     clang-tools_18
     discord
+    neovim
     prismlauncher
     protonmail-desktop
     rr
