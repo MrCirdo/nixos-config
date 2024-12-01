@@ -39,10 +39,9 @@
   sops.age.keyFile = "${config.users.users.default.home}/.config/sops/age/keys.txt";
   services.printing.enable = true;
 
-  sound.enable = true;
   hardware = {
     pulseaudio.enable = false;
-    opengl.enable = true;
+    graphics.enable = true;
   };
 
   security = {
