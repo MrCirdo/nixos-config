@@ -107,7 +107,7 @@
 
     alertColor = tailwindcss.red."500";
 
-    wallpaper = ../../wallpapers/hexzit.jpg;
+    wallpaper = ../../wallpapers/kristina-schmid-cropped.jpg;
   };
 
   imports = [./system];
