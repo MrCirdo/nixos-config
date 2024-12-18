@@ -40,6 +40,9 @@
     bash = {
       enable = true;
       enableCompletion = true;
+      shellAliases = {
+        vim = "nvim";
+      };
       initExtra = ''
         set -o vi
       '';

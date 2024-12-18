@@ -9,6 +9,9 @@
 in {
   programs.zsh = {
     enable = true;
+    shellAliases = {
+      vim = "nvim";
+    };
     initExtra = ''
 
       ${pkgs.fastfetch}/bin/fastfetch
