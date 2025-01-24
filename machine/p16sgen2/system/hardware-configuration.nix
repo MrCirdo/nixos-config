@@ -38,11 +38,6 @@
     }
   ];
 
-  zramSwap = {
-    enable = true;
-    priority = 2;
-  };
-
   boot.kernel.sysctl = {
     "vm.swappiness" = 180;
     "vm.watermark_boost_factor" = 0;
