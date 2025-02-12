@@ -4,7 +4,7 @@
     useUserPackages = true;
     users.default = {
       home = {
-        stateVersion = "22.11";
+        stateVersion = "24.11";
       };
     };
     sharedModules = [
