@@ -299,7 +299,7 @@
         {
           source = pkgs.fetchurl {
             url = "https://github.com/MrCirdo.gpg";
-            hash = "sha256-VcMM8wf+1zPExshINV/RLRUjN/LhulncP7OfJmtgKzM=";
+            hash = "sha256-N5CwHYyDGyvPe2uum4bvt3pqtHsmOM7ken5YstK0hSo=";
           };
           trust = "ultimate";
         }
