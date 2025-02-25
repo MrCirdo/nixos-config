@@ -13,9 +13,6 @@
   time.timeZone = "Europe/Paris";
 
   boot = {
-    kernel.sysctl = {
-      "kernel.perf_event_paranoid" = 1;
-    };
     plymouth = {
       enable = false;
       themePackages = [pkgs.adi1090x-plymouth-themes];
@@ -102,7 +99,7 @@
     ];
   };
 
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
   networking.nameservers = [
     "9.9.9.9"
     "149.112.112.112"
