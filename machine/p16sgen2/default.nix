@@ -28,7 +28,7 @@
 
       grub = {
         enable = false;
-        enableCryptodisk = true;
+        enableCryptodisk = false;
         device = "nodev";
         efiSupport = true;
         extraEntries = ''

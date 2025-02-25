@@ -7,9 +7,18 @@
   ...
 }: {
   boot = {
-    loader.systemd-boot.enable = false;
-    loader.efi.canTouchEfiVariables = true;
-    initrd.luks.devices."root".device = "/dev/disk/by-uuid/07425910-1a81-4a04-8366-2ce9560fb012";
+    loader = {
+      systemd-boot.enable = false;
+      efi.canTouchEfiVariables = true;
+    };
+
+    initrd = {
+      systemd.enable = true;
+      luks.devices."root" = {
+        device = "/dev/disk/by-uuid/07425910-1a81-4a04-8366-2ce9560fb012";
+        crypttabExtraOpts = ["fido2-device=auto"];
+      };
+    };
     lanzaboote = {
       enable = true;
       pkiBundle = "/etc/secureboot";
