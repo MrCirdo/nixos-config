@@ -138,8 +138,6 @@
               {
                 timeout = 300;
                 command = "${pkgs.swaylock-effects}/bin/swaylock -f -C $HOME/.config/swaylock-effects/config";
-                # command = "${pkgs.swaylock-effects}/bin/swaylock -f -C $HOME/.config/swaylock-effects/config; ${pkgs.sway}/bin/swaymsg output '*' dpms off";
-                # resumeCommand = "${pkgs.sway}/bin/swaymsg output '*' dpms on";
               }
               {
                 timeout = 360;
