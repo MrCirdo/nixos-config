@@ -16,7 +16,6 @@
       systemd.enable = true;
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/07425910-1a81-4a04-8366-2ce9560fb012";
-        crypttabExtraOpts = ["fido2-device=auto"];
       };
     };
     lanzaboote = {

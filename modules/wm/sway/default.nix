@@ -10,13 +10,7 @@
     };
   };
 
-  config = let
-    launchSway =
-      pkgs.writeShellScriptBin "launch_sway.sh"
-      ''
-        exec ${pkgs.sway}/bin/sway
-      '';
-  in
+  config =
     # The goal is if sway is enabled.
     # The option in module manager must be actived.
     with lib;
@@ -43,29 +37,16 @@
             };
 
             services = {
-              displayManager = {
-                defaultSession = "sway";
-                autoLogin = {
-                  user = "odric";
-                  enable = true;
+              greetd = {
+                enable = true;
+                settings = {
+                  default_session = {
+                    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd ${config.home-manager.users.default.wayland.windowManager.sway.package}/bin/sway";
+                  };
                 };
               };
               xserver = {
                 enable = true;
-                displayManager = {
-                  session = [
-                    {
-                      manage = "destkop";
-                      name = "sway";
-                      start = "${launchSway}/bin/launch_sway.sh";
-                    }
-                  ];
-
-                  gdm = {
-                    enable = true;
-                    wayland = true;
-                  };
-                };
               };
             };
 
