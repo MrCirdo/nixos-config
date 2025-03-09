@@ -106,7 +106,12 @@
                   "tooltip-format-ethernet" = "{ipaddr}";
                   "tooltip-format-disconnected" = "Disconnected";
                   "max-length" = 50;
-                  on-click = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.networkmanager}/bin/nmtui";
+                  on-click = let
+                    launchNmtui = pkgs.writeShellScriptBin "launch_nmtui.sh" ''
+                      ${pkgs.coreutils}/bin/sleep 0.1
+                      ${pkgs.networkmanager}/bin/nmtui
+                    '';
+                  in "${pkgs.alacritty}/bin/alacritty -e ${launchNmtui}/bin/launch_nmtui.sh";
                 };
 
                 mpris = {
