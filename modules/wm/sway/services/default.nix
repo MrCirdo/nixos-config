@@ -29,6 +29,7 @@
             dawnTime = "8:00";
             duskTime = "22:00";
             temperature.night = 2500;
+            tray = true;
           };
 
           mako = {
@@ -125,6 +126,8 @@
               @define-color bg-selected ${theme.focusColor};
             '';
           };
+
+          network-manager-applet.enable = true;
 
           swayidle = {
             enable = true;
