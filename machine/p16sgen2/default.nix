@@ -9,13 +9,15 @@
     gamescope --mangoapp -- ${pkgs-unstable.heroic}/bin/heroic
   '';
 
-  gamescopeSessionFile = (pkgs.writeTextDir "share/wayland-sessions/heroic-games-launcher.desktop" ''
-    [Desktop Entry]
-    Name=Heroic
-    Comment=A digital distribution platform
-    Exec=${heroic-gamescope}/bin/heroic-gamescope
-    Type=Application
-  '').overrideAttrs (_: { passthru.providedSessions = [ "heroic-games-launcher" ]; });
+  gamescopeSessionFile =
+    (pkgs.writeTextDir "share/wayland-sessions/heroic-games-launcher.desktop" ''
+      [Desktop Entry]
+      Name=Heroic
+      Comment=A digital distribution platform
+      Exec=${heroic-gamescope}/bin/heroic-gamescope
+      Type=Application
+    '')
+    .overrideAttrs (_: {passthru.providedSessions = ["heroic-games-launcher"];});
 in {
   gnome.enable = false;
   sway.enable = true;
