@@ -25,6 +25,10 @@ in {
 
   hardware = {
     bluetooth.enable = true;
+    amdgpu.amdvlk = {
+      enable = true;
+      support32Bit.enable = true;
+    };
   };
 
   boot = {
