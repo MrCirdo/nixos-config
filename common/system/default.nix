@@ -49,7 +49,10 @@
 
   hardware = {
     pulseaudio.enable = false;
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
 
   security = {
