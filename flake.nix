@@ -43,7 +43,7 @@
   } @ inputs: let
     system = "x86_64-linux";
 
-    overlays = [(import ./overlays/electron.nix)];
+    overlays = [(import ./overlays/electron.nix) (import ./overlays/swaysome/swaysome.nix)];
 
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;

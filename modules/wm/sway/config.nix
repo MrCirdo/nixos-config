@@ -46,7 +46,7 @@
               command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
             }
             {
-              command = "${pkgs.gammastep}/bin/gammastep-indicator";
+              command = "exec ${pkgs.swaysome}/bin/swaysome init 1";
             }
           ];
 
@@ -88,26 +88,60 @@
             "${defaultConfig.modifier}+Shift+space" = "floating toggle";
             "${defaultConfig.modifier}+space" = "focus mode_toggle";
 
-            "${defaultConfig.modifier}+1" = "workspace number 1";
-            "${defaultConfig.modifier}+2" = "workspace number 2";
-            "${defaultConfig.modifier}+3" = "workspace number 3";
-            "${defaultConfig.modifier}+4" = "workspace number 4";
-            "${defaultConfig.modifier}+5" = "workspace number 5";
-            "${defaultConfig.modifier}+6" = "workspace number 6";
-            "${defaultConfig.modifier}+7" = "workspace number 7";
-            "${defaultConfig.modifier}+8" = "workspace number 8";
-            "${defaultConfig.modifier}+9" = "workspace number 9";
+            "${defaultConfig.modifier}+1" = "exec ${pkgs.swaysome}/bin/swaysome focus 1";
+            "${defaultConfig.modifier}+2" = "exec ${pkgs.swaysome}/bin/swaysome focus 2";
+            "${defaultConfig.modifier}+3" = "exec ${pkgs.swaysome}/bin/swaysome focus 3";
+            "${defaultConfig.modifier}+4" = "exec ${pkgs.swaysome}/bin/swaysome focus 4";
+            "${defaultConfig.modifier}+5" = "exec ${pkgs.swaysome}/bin/swaysome focus 5";
+            "${defaultConfig.modifier}+6" = "exec ${pkgs.swaysome}/bin/swaysome focus 6";
+            "${defaultConfig.modifier}+7" = "exec ${pkgs.swaysome}/bin/swaysome focus 7";
+            "${defaultConfig.modifier}+8" = "exec ${pkgs.swaysome}/bin/swaysome focus 8";
+            "${defaultConfig.modifier}+9" = "exec ${pkgs.swaysome}/bin/swaysome focus 9";
+            "${defaultConfig.modifier}+0" = "exec ${pkgs.swaysome}/bin/swaysome focus 0";
 
-            "${defaultConfig.modifier}+Alt+1" = "move container to workspace number 1";
-            "${defaultConfig.modifier}+Alt+2" = "move container to workspace number 2";
-            "${defaultConfig.modifier}+Alt+3" = "move container to workspace number 3";
-            "${defaultConfig.modifier}+Alt+4" = "move container to workspace number 4";
-            "${defaultConfig.modifier}+Alt+5" = "move container to workspace number 5";
-            "${defaultConfig.modifier}+Alt+6" = "move container to workspace number 6";
-            "${defaultConfig.modifier}+Alt+7" = "move container to workspace number 7";
-            "${defaultConfig.modifier}+Alt+8" = "move container to workspace number 8";
-            "${defaultConfig.modifier}+Alt+9" = "move container to workspace number 9";
+            "${defaultConfig.modifier}+Shift+1" = "exec ${pkgs.swaysome}/bin/swaysome move 1";
+            "${defaultConfig.modifier}+Shift+2" = "exec ${pkgs.swaysome}/bin/swaysome move 2";
+            "${defaultConfig.modifier}+Shift+3" = "exec ${pkgs.swaysome}/bin/swaysome move 3";
+            "${defaultConfig.modifier}+Shift+4" = "exec ${pkgs.swaysome}/bin/swaysome move 4";
+            "${defaultConfig.modifier}+Shift+5" = "exec ${pkgs.swaysome}/bin/swaysome move 5";
+            "${defaultConfig.modifier}+Shift+6" = "exec ${pkgs.swaysome}/bin/swaysome move 6";
+            "${defaultConfig.modifier}+Shift+7" = "exec ${pkgs.swaysome}/bin/swaysome move 7";
+            "${defaultConfig.modifier}+Shift+8" = "exec ${pkgs.swaysome}/bin/swaysome move 8";
+            "${defaultConfig.modifier}+Shift+9" = "exec ${pkgs.swaysome}/bin/swaysome move 9";
+            "${defaultConfig.modifier}+Shift+0" = "exec ${pkgs.swaysome}/bin/swaysome move 0";
 
+            "Alt+1" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 1";
+            "Alt+2" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 2";
+            "Alt+3" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 3";
+            "Alt+4" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 4";
+            "Alt+5" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 5";
+            "Alt+6" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 6";
+            "Alt+7" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 7";
+            "Alt+8" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 8";
+            "Alt+9" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 9";
+            "Alt+0" = "exec ${pkgs.swaysome}/bin/swaysome focus-group 0";
+
+            # Move containers to other workspace groups
+            "Alt+Shift+1" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 1";
+            "Alt+Shift+2" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 2";
+            "Alt+Shift+3" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 3";
+            "Alt+Shift+4" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 4";
+            "Alt+Shift+5" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 5";
+            "Alt+Shift+6" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 6";
+            "Alt+Shift+7" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 7";
+            "Alt+Shift+8" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 8";
+            "Alt+Shift+9" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 9";
+            "Alt+Shift+0" = "exec ${pkgs.swaysome}/bin/swaysome move-to-group 0";
+
+            # Move focused container to next output
+            "${defaultConfig.modifier}+o" = "exec ${pkgs.swaysome}/bin/swaysome next-output";
+            # Move focused container to previous output
+            "${defaultConfig.modifier}+Shift+o" = "exec ${pkgs.swaysome}/bin/swaysome prev-output";
+
+            # Move focused workspace group to next output
+            "${defaultConfig.modifier}+Alt+o" = "exec ${pkgs.swaysome}/bin/swaysome workspace-group-next-output";
+            # Move focused workspace group to previous output
+            "${defaultConfig.modifier}+Alt+Shift+o" = "exec ${pkgs.swaysome}/bin/swaysome workspace-group-prev-output";
             "${defaultConfig.modifier}+Shift+minus" = "move scratchpad";
             "${defaultConfig.modifier}+minus" = "scratchpad show";
 

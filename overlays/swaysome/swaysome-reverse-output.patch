@@ -1,0 +1,13 @@
+diff --git a/src/main.rs b/src/main.rs
+index 9810a57..b1f75ca 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -247,7 +247,7 @@ impl SwaySome {
+             .into_iter()
+             .filter(|x| x.active)
+             .collect();
+-        outputs.sort_by(|x, y| x.name.cmp(&y.name)); // sort_by_key doesn't work here (https://stackoverflow.com/a/47126516)
++        outputs.sort_by(|x, y| y.name.cmp(&x.name)); // sort_by_key doesn't work here (https://stackoverflow.com/a/47126516)
+         outputs
+     }
+
