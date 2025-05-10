@@ -30,6 +30,7 @@
                   "temperature"
                   "pulseaudio"
                   "battery"
+                  "custom/begin"
                   "group/powermenu"
                 ];
 
@@ -180,6 +181,11 @@
                   tooltip = true;
                   tooltip-format = "󰒲 Hibernate...";
                   on-click = "${pkgs.systemd}/bin/systemctl hibernate";
+                };
+
+                "custom/begin" = {
+                  format = " ";
+                  tooltip = false;
                 };
 
                 "group/powermenu" = {
