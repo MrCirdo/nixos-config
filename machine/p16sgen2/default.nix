@@ -36,6 +36,7 @@ in {
   boot = {
     resumeDevice = "/dev/disk/by-uuid/18aa1876-2f3a-4bf3-916e-c5d5e92ef789";
     kernelParams = ["resume_offset=4100096"];
+    kernel.sysctl = {"kernel.perf_event_paranoid" = 1;};
 
     loader = {
       efi.efiSysMountPoint = "/boot";
@@ -113,21 +114,21 @@ in {
   theme = let
     tailwindcss = config.theme.tailwindcss;
   in {
-    backgroundColor = tailwindcss.neutral."950";
-    backgroundColor2 = tailwindcss.neutral."900";
-    backgroundColor3 = tailwindcss.neutral."800";
+    backgroundColor = tailwindcss.stone."950";
+    backgroundColor2 = tailwindcss.stone."900";
+    backgroundColor3 = tailwindcss.stone."800";
 
-    focusColor = tailwindcss.neutral."500";
-    focusColor2 = tailwindcss.neutral."600";
-    focusColor3 = tailwindcss.neutral."400";
+    focusColor = tailwindcss.stone."500";
+    focusColor2 = tailwindcss.stone."600";
+    focusColor3 = tailwindcss.stone."400";
 
-    textColor = tailwindcss.neutral."100";
-    textColor2 = tailwindcss.neutral."200";
-    textColor3 = tailwindcss.neutral."300";
+    textColor = tailwindcss.stone."100";
+    textColor2 = tailwindcss.stone."200";
+    textColor3 = tailwindcss.stone."300";
 
     alertColor = tailwindcss.red."500";
 
-    wallpaper = ../../wallpapers/kristina-schmid-cropped.jpg;
+    wallpaper = ../../wallpapers/green-forest.png;
   };
 
   imports = [./system];
