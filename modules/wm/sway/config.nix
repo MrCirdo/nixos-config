@@ -21,12 +21,13 @@
         };
 
         extraConfig = ''
-          blur enable
+          blur disable
           corner_radius 8
           smart_corner_radius on
+
           for_window [app_id="codium-url-handler"] opacity 0.9
           for_window [app_id="discord"] opacity 0.9
-          for_window [app_id="firefox"] blur disable
+          for_window [app_id="Alacritty"] blur enable
 
           for_window [class=".*"] inhibit_idle fullscreen
           for_window [app_id=".*"] inhibit_idle fullscreen
