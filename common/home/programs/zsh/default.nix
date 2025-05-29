@@ -12,8 +12,8 @@ in {
     shellAliases = {
       vim = "nvim";
     };
-    initExtra = ''
 
+    initContent = ''
       ${pkgs.fastfetch}/bin/fastfetch
 
       function nrn() {

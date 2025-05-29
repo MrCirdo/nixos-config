@@ -31,24 +31,10 @@
     ];
   };
 
-  i18n.defaultLocale = "en_US.utf8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "fr_FR.utf8";
-    LC_IDENTIFICATION = "fr_FR.utf8";
-    LC_MEASUREMENT = "fr_FR.utf8";
-    LC_MONETARY = "fr_FR.utf8";
-    LC_NAME = "fr_FR.utf8";
-    LC_NUMERIC = "fr_FR.utf8";
-    LC_PAPER = "fr_FR.utf8";
-    LC_TELEPHONE = "fr_FR.utf8";
-    LC_TIME = "fr_FR.utf8";
-  };
-
   sops.age.keyFile = "${config.users.users.default.home}/.config/sops/age/keys.txt";
   services.printing.enable = true;
 
   hardware = {
-    pulseaudio.enable = false;
     graphics = {
       enable = true;
       enable32Bit = true;

@@ -60,74 +60,76 @@
     vscode = {
       enable = true;
       package = pkgs-unstable.vscodium;
-      userSettings = {
-        "keyboard.dispatch" = "keyCode";
-        "editor.largeFileOptimizations" = true;
-        "window.titleBarStyle" = "custom";
-        "workbench.colorTheme" = "Ayu Dark";
-        "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
-        "C_Cpp.intelliSenseEngine" = "disabled";
-        "rust-analyzer.server.path" = "/etc/profiles/per-user/odric/bin/rust-analyzer";
-        "vim.handleKeys" = {
-          "<C-d>" = true;
-          "<C-s>" = false;
-          "<C-z>" = false;
-          "<C-p>" = false;
-        };
-        "editor.tokenColorCustomizations" = {
-          "textMateRules" = [
-            {
-              "name" = "One Dark italic";
-              "scope" = [
-                "comment"
-                "entity.other.attribute-name"
-                "keyword"
-                "markup.underline.link"
-                "storage.modifier"
-                "storage.type"
-                "string.url"
-                "variable.language.super"
-                "variable.language.this"
-              ];
+      profiles.default = {
+        extensions = with pkgs-unstable.vscode-extensions; [
+          eamodio.gitlens
+          jnoortheen.nix-ide
+          llvm-vs-code-extensions.vscode-clangd
+          ms-vscode.cmake-tools
+          mskelton.one-dark-theme
+          rust-lang.rust-analyzer
+          teabyii.ayu
+          twxs.cmake
+          vadimcn.vscode-lldb
+          vscodevim.vim
+        ];
 
-              "settings" = {
-                "fontStyle" = "italic";
-              };
-            }
-            {
-              "name" = "One Dark italic reset";
-              "scope" = [
-                "keyword.operator"
-                "keyword.other.type"
-                "storage.modifier.import"
-                "storage.modifier.package"
-                "storage.type.built-in"
-                "storage.type.function.arrow"
-                "storage.type.generic"
-                "storage.type.java"
-                "storage.type.primitive"
-              ];
+        userSettings = {
+          "keyboard.dispatch" = "keyCode";
+          "editor.largeFileOptimizations" = true;
+          "window.titleBarStyle" = "custom";
+          "workbench.colorTheme" = "Ayu Dark";
+          "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
+          "C_Cpp.intelliSenseEngine" = "disabled";
+          "rust-analyzer.server.path" = "/etc/profiles/per-user/odric/bin/rust-analyzer";
+          "vim.handleKeys" = {
+            "<C-d>" = true;
+            "<C-s>" = false;
+            "<C-z>" = false;
+            "<C-p>" = false;
+          };
+          "editor.tokenColorCustomizations" = {
+            "textMateRules" = [
+              {
+                "name" = "One Dark italic";
+                "scope" = [
+                  "comment"
+                  "entity.other.attribute-name"
+                  "keyword"
+                  "markup.underline.link"
+                  "storage.modifier"
+                  "storage.type"
+                  "string.url"
+                  "variable.language.super"
+                  "variable.language.this"
+                ];
 
-              "settings" = {
-                "fontStyle" = "";
-              };
-            }
-          ];
+                "settings" = {
+                  "fontStyle" = "italic";
+                };
+              }
+              {
+                "name" = "One Dark italic reset";
+                "scope" = [
+                  "keyword.operator"
+                  "keyword.other.type"
+                  "storage.modifier.import"
+                  "storage.modifier.package"
+                  "storage.type.built-in"
+                  "storage.type.function.arrow"
+                  "storage.type.generic"
+                  "storage.type.java"
+                  "storage.type.primitive"
+                ];
+
+                "settings" = {
+                  "fontStyle" = "";
+                };
+              }
+            ];
+          };
         };
       };
-
-      extensions = with pkgs-unstable.vscode-extensions; [
-        eamodio.gitlens
-        jnoortheen.nix-ide
-        llvm-vs-code-extensions.vscode-clangd
-        ms-vscode.cmake-tools
-        mskelton.one-dark-theme
-        rust-lang.rust-analyzer
-        teabyii.ayu
-        twxs.cmake
-        vadimcn.vscode-lldb
-        vscodevim.vim
-      ];
     };
 
     alacritty = {

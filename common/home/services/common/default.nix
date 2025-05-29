@@ -9,7 +9,7 @@
       enableZshIntegration = true;
       enableBashIntegration = true;
       enableSshSupport = true;
-      pinentryPackage = pkgs.pinentry-qt;
+      pinentry.package = pkgs.pinentry-qt;
     };
     playerctld.enable = true;
     flameshot.enable = true;

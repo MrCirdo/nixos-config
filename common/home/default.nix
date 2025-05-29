@@ -16,13 +16,14 @@
 
   imports = [./services/common/spotifyd.nix];
 
-  fonts.packages = with pkgs; [
-    nerdfonts
-    ubuntu_font_family
-    source-code-pro
-    font-awesome
-    fira-code
-    fira-code-symbols
-    borg-sans-mono
-  ];
+  fonts.packages = with pkgs;
+    [
+      ubuntu_font_family
+      source-code-pro
+      font-awesome
+      fira-code
+      fira-code-symbols
+      borg-sans-mono
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }
