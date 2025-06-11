@@ -91,6 +91,16 @@
         modules = modules ++ [./machine/macbookpro nixos-hardware.nixosModules.apple-macbook-pro-12-1];
       };
 
+      dahu = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules =
+          modules
+          ++ [
+            ./machine/thinkbook16g6
+            lanzaboote.nixosModules.lanzaboote
+          ];
+      };
+
       groot = nixpkgs.lib.nixosSystem {
         inherit system;
         modules =

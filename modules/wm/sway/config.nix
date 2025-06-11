@@ -264,16 +264,32 @@
               xkb_variant = "intl";
             };
 
+            "1133:49948:Logitech_USB_Keyboard" = {
+              repeat_delay = "200";
+              repeat_rate = "75";
+              xkb_options = "caps:escape";
+              xkb_layout = "us";
+              xkb_variant = "intl";
+            };
+
             "1267:12572:DELL097D:00_04F3:311C_Touchpad" = {
               scroll_method = "two_finger";
               tap_button_map = "lrm";
               tap = "enabled";
             };
+
             "1739:52934:SYNA801A:00_06CB:CEC6_Touchpad" = {
               scroll_method = "two_finger";
               tap_button_map = "lrm";
               tap = "enabled";
             };
+
+            "1739:52990:SYNA2BA6:00_06CB:CEFE_Touchpad" = {
+              scroll_method = "two_finger";
+              tap_button_map = "lrm";
+              tap = "enabled";
+            };
+
             "12538:1024:USB_Optical_Mouse" = {
               pointer_accel = "-0.5";
             };
@@ -291,6 +307,9 @@
             };
             "DP-5" = {
               scale = "1";
+            };
+            "HDMI-A-1" = {
+              scale = "1.50";
             };
           };
 
