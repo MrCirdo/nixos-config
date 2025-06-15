@@ -20,11 +20,7 @@
     man-pages-posix
 
     # Rust
-    cargo
-    clippy
     rust-analyzer
-    rustc
-    rustfmt
 
     # Nix
     nil
