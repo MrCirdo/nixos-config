@@ -48,6 +48,7 @@
     fd
     firefox
     gnupg
+    heroic
     htop
     jellyfin-media-player
     lazygit
@@ -64,7 +65,6 @@
     wdisplays
     wget
     wl-clipboard
-    heroic
   ];
 
   unstablePackage = with pkgs-unstable; [
