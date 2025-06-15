@@ -36,11 +36,13 @@
 
           mako = {
             enable = false;
-            backgroundColor = theme.backgroundColor;
-            borderColor = theme.backgroundColor2;
-            textColor = theme.textColor;
-            defaultTimeout = 10000;
-            borderRadius = 20;
+            settings = {
+              backgroundColor = theme.backgroundColor;
+              borderColor = theme.backgroundColor2;
+              textColor = theme.textColor;
+              defaultTimeout = 10000;
+              borderRadius = 20;
+            };
           };
 
           swaync = {
