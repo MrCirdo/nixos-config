@@ -83,6 +83,10 @@
         inherit pkgs;
         pkgs-unstable = pkgs-unstable;
       };
+      linux = import ./shells/linux.nix {
+        inherit pkgs;
+        pkgs-unstable = pkgs-unstable;
+      };
     };
 
     nixosConfigurations = {
