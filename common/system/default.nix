@@ -13,9 +13,9 @@
 
   boot = {
     plymouth = {
-      enable = false;
+      enable = true;
       themePackages = [pkgs.adi1090x-plymouth-themes];
-      theme = "darth_vader";
+      theme = "cross_hud";
     };
 
     consoleLogLevel = 0;
@@ -62,7 +62,6 @@
     docker = {
       enable = true;
       daemon.settings = {
-        "insecure-registries" = ["https://gitlab.quodfinancial.com:5050"];
         "features"."buildkit" = true;
       };
     };
