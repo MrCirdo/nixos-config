@@ -75,7 +75,7 @@ in {
     pipewire = {
       rocSink = {
         enable = true;
-        remoteIp = "192.168.1.23";
+        remoteIp = "192.168.1.12";
         fecCode = "rs8m";
         sinkName = "Bonne grosse enceinte";
         openFirewall = true;
