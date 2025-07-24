@@ -10,6 +10,19 @@
       config,
       ...
     }: {
+      home.pointerCursor = {
+        name = "Adwaita";
+        package = pkgs.adwaita-icon-theme;
+        gtk = {
+          enable = true;
+        };
+        x11 = {
+          enable = true;
+          defaultCursor = "Adwaita";
+        };
+        sway.enable = true;
+      };
+
       dconf.settings = {
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
@@ -18,6 +31,10 @@
 
       gtk = {
         enable = true;
+        cursorTheme = {
+          size = 25;
+          name = "Adwaita";
+        };
         theme = {
           name = "Adwaita-dark";
           package = pkgs.gnome-themes-extra;
