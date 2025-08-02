@@ -69,6 +69,7 @@
 
   unstablePackage = with pkgs-unstable; [
     clang-tools_18
+    comma
     discord
     neovim
     prismlauncher
