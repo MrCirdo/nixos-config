@@ -37,8 +37,10 @@ in {
     resumeDevice = "/dev/disk/by-uuid/18aa1876-2f3a-4bf3-916e-c5d5e92ef789";
     kernelParams = ["resume_offset=4100096"];
     kernel.sysctl = {"kernel.perf_event_paranoid" = 1;};
+    kernelPackages = pkgs-unstable.linuxPackages_latest;
 
     loader = {
+      timeout = 0;
       efi.efiSysMountPoint = "/boot";
       grub2-theme = {
         enable = false;
@@ -63,7 +65,14 @@ in {
     };
   };
 
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=60m
+  '';
+
   services = {
+    logind = {
+      lidSwitch = "suspend-then-hibernate";
+    };
     fprintd = {
       enable = true;
       tod = {
@@ -83,6 +92,12 @@ in {
     };
 
     displayManager.sessionPackages = [gamescopeSessionFile];
+
+    upower = {
+      enable = true;
+      allowRiskyCriticalPowerAction = true;
+      criticalPowerAction = "Hibernate";
+    };
   };
 
   programs = {
