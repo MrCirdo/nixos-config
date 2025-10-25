@@ -127,6 +127,7 @@ in {
     };
   };
 
+
   security.pam.services = {
     sudo.fprintAuth = true;
   };
@@ -134,9 +135,9 @@ in {
   theme = let
     tailwindcss = config.theme.tailwindcss;
   in {
-    backgroundColor = tailwindcss.stone."950";
-    backgroundColor2 = tailwindcss.stone."900";
-    backgroundColor3 = tailwindcss.stone."800";
+    backgroundColor = tailwindcss.stone."900";
+    backgroundColor2 = tailwindcss.stone."800";
+    backgroundColor3 = tailwindcss.stone."700";
 
     focusColor = tailwindcss.stone."500";
     focusColor2 = tailwindcss.stone."600";
@@ -148,7 +149,7 @@ in {
 
     alertColor = tailwindcss.red."500";
 
-    wallpaper = ../../wallpapers/green-forest.png;
+    wallpaper = ../../wallpapers/thedrexter-wallheaver.png;
   };
 
   imports = [./system];
