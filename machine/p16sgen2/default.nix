@@ -107,6 +107,7 @@ in {
     };
     steam = {
       enable = true;
+      package = pkgs-unstable.steam;
       extest.enable = true;
       gamescopeSession = {
         enable = true;
