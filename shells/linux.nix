@@ -1,14 +1,11 @@
-{
-  pkgs,
-  ...
-}:
-  with pkgs;
-    mkShell {
-      inputsFrom = [
-        linux
-      ];
-      buildInputs = [
-        ncurses
-        pkg-config
-      ];
-    }
+{pkgs, ...}:
+with pkgs;
+  mkShell {
+    inputsFrom = [
+      linux
+    ];
+    buildInputs = [
+      ncurses
+      pkg-config
+    ];
+  }
