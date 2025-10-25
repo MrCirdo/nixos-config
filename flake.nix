@@ -87,6 +87,9 @@
         inherit pkgs;
         pkgs-unstable = pkgs-unstable;
       };
+      llvm = import ./shells/llvm.nix {
+        inherit pkgs;
+      };
     };
 
     nixosConfigurations = {
