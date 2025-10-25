@@ -8,6 +8,10 @@
       alsa.enable = true;
     };
     tailscale.enable = true;
+    usbmuxd = {
+      enable = true;
+      package = pkgs.usbmuxd2;
+    };
     openssh = {
       enable = true;
       settings.X11Forwarding = true;
