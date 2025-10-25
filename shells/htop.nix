@@ -13,10 +13,12 @@ in
         htop
       ];
       buildInputs = [
-        autoconf
-        ncurses
-        libunwindDebug
         astyle
+        autoconf
         libiberty
+        libunwindDebug
+        ncurses
+        valgrind
+        asciinema_3
       ];
     }
