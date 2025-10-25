@@ -50,7 +50,6 @@
     gnupg
     heroic
     htop
-    jellyfin-media-player
     lazygit
     lf
     nfs-utils
@@ -68,13 +67,12 @@
   ];
 
   unstablePackage = with pkgs-unstable; [
-    clang-tools_18
     comma
     discord
     neovim
     prismlauncher
-    protonmail-desktop
     rr
+    tidal-hifi
     vscodium
   ];
 in {
