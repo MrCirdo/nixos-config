@@ -8,6 +8,7 @@
 }: {
   programs = {
     home-manager.enable = true;
+    mergiraf.enable = true;
     git = {
       enable = true;
       lfs.enable = true;
