@@ -18,7 +18,7 @@
 
   fonts.packages = with pkgs;
     [
-      ubuntu_font_family
+      ubuntu-classic
       source-code-pro
       font-awesome
       fira-code

@@ -42,7 +42,7 @@
     bluetuith
     bluez
     chromium
-    du-dust
+    dust
     duf
     fastfetch
     fd

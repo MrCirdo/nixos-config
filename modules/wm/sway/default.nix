@@ -41,7 +41,7 @@
                 enable = true;
                 settings = {
                   default_session = {
-                    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd ${config.home-manager.users.default.wayland.windowManager.sway.package}/bin/sway";
+                    command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd ${config.home-manager.users.default.wayland.windowManager.sway.package}/bin/sway";
                   };
                 };
               };

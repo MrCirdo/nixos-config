@@ -27,10 +27,6 @@ in {
 
   hardware = {
     bluetooth.enable = true;
-    amdgpu.amdvlk = {
-      enable = true;
-      support32Bit.enable = true;
-    };
   };
 
   boot = {
@@ -71,7 +67,9 @@ in {
 
   services = {
     logind = {
-      lidSwitch = "suspend-then-hibernate";
+      settings = {
+        Login.HandleLidSwitch = "suspend-then-hibernate";
+      };
     };
     fprintd = {
       enable = true;

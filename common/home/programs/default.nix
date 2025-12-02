@@ -9,22 +9,20 @@
   programs = {
     home-manager.enable = true;
     mergiraf.enable = true;
-    git = {
-      enable = true;
-      lfs.enable = true;
-      userEmail = "odric@roux-paris.fr";
-      userName = "Odric Roux-Paris";
-      signing = {
-        key = "C608DE9D03A3BCDB75A51D12DD79BAE7510108AC";
-        signByDefault = true;
-      };
-      difftastic = {
-        enable = false;
+    difftastic = {
+      enable = false;
+      options = {
         background = "dark";
       };
-
-      delta = {enable = true;};
-      extraConfig = {
+    };
+    delta = {enable = true;};
+    git = {
+      enable = true;
+      settings = {
+        user = {
+          email = "odric@roux-paris.fr";
+          name = "Odric Roux-Paris";
+        };
         push = {
           autoSetupRemote = true;
         };
@@ -35,6 +33,11 @@
           enable = true;
           autoUpdate = true;
         };
+      };
+      lfs.enable = true;
+      signing = {
+        key = "C608DE9D03A3BCDB75A51D12DD79BAE7510108AC";
+        signByDefault = true;
       };
     };
 
@@ -50,12 +53,7 @@
     };
 
     ssh = {
-      enable = true;
-      serverAliveInterval = 10;
-      forwardAgent = true;
-      extraConfig = ''
-        TCPKeepAlive yes
-      '';
+      enableDefaultConfig = true;
     };
 
     vscode = {

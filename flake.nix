@@ -2,12 +2,12 @@
   description = "My personal nixos config.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
 
     sops-nix.url = "github:Mic92/sops-nix";
-    helix.url = "github:helix-editor/helix/24.07";
+    helix.url = "github:helix-editor/helix/25.07.1";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -43,7 +43,7 @@
   } @ inputs: let
     system = "x86_64-linux";
 
-    overlays = [(import ./overlays/electron.nix) (import ./overlays/swaysome/swaysome.nix)];
+    overlays = [(import ./overlays/electron.nix) helix.overlays.helix];
 
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
