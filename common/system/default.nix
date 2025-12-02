@@ -68,7 +68,6 @@
     };
     spiceUSBRedirection.enable = true;
     libvirtd.enable = true;
-    lxd.enable = false;
   };
 
   environment = {
